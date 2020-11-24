@@ -38,14 +38,16 @@ bool rdv::ajouter()
     QSqlQuery query;
   QString coderdv_string= QString::number(coderdv);
   QString id_p_string= QString::number(id_p);
-         query.prepare("INSERT INTO rdv (coderdv, date_rdv, time_rdv, medecin,  service, id_p) "
-                       "VALUES (:coderdv, :daterdv, :TIMERDV, :doctor, :service, id)");
+         /*query.prepare("INSERT INTO rdv (coderdv, date_rdv, time_rdv, medecin,  service, id_p) "
+                       "VALUES (:coderdv, :daterdv, :TIMERDV, :doctor, :service, id)");*/
+  query.prepare("INSERT INTO rdv (coderdv, daterdv, TIMERDV, doctor, service, id) "
+                         "VALUES (:coderdv, :date_rdv, :time_rdv, :medecin,  :service, :id_p)");
          query.bindValue(":coderdv",coderdv_string);
-         query.bindValue(":daterdv", date_rdv);
-         query.bindValue(":TIMERDV", time_rdv);
-         query.bindValue(":doctor", medecin);
+         query.bindValue(":date_rdv", date_rdv);
+         query.bindValue(":time_rdv", time_rdv);
+         query.bindValue(":medecin", medecin);
          query.bindValue(":service", service);
-         query.bindValue(":id",id_p_string);
+         query.bindValue(":id_p",id_p_string);
         return query.exec();
 
 }
@@ -77,17 +79,17 @@ QSqlQueryModel* rdv::afficher()
   return  model;
 }
 
-bool rdv::modifier_rdv(){
+bool rdv::modifier_rdv(int coderdv){
 
         QSqlQuery query;
          QString coderdv_string= QString::number(coderdv);
          QString id_p_string= QString::number(id_p);
-        query.prepare("update rdv set date_rdv=:daterdv, time_rdv=:TIMERDV, medecin=:doctor,  service=:service, id_p:=id where coderdv=:coderdv");
+        query.prepare("UPDATE RDV set daterdv=:date_rdv, TIMERDV=:time_rdv, doctor=:medecin,  service=:service, id:=id_p where coderdv=:coderdv");
 
         query.bindValue(":coderdv",coderdv_string);
-        query.bindValue(":daterdv", date_rdv);
-        query.bindValue(":TIMERDV", time_rdv);
-        query.bindValue(":doctor", medecin);
+        query.bindValue(":date_rdv", date_rdv);
+        query.bindValue(":time_rdv", time_rdv);
+        query.bindValue(":medecin", medecin);
         query.bindValue(":service", service);
         query.bindValue(":id",id_p_string);
 
@@ -108,12 +110,12 @@ model->setHeaderData(0, Qt::Horizontal, QObject::tr("coderdv"));
     return model;
 
 }
-void rdv::chercher (){
+/*void rdv::chercher (){
 
 QSqlQuery query1;
 QString coderdv_string= QString::number(coderdv);
 QString id_p_string= QString::number(id_p);
-query1.prepare("select date_rdv, time_rdv, medecin,  service, id_p_string from rdv where coderdv=:coderdv");
+query1.prepare("select coderdv from rdv where coderdv=:coderdv");
 query1.bindValue(":coderdv",coderdv_string);
 
 query1.exec();
@@ -148,5 +150,45 @@ QSqlQueryModel * rdv::recherche (QString champ ,QString valeur,int etat){
    model->setHeaderData(5, Qt::Horizontal, QObject::tr("id"));
     return  model;
 
+}*/
+
+bool rdv::search(int coderdv){
+    QSqlQuery query;
+    QString res = QString::number(coderdv);
+    query.prepare("SELECT coderdv FROM rdv WHERE coderdv = :coderdv");
+    query.bindValue(":coderdv", res);
+    query.exec();
+
+    if(query.size()!=coderdv){return false;}
+    else return true;
+
+
 }
 
+QSqlQueryModel* rdv::afficher_asc()//tri asc
+{
+    QSqlQueryModel* model= new QSqlQueryModel();
+    model->setQuery("select * from rdv ORDER BY daterdv");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("coderdv"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nb place"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("daterdv"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("TIMERDV"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("doctor"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("service"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("id"));
+        return model;
+    }
+
+QSqlQueryModel* rdv::afficher_desc() //trie desc
+{
+    QSqlQueryModel* model= new QSqlQueryModel();
+    model->setQuery("select * from rdv ORDER BY daterdv DESC");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("coderdv"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nb place"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("daterdv"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("TIMERDV"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("doctor"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("service"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("id"));
+        return model;
+    }

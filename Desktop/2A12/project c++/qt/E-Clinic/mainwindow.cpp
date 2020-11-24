@@ -21,12 +21,20 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->supprimerp, SIGNAL(clicked(bool)), this, SLOT(on_pb_supprimer_clicked()));
     connect(ui->supprimerr, SIGNAL(clicked(bool)), this, SLOT(on_pb_supprimer_clicked2()));
 
-    connect(ui->modifier_p, SIGNAL(clicked(bool)), this, SLOT(on_modifier_p_clicked()));
-    connect(ui->modifier_p_2, SIGNAL(clicked(bool)), this, SLOT(on_modifier_p_clicked2()));
-connect(ui->pushButton_1, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_2_clicked()));
+    connect(ui->pb_modifier_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked()));
+    connect(ui->pb_modifier, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked_2()));
+    connect(ui->pushButton_1, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_2_clicked()));
 
-    connect(ui->rechercherp, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged(const QString &arg1)));
-    connect(ui->rechercherr, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged2(const QString &arg1)));
+    connect(ui->pb_asc_tri, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_tri_clicked();));
+    connect(ui->pb_desc_tri, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_tri_clicked();));
+    connect(ui->pb_asc_tri_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_tri_clicked_2();));
+    connect(ui->pb_desc_tri_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_tri_clicked_2();));
+
+
+
+    //connect(ui->rechercherp, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged(const QString &arg1)));
+    //connect(ui->rechercherr, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged2(const QString &arg1)));
+
 
     /*client_ = NULL;
 
@@ -176,7 +184,7 @@ void MainWindow::on_pb_supprimer_clicked2()
 }
 
 
-void MainWindow::on_modifier_p_clicked()
+/*void MainWindow::on_modifier_p_clicked()
 {
 
     tmppatient.setnom(ui->Nom_2->text());
@@ -218,16 +226,16 @@ void MainWindow::on_modifier_p_clicked()
     tmppatient.setmotifdec(ui->motifDEC_2->text());
 
 
-}
+}*/
 
-void MainWindow::on_recherche_tri_textChanged(const QString &arg1)
+/*void MainWindow::on_recherche_tri_textChanged(const QString &arg1)
 {
     ui->tab_patients->setModel(tmppatient.recherche(champ,arg1,etat));
    valeur=arg1;
-}
+}*/
 
 
-void MainWindow::on_modifier_p_clicked2()
+/*void MainWindow::on_modifier_p_clicked2()
 {
 
 
@@ -239,12 +247,225 @@ void MainWindow::on_modifier_p_clicked2()
      tmprdv.settime_rdv(ui->timeEdit_2->text());
      tmprdv.setservice(ui->Service_3->text());
 
-}
+}*/
 
-void MainWindow::on_recherche_tri_textChanged2(const QString &arg1)
+void MainWindow::on_pb_modifier_clicked(){
+
+    QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
+    QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
+
+
+    int coderdv = ui->CodeRDV_3->text().toInt();
+    ui->CodeRDV_3->setValidator(validator_int);
+
+    int id_p = ui->ID_4->text().toInt();
+    ui->ID_4->setValidator(validator_int);
+
+    QString medecin = ui->Docteur_3->text();
+    ui->Docteur_3->setValidator(validator_String);
+
+    QString date_rdv = ui->dateEdit_5->text();
+    ui->dateEdit_5->setValidator(validator_String);
+
+    QString service = ui->Service_3->text();
+    ui->Service_3->setValidator(validator_String);
+
+    QString time_rdv = ui->timeEdit_2->text();
+    ui->timeEdit_2->setValidator(validator_String);
+
+
+
+        rdv r(coderdv, medecin, service, date_rdv, time_rdv, id_p);
+        bool test=r.modifier_rdv(coderdv);
+
+        ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
+
+
+
+        if(test && r.search(coderdv)==true){
+
+
+            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+               le->clear();
+            }
+
+          QMessageBox::information(this, QObject::tr("Modifier une annonce"),
+          QObject::tr("Annonce modifiée.\n"
+                      "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+      }
+        else
+            QMessageBox::critical(this, QObject::tr("Modifier une annonce"),
+                        QObject::tr("Erreur !.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
+}
+void MainWindow::on_pb_modifier_clicked_2(){
+
+    QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
+    QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
+
+    int id = ui->ID_2->text().toInt();
+    ui->ID_2->setValidator(validator_int);
+
+    int tel = ui->Tel_2->text().toInt();
+    ui->Tel_2->setValidator(validator_int);
+
+    int telpap = ui->Telpap_2->text().toInt();
+    ui->Telpap_2->setValidator(validator_int);
+
+
+    QString nom = ui->Nom_2->text();
+    ui->Nom_2->setValidator(validator_String);
+
+    QString prenom = ui->Prenom_2->text();
+    ui->Prenom_2->setValidator(validator_String);
+
+    QString sexe = ui->Sexe_2->text();
+    ui->Sexe_2->setValidator(validator_String);
+
+    QString adresse = ui->Adresse_2->text();
+    ui->Adresse_2->setValidator(validator_String);
+
+    QString situationf = ui->SituationF_2->text();
+    ui->SituationF_2->setValidator(validator_String);
+
+    QString assurancemed = ui->AssuranceMed_2->text();
+    ui->AssuranceMed_2->setValidator(validator_String);
+
+    QString codeassurance = ui->CodeAssurance_2->text();
+    ui->CodeAssurance_2->setValidator(validator_String);
+
+    QString nompap = ui->Nompap_2->text();
+    ui->Nompap_2->setValidator(validator_String);
+
+    QString prenompap = ui->Prenompap_2->text();
+    ui->Prenompap_2->setValidator(validator_String);
+
+    QString typep = ui->TypePatients_2->text();
+    ui->TypePatients_2->setValidator(validator_String);
+
+    QString date_naissance = ui->Datenaissance_2->text();
+    ui->Datenaissance_2->setValidator(validator_String);
+
+    QString lienpar = ui->Lien_P_2->text();
+    ui->Lien_P_2->setValidator(validator_String);
+
+    QString medadm = ui->NomMed_2->text();
+    ui->NomMed_2->setValidator(validator_String);
+
+    QString dateent = ui->Date_entree_2->text();
+    ui->Date_entree_2->setValidator(validator_String);
+
+    QString datetrait = ui->Date_traitment_2->text();
+    ui->Date_traitment_2->setValidator(validator_String);
+
+    /*QString designation = ui->timeEdit_2->text();
+    ui->timeEdit_2->setValidator(validator_String);*/
+
+    QString datesor= ui->Date_sortie_2->text();
+    ui->Date_sortie_2->setValidator(validator_String);
+
+    QString motifsor = ui->motif_S_2->text();
+    ui->motif_S_2->setValidator(validator_String);
+
+    QString resultatsor = ui->Resu_S_2->text();
+    ui->Resu_S_2->setValidator(validator_String);
+
+    QString datedec = ui->Date_deces_2->text();
+    ui->Date_deces_2->setValidator(validator_String);
+
+    QString motifdec = ui->motifDEC_2->text();
+    ui->motifDEC_2->setValidator(validator_String);
+
+    QString datecon = ui->Date_consultaion_2->text();
+    ui->Date_consultaion_2->setValidator(validator_String);
+
+    QString typecon = ui->TypeC_2->text();
+    ui->TypeC_2->setValidator(validator_String);
+
+    QString datepres = ui->Date_Prescription_2->text();
+    ui->Date_Prescription_2->setValidator(validator_String);
+
+    QString note = ui->NotePres2->text();
+    ui->NotePres2->setValidator(validator_String);
+
+    QString designationexr = ui->DesiER_2->text();
+    ui->DesiER_2->setValidator(validator_String);
+
+    QString resultatexr = ui->resER_2->text();
+    ui->resER_2->setValidator(validator_String);
+
+    QString designationexb = ui->DesiEB_2->text();
+    ui->DesiEB_2->setValidator(validator_String);
+
+    QString resultatexb = ui->resEB_2->text();
+    ui->resEB_2->setValidator(validator_String);
+
+    QString chirurigien = ui->Chirurigien_2->text();
+    ui->Chirurigien_2->setValidator(validator_String);
+
+    QString anesthesist = ui->anesthesist_2->text();
+    ui->anesthesist_2->setValidator(validator_String);
+
+    QString dateadm = ui->Date_admission_2->text();
+    ui->Date_admission_2->setValidator(validator_String);
+
+    QString typeadm = ui->Type_A_2->text();
+    ui->Type_A_2->setValidator(validator_String);
+
+    QString motifadm = ui->Motif_A_2->text();
+    ui->Motif_A_2->setValidator(validator_String);
+
+    QString nomacc = ui->NomAc_2->text();
+    ui->NomAc_2->setValidator(validator_String);
+
+    QString prenomacc = ui->PrenomAC_2->text();
+    ui->PrenomAC_2->setValidator(validator_String);
+
+patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe,datepres,note,designationexr,resultatexr,designationexb,resultatexb,chirurigien,anesthesist,dateadm,typeadm,motifadm,nomacc,prenomacc,lienpar,dateent,datesor,motifsor,resultatsor,datedec,motifdec,datetrait,medadm);
+        bool test=p.modifier_patient(id);
+
+        ui->tab_patients->setModel(tmppatient.afficher());   //refresh
+
+
+
+        if(test && p.search(id)==true){
+
+
+            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+               le->clear();
+            }
+
+          QMessageBox::information(this, QObject::tr("Modifier une annonce"),
+          QObject::tr("Annonce modifiée.\n"
+                      "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+      }
+        else
+            QMessageBox::critical(this, QObject::tr("Modifier une annonce"),
+                        QObject::tr("Erreur !.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
+}
+/*void MainWindow::on_recherche_tri_textChanged2(const QString &arg1)
 {
     ui->tab_rdv->setModel(tmprdv.recherche(champ,arg1,etat));
    valeur=arg1;
+}*/
+void MainWindow::on_pb_asc_tri_clicked(){
+    ui->tmprdv_tri->setModel(tmprdv.afficher_asc());
+}
+
+void MainWindow::on_pb_desc_tri_clicked(){
+    ui->tmprdv_tri->setModel(tmprdv.afficher_desc());
+}
+void MainWindow::on_pb_asc_tri_clicked_2(){
+    ui->tmppatient_tri->setModel(tmprdv.afficher_asc());
+}
+
+void MainWindow::on_pb_desc_tri_clicked_2(){
+    ui->tmppatient_tri->setModel(tmprdv.afficher_desc());
 }
 
 void MainWindow::on_pushButton_2_clicked(){

@@ -96,10 +96,13 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
 
-   bool modifier_patient();
+   bool modifier_patient(int);
     QSqlQueryModel * afficher_liste_patient();
-    void chercher();
-    QSqlQueryModel * recherche(QString,QString,int);
+    /*void chercher();
+    QSqlQueryModel * recherche(QString,QString,int);*/
+    QSqlQueryModel* afficher_asc();
+    QSqlQueryModel* afficher_desc();
+    bool search(int);
 private:
     int id,tel ,telpap;
     QString nom, prenom;

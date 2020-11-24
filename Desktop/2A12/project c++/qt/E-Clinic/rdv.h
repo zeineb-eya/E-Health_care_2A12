@@ -29,10 +29,13 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
 
-  bool modifier_rdv();
+  bool modifier_rdv(int);
     QSqlQueryModel * afficher_liste_rdv();
-    void chercher();
-    QSqlQueryModel * recherche(QString,QString,int);
+   /* void chercher();
+    QSqlQueryModel * recherche(QString,QString,int);*/
+    QSqlQueryModel* afficher_asc();
+    QSqlQueryModel* afficher_desc();
+    bool search(int);
 private:
     int coderdv,id_p;
     QString medecin, service;
