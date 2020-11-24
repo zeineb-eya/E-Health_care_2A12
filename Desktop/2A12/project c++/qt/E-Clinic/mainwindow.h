@@ -1,5 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QMainWindow>
@@ -7,9 +8,11 @@
 #include "rdv.h"
 #include <QDebug>
 #include <QString>
-#include "C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/email.h"
+#include <QPrinter>
+#include <QPrintDialog>
+/*#include "C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/email.h"
 #include "C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/smtpclient.h"
-#include "C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/emailaddress.h"
+#include "C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/emailaddress.h"*/
 namespace Ui {
 class MainWindow;
 }
@@ -43,6 +46,7 @@ void onStatus(Status::e status, QString errorMessage);
 private:
     Email createEmail();*/
 
+void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;

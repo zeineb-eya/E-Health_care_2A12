@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>6</x>
-      <y>9</y>
+      <x>0</x>
+      <y>0</y>
       <width>851</width>
       <height>471</height>
      </rect>
@@ -104,19 +104,6 @@
              <string>supprimer</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="imprimerp">
-            <property name="geometry">
-             <rect>
-              <x>460</x>
-              <y>170</y>
-              <width>61</width>
-              <height>23</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>imprimer</string>
-            </property>
-           </widget>
            <widget class="QPushButton" name="quiter_3">
             <property name="geometry">
              <rect>
@@ -141,6 +128,19 @@
             </property>
             <property name="placeholderText">
              <string>ID</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_1">
+            <property name="geometry">
+             <rect>
+              <x>450</x>
+              <y>170</y>
+              <width>75</width>
+              <height>23</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Print</string>
             </property>
            </widget>
           </widget>
@@ -1762,72 +1762,6 @@
          <attribute name="title">
           <string>imprimer</string>
          </attribute>
-         <widget class="QWidget" name="verticalLayoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>190</x>
-            <y>80</y>
-            <width>341</width>
-            <height>162</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QLabel" name="label_2">
-             <property name="text">
-              <string>URL:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="urlEdit"/>
-           </item>
-           <item>
-            <widget class="QLabel" name="label">
-             <property name="text">
-              <string>User Id:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="userIdEdit"/>
-           </item>
-           <item>
-            <widget class="QComboBox" name="printerComboBox"/>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout">
-             <item>
-              <spacer name="horizontalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="updateButton">
-               <property name="text">
-                <string>Update</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="printNowButton">
-               <property name="text">
-                <string>Print Now</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
         </widget>
        </widget>
       </widget>
@@ -2674,7 +2608,7 @@ background-repeat: none;
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="widget">
+    <widget class="QWidget" name="widget_2">
      <attribute name="title">
       <string/>
      </attribute>

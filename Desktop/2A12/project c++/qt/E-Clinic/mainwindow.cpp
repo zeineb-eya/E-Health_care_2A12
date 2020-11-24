@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+
 #include "patient.h"
 #include "rdv.h"
 
@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tab_patients->setModel(tmppatient.afficher());
     ui->tab_rdv->setModel(tmprdv.afficher());
 
+
+    // Connect all signals and slots
     connect(ui->pb_ajouter, SIGNAL(clicked(bool)), this, SLOT(on_pb_ajouter_clicked()));
     connect(ui->pb_ajouter_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_ajouter_clicked2()));
 
@@ -21,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->modifier_p, SIGNAL(clicked(bool)), this, SLOT(on_modifier_p_clicked()));
     connect(ui->modifier_p_2, SIGNAL(clicked(bool)), this, SLOT(on_modifier_p_clicked2()));
-
+connect(ui->pushButton_1, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_2_clicked()));
 
     connect(ui->rechercherp, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged(const QString &arg1)));
     connect(ui->rechercherr, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged2(const QString &arg1)));
@@ -243,6 +245,15 @@ void MainWindow::on_recherche_tri_textChanged2(const QString &arg1)
 {
     ui->tab_rdv->setModel(tmprdv.recherche(champ,arg1,etat));
    valeur=arg1;
+}
+
+void MainWindow::on_pushButton_2_clicked(){
+
+    QPrinter printer;
+    printer.setPrinterName("desired printer name");
+    QPrintDialog dialog(&printer,this);
+    if (dialog.exec() == QDialog::Rejected) return ;
+    ui->tab_patients->render(&printer);
 }
 
 /*void MainWindow::sendEmail()

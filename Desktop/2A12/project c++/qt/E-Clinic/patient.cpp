@@ -141,8 +141,12 @@ bool patient::ajouter()
   QString id_string= QString::number(id);
   QString tel_string= QString::number(tel);
   QString telpap_string= QString::number(telpap);
-         query.prepare("INSERT INTO patients (id, nom, prenom, sexe, tel, nompap, prenompap, telpap, adresse, situationf, assurancemed, codeassurance, date_naissance, typep, datecon, typecon, datepres, note, datetrait, designationexb, resultatexb, designationexr, resultatexr, chirurigien, anesthesist, dateadm, typeadm, motifadm, medadm, nomacc, prenomacc, lienpar, dateent, datesor, motifsor, resultatsor, datedec, motifdec) "
+  query.prepare("INSERT INTO patients (id, nom, prenom, sexe, tel, nompap, prenompap, telpap, adresse, situationf, assurancemed, codeassurance, date_naissance, typep, datecon, typecon, datepres, note, datetrait, designationexb, resultatexb, designationexr, resultatexr, chirurigien, anesthesist, dateadm, typeadm, motifadm, medadm, nomacc, prenomacc, lienpar, dateent, datesor, motifsor, resultatsor, datedec, motifdec) "
                        "VALUES (:id, :nom, :prenom, :sexe, :tel, :nomp_a_prevenir, :prenomp_a_prevenir, :telp_a_prevenir, :adresse, :situation_familliale, :assurance_medical, :code_assurance, :date_naissance, :typepatient, :DATE_CONSULTATION, :TYPE_CONSULTATION, :DATE_PRESCRIPTION, :NOTE, :DATE_TRAITMENT, :DESIGNATIONEXB, :RESULTATEXB, :DESIGNATIONEXR, :RESULTATEXR, :CHIRURIGIEN, :ANESTHESIST, :DATE_ADMISSION, :TYPE_ADMISSION, :MOTIF_ADMISSION, :MEDECIN_ADMISSION, :NOM_ACCOMPAGNANT, :PRENOM_ACCOMPAGNANT, :LIEN_PARENTE, :DATE_ENTREE, :DATE_SORTIE, :MOTIF_SORTIE, :RESULTAT_SORTIE, :DATE_DECES, :MOTIF_DECES )");
+
+  /*query.prepare("INSERT INTO patients (:id, :nom, :prenom, :sexe, :tel, :nomp_a_prevenir, :prenomp_a_prevenir, :telp_a_prevenir, :adresse, :situation_familliale, :assurance_medical, :code_assurance, :date_naissance, :typepatient, :DATE_CONSULTATION, :TYPE_CONSULTATION, :DATE_PRESCRIPTION, :NOTE, :DATE_TRAITMENT, :DESIGNATIONEXB, :RESULTATEXB, :DESIGNATIONEXR, :RESULTATEXR, :CHIRURIGIEN, :ANESTHESIST, :DATE_ADMISSION, :TYPE_ADMISSION, :MOTIF_ADMISSION, :MEDECIN_ADMISSION, :NOM_ACCOMPAGNANT, :PRENOM_ACCOMPAGNANT, :LIEN_PARENTE, :DATE_ENTREE, :DATE_SORTIE, :MOTIF_SORTIE, :RESULTAT_SORTIE, :DATE_DECES, :MOTIF_DECES) "
+                         "VALUES (id, nom, prenom, sexe, tel, nompap, prenompap, telpap, adresse, situationf, assurancemed, codeassurance, date_naissance, typep, datecon, typecon, datepres, note, datetrait, designationexb, resultatexb, designationexr, resultatexr, chirurigien, anesthesist, dateadm, typeadm, motifadm, medadm, nomacc, prenomacc, lienpar, dateent, datesor, motifsor, resultatsor, datedec, motifdec )");
+*/
          query.bindValue(":id",id_string);
          query.bindValue(":nom", nom);
          query.bindValue(":prenom", prenom);
@@ -181,6 +185,8 @@ bool patient::ajouter()
          query.bindValue(":RESULTAT_SORTIE", resultatsor);
          query.bindValue(":DATE_DECES", datedec);
          query.bindValue(":MOTIF_DECES", motifdec);
+
+
         return query.exec();
 
 }
