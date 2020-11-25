@@ -10,7 +10,7 @@ tel=0; telpap=0; date_naissance="";
 
 }
 
-
+//info patients
 patient::patient(int id,int tel,int telpap,QString nom,QString prenom,QString nompap,QString prenompap,QString adresse,QString situationf,QString assurancemed,QString codeassurance,QString typep,QString date_naissance,QString sexe/*,QString datepres,QString note,QString designationexr,QString resultatexr,QString designationexb,QString resultatexb,QString chirurigien,QString anesthesist,QString dateadm,QString typeadm,QString motifadm,QString nomacc,QString prenomacc,QString lienpar,QString dateent,QString datesor,QString motifsor,QString resultatsor,QString datedec,QString motifdec,QString datetrait,QString medadm*/)
 {   this->id=id;
     this->nom=nom;

@@ -3,7 +3,7 @@ QT       += core gui sql printsupport
 QT       += core gui network
 
 
-
+#https://github.com/zeineb-eya/E-Health_care_2A12.git
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -48,7 +48,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-#LIBS += -lwinspool
 
 DISTFILES += \
     SMTPClient/SMTPClient.pri

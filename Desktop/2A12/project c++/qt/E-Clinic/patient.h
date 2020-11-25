@@ -5,7 +5,7 @@
 #include <QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
-
+//pat
 class patient
 {
 

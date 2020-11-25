@@ -11,7 +11,7 @@ rdv::rdv(){
    time_rdv="";
 
 }
-
+//rendz-vous
 rdv::rdv(int coderdv,QString medecin,QString date_rdv,QString service,QString time_rdv, int id_p)
 {this->coderdv=coderdv; this->medecin=medecin; this->date_rdv=date_rdv; this->time_rdv=time_rdv; this->service=service; this->id_p=id_p; }
 

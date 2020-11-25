@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+//window
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QMainWindow>
