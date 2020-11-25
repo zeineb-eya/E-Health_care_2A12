@@ -49,14 +49,13 @@ public:
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(int);
-
+QSqlQueryModel* afficher_idpatient(int id);//search by id
    bool modifier_patient();
     QSqlQueryModel * afficher_liste_patient();
-    /*void chercher();
-    QSqlQueryModel * recherche(QString,QString,int);*/
+
     QSqlQueryModel* afficher_asc();
     QSqlQueryModel* afficher_desc();
-    bool search(int);
+    bool search(int id);
 private:
     int id,tel ,telpap;
     QString nom, prenom;

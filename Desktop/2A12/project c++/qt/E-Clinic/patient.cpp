@@ -182,112 +182,7 @@ model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
 
 }
 
-/*void patient::chercher (){
 
-QSqlQuery query1;
-QString id_string= QString::number(id);
-query1.prepare("select id from patients where ID = :id");
-query1.bindValue(":ID",id_string);
-query1.exec();
-QString tel_string= QString::number(tel);
-QString telpap_string= QString::number(telpap);
-
-while(query1.next())
-{
-nom = query1.value(0).toString();
-prenom = query1.value(1).toString();
-sexe = query1.value(2).toString();
-tel_string= query1.value(3).toString();
-nompap= query1.value(4).toString();
-prenompap= query1.value(5).toString();
-telpap_string= query1.value(6).toString();
-adresse= query1.value(7).toString();
-situationf= query1.value(8).toString();
-assurancemed= query1.value(9).toString();
-codeassurance= query1.value(10).toString();
-date_naissance= query1.value(11).toString();
-typep= query1.value(12).toString();
-datecon= query1.value(13).toString();
-typecon= query1.value(14).toString();
-datepres= query1.value(15).toString();
-note= query1.value(16).toString();
-datetrait= query1.value(17).toString();
-designationexb= query1.value(18).toString();
-resultatexb= query1.value(19).toString();
-designationexr= query1.value(20).toString();
-resultatexr= query1.value(21).toString();
-chirurigien= query1.value(22).toString();
-anesthesist= query1.value(23).toString();
-dateadm= query1.value(24).toString();
-typeadm= query1.value(25).toString();
-motifadm= query1.value(26).toString();
-medadm= query1.value(27).toString();
-nomacc= query1.value(28).toString();
-prenomacc= query1.value(29).toString();
-lienpar= query1.value(30).toString();
-dateent= query1.value(31).toString();
-datesor= query1.value(32).toString();
-motifsor= query1.value(33).toString();
-resultatsor= query1.value(34).toString();
-datedec= query1.value(35).toString();
-motifdec= query1.value(36).toString();
-
-}
-}*/
-/*QSqlQueryModel * patient::recherche (QString champ ,QString valeur,int etat){
-    QSqlQueryModel * model=new QSqlQueryModel();
-    QSqlQuery query;
-    if(etat==0){
-    query.prepare("SELECT * FROM PATIENTS  where ("+champ+" LIKE :valeur) order by reference");}
-    else
-    {
-         query.prepare("SELECT * FROM PATIENTS  where ("+champ+" LIKE :valeur) order by reference desc");
-    }
-    valeur="%"+valeur+"%";
-    query.bindValue(":valeur",valeur);
-    query.exec();
-    model->setQuery(query);
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prenom"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("sexe"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("nomp_a_prevenir"));
-    model->setHeaderData(6, Qt::Horizontal, QObject::tr("prenomp_a_prevenir"));
-    model->setHeaderData(7, Qt::Horizontal, QObject::tr("telp_a_prevenir"));
-    model->setHeaderData(8, Qt::Horizontal, QObject::tr("adresse"));
-    model->setHeaderData(9, Qt::Horizontal, QObject::tr("situation_familliale"));
-    model->setHeaderData(10, Qt::Horizontal, QObject::tr("assurance_medical"));
-    model->setHeaderData(11, Qt::Horizontal, QObject::tr("code_assurance"));
-    model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
-    model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
-    model->setHeaderData(14, Qt::Horizontal, QObject::tr("DATE_CONSULTATION"));
-    model->setHeaderData(15, Qt::Horizontal, QObject::tr("TYPE_CONSULTATION"));
-    model->setHeaderData(15, Qt::Horizontal, QObject::tr("DATE_PRESCRIPTION"));
-    model->setHeaderData(16, Qt::Horizontal, QObject::tr("NOTE"));
-    model->setHeaderData(17, Qt::Horizontal, QObject::tr("DATE_TRAITMENT"));
-    model->setHeaderData(18, Qt::Horizontal, QObject::tr("DESIGNATIONEXB"));
-    model->setHeaderData(19, Qt::Horizontal, QObject::tr("RESULTATEXB"));
-    model->setHeaderData(20, Qt::Horizontal, QObject::tr("DESIGNATIONEXR"));
-    model->setHeaderData(21, Qt::Horizontal, QObject::tr("RESULTATEXR"));
-    model->setHeaderData(22, Qt::Horizontal, QObject::tr("CHIRURIGIEN"));
-    model->setHeaderData(23, Qt::Horizontal, QObject::tr("ANESTHESIST"));
-    model->setHeaderData(24, Qt::Horizontal, QObject::tr("DATE_ADMISSION"));
-    model->setHeaderData(26, Qt::Horizontal, QObject::tr("TYPE_ADMISSION"));
-    model->setHeaderData(27, Qt::Horizontal, QObject::tr("MOTIF_ADMISSION"));
-    model->setHeaderData(28, Qt::Horizontal, QObject::tr("MEDECIN_ADMISSION"));
-    model->setHeaderData(29, Qt::Horizontal, QObject::tr("NOM_ACCOMPAGNANT"));
-    model->setHeaderData(30, Qt::Horizontal, QObject::tr("PRENOM_ACCOMPAGNANT"));
-    model->setHeaderData(31, Qt::Horizontal, QObject::tr("LIEN_PARENTE"));
-    model->setHeaderData(32, Qt::Horizontal, QObject::tr("DATE_ENTREE"));
-    model->setHeaderData(33, Qt::Horizontal, QObject::tr("DATE_SORTIE"));
-    model->setHeaderData(34, Qt::Horizontal, QObject::tr("MOTIF_SORTIE"));
-    model->setHeaderData(35, Qt::Horizontal, QObject::tr("RESULTAT_SORTIE"));
-    model->setHeaderData(36, Qt::Horizontal, QObject::tr("DATE_DECES"));
-    model->setHeaderData(37, Qt::Horizontal, QObject::tr("MOTIF_DECES"));
-    return  model;
-
-}*/
 
 bool patient::search(int id){
     QSqlQuery query;
@@ -343,5 +238,28 @@ QSqlQueryModel* patient::afficher_desc() //trie desc
     model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
     model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
 
+        return model;
+    }
+QSqlQueryModel* patient::afficher_idpatient(int id){
+    QSqlQuery query;
+    query.prepare("select * from PATIENTS where ID = :id");
+    query.bindValue(":id", id);
+    QSqlQueryModel* model= new QSqlQueryModel();
+    query.exec();
+    model->setQuery(query);
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prenom"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("sexe"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("nomp_a_prevenir"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("prenomp_a_prevenir"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("telp_a_prevenir"));
+    model->setHeaderData(8, Qt::Horizontal, QObject::tr("adresse"));
+    model->setHeaderData(9, Qt::Horizontal, QObject::tr("situation_familliale"));
+    model->setHeaderData(10, Qt::Horizontal, QObject::tr("assurance_medical"));
+    model->setHeaderData(11, Qt::Horizontal, QObject::tr("code_assurance"));
+    model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
+    model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
         return model;
     }

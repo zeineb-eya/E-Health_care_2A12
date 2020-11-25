@@ -21,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->supprimerp, SIGNAL(clicked(bool)), this, SLOT(on_pb_supprimer_clicked())); //supp p
     connect(ui->supprimerr, SIGNAL(clicked(bool)), this, SLOT(on_pb_supprimer_clicked2())); //sup r
 
-    connect(ui->pb_modifier_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked())); //modifier p
-    connect(ui->pb_modifier, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked_2())); //modifier r
+    connect(ui->pb_modifier, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked())); //modifier r
+    connect(ui->pb_modifier_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked_2())); //modifier p
     connect(ui->pushButton_1, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_2_clicked())); // print
 
     connect(ui->pb_asc_tri, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_tri_clicked()));
@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pb_asc_tri_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_tri_clicked_2()));
     connect(ui->pb_desc_tri_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_tri_clicked_2()));
 
-
+    connect(ui->pb_aff_client, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_client_clicked()));//recherche par id patient
 
     //connect(ui->rechercherp, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged(const QString &arg1)));
     //connect(ui->rechercherr, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged2(const QString &arg1)));
@@ -161,7 +161,38 @@ void MainWindow::on_pb_supprimer_clicked2()
 
 }
 
+/*void MainWindow::on_pb_modifier_clicked(){
 
+
+    int coderdv = ui->CodeRDV_3->text().toInt();
+    int id_p = ui->ID_4->text().toInt();
+    QString medecin = ui->Docteur_3->text();
+    QString date_rdv = ui->dateEdit_5->text();
+    QString service = ui->Service_3->text();
+    QString time_rdv = ui->timeEdit_2->text();
+    rdv r(coderdv, medecin, service, date_rdv, time_rdv, id_p);
+    bool test=r.modifier_rdv();
+
+    ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
+
+        if(test){
+                ui->tab_rdv->setModel(tmprdv.afficher());
+
+            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+               le->clear();
+            }
+
+          QMessageBox::information(this, QObject::tr("Modifier un client"),
+          QObject::tr("Client modifiée.\n"
+                      "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+      }
+        else
+            QMessageBox::critical(this, QObject::tr("Modifier un client"),
+                        QObject::tr("Erreur !.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
+}*/
 
 
 void MainWindow::on_pb_modifier_clicked(){
@@ -197,23 +228,19 @@ void MainWindow::on_pb_modifier_clicked(){
 
 
 
-        if(test /*&& r.search(coderdv)==true*/){
+        if(test && r.search(coderdv)==true){
                 ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
 
-            /*foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
-               le->clear();
-            }*/
-
-          QMessageBox::information(this, QObject::tr("Modifier un rdv"),
-          QObject::tr("rdv modifiée.\n"
-                      "Click Cancel to exit."), QMessageBox::Cancel);
+                QMessageBox::information(this, QObject::tr("Modifier un rendez-vous"),
+                QObject::tr("rendez-vous modifiée.\n"
+                            "Click Cancel to exit."), QMessageBox::Cancel);
 
 
-      }
-        else
-            QMessageBox::critical(this, QObject::tr("Modifier un rdv"),
-                        QObject::tr("Erreur !.\n"
-                                    "Click Cancel to exit."), QMessageBox::Cancel);
+            }
+              else
+                  QMessageBox::critical(this, QObject::tr("Modifier un rendez-vous"),
+                              QObject::tr("Erreur !.\n"
+                                          "Click Cancel to exit."), QMessageBox::Cancel);
 }
 void MainWindow::on_pb_modifier_clicked_2(){
 
@@ -272,23 +299,19 @@ patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurance
 
 
 
-        if(test /*&& p.search(id)==true*/){
+        if(test && p.search(id)==true){
              ui->tab_patients->setModel(tmppatient.afficher());   //refresh
 
-            /*foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
-               le->clear();
-            }*/
-
-          QMessageBox::information(this, QObject::tr("Modifier un patient"),
-          QObject::tr("Annonce patient.\n"
-                      "Click Cancel to exit."), QMessageBox::Cancel);
+             QMessageBox::information(this, QObject::tr("Modifier un patient"),
+             QObject::tr("patient modifiée.\n"
+                         "Click Cancel to exit."), QMessageBox::Cancel);
 
 
-      }
-        else
-            QMessageBox::critical(this, QObject::tr("Modifier un patient"),
-                        QObject::tr("Erreur !.\n"
-                                    "Click Cancel to exit."), QMessageBox::Cancel);
+         }
+           else
+               QMessageBox::critical(this, QObject::tr("Modifier un patient"),
+                           QObject::tr("Erreur !.\n"
+                                       "Click Cancel to exit."), QMessageBox::Cancel);
 }
 
 void MainWindow::on_pb_asc_tri_clicked(){
@@ -314,7 +337,10 @@ void MainWindow::on_pushButton_2_clicked(){
     if (dialog.exec() == QDialog::Rejected) return ;
     ui->tab_patients->render(&printer);
 }
-
+void MainWindow::on_pb_aff_client_clicked(){
+    int id = ui->lineEdit_aff_idpatient->text().toInt();
+    ui->tab_aff_patient->setModel(tmppatient.afficher_idpatient(id));
+}
 /*void MainWindow::sendEmail()
 {
     // Create the email object
