@@ -29,7 +29,7 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int);
 
-  bool modifier_rdv(int);
+  bool modifier_rdv();
     QSqlQueryModel * afficher_liste_rdv();
    /* void chercher();
     QSqlQueryModel * recherche(QString,QString,int);*/

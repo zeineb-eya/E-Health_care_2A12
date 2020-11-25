@@ -79,12 +79,12 @@ QSqlQueryModel* rdv::afficher()
   return  model;
 }
 
-bool rdv::modifier_rdv(int coderdv){
+bool rdv::modifier_rdv(){
 
         QSqlQuery query;
          QString coderdv_string= QString::number(coderdv);
          QString id_p_string= QString::number(id_p);
-        query.prepare("UPDATE RDV set daterdv=:date_rdv, TIMERDV=:time_rdv, doctor=:medecin,  service=:service, id:=id_p where coderdv=:coderdv");
+        query.prepare("UPDATE RDV set daterdv=:date_rdv, timerdv=:time_rdv, doctor=:medecin,  service=:service, id:=id_p where coderdv=:coderdv");
 
         query.bindValue(":coderdv",coderdv_string);
         query.bindValue(":date_rdv", date_rdv);

@@ -68,30 +68,8 @@ void MainWindow::on_pb_ajouter_clicked()
     QString nompap=ui->Nompap->text();
     QString prenompap=ui->Prenompap->text();
 
-    QString datepres=ui->Date_Prescription->text();
-    QString note=ui->NotePres->text();
-    QString designationexb=ui->DesiEB->text();
-    QString resultatexb=ui->resEB->text();
-    QString designationexr=ui->DesiER->text();
-    QString resultatexr=ui->resER->text();
-    QString chirurigien=ui->Chirurigien->text();
-    QString anesthesist=ui->anesthesist->text();
-    QString dateadm=ui->Date_admission->text();
-    QString typeadm=ui->Type_A->text();
-    QString motifadm=ui->Motif_A->text();
-    QString nomacc=ui->NomAc->text();
-    QString prenomacc=ui->PrenomAC->text();
-    QString lienpar=ui->Lien_P->text();
-    QString dateent=ui->Date_entree->text();
-    QString datesor=ui->Date_sortie->text();
-    QString motifsor=ui->motif_S->text();
-    QString resultatsor=ui->Resu_S->text();
-    QString datedec=ui->Date_deces->text();
-    QString motifdec=ui->motifDEC->text();
-    QString datetrait=ui->Date_traitment->text();
-    QString medadm=ui->NomMed->text();
 
- patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe,datepres,note,designationexr,resultatexr,designationexb,resultatexb,chirurigien,anesthesist,dateadm,typeadm,motifadm,nomacc,prenomacc,lienpar,dateent,datesor,motifsor,resultatsor,datedec,motifdec,datetrait,medadm);
+ patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe/*,datepres,note,designationexr,resultatexr,designationexb,resultatexb,chirurigien,anesthesist,dateadm,typeadm,motifadm,nomacc,prenomacc,lienpar,dateent,datesor,motifsor,resultatsor,datedec,motifdec,datetrait,medadm*/);
 
  bool test=p.ajouter();
 
@@ -184,70 +162,7 @@ void MainWindow::on_pb_supprimer_clicked2()
 }
 
 
-/*void MainWindow::on_modifier_p_clicked()
-{
 
-    tmppatient.setnom(ui->Nom_2->text());
-    tmppatient.setprenom(ui->Prenom_2->text());
-   // tmppatient.settel(ui->Tel_2->text());
-   // tmppatient.settelpap(ui->Telpap_2->text());
-    tmppatient.setsexe(ui->Sexe_2->text());
-    tmppatient.setadresse(ui->Adresse_2->text());
-    tmppatient.setsituationf(ui->SituationF_2->text());
-    tmppatient.setassurancemed(ui->AssuranceMed_2->text());
-    tmppatient.setcodeassurance(ui->CodeAssurance_2->text());
-    tmppatient.setnompap(ui->Nompap_2->text());
-    tmppatient.setprenompap(ui->Prenompap_2->text());
-    tmppatient.settypep(ui->TypePatients_2->text());
-    tmppatient.setdate_naissance(ui->Datenaissance_2->text());
-    tmppatient.setdatecon(ui->Date_consultaion_2->text());
-    tmppatient.settypecon(ui->TypeC_2->text());
-    tmppatient.setdatepres(ui->Date_Prescription_2->text());
-    tmppatient.setnote(ui->NotePres2->text());
-    tmppatient.setdatetrait(ui->Date_traitment_2->text());
-    tmppatient.setdesignationexb(ui->DesiEB_2->text());
-    tmppatient.setresultatexb(ui->resEB_2->text());
-    tmppatient.setdesignationexr(ui->DesiER_2->text());
-    tmppatient.setresultatexr(ui->resER_2->text());
-    tmppatient.setchirurigien(ui->Chirurigien_2->text());
-    tmppatient.setanesthesist(ui->anesthesist_2->text());
-    tmppatient.setdateadm(ui->Date_admission_2->text());
-    tmppatient.settypeadm(ui->Type_A_2->text());
-    tmppatient.setmotifadm(ui->Motif_A_2->text());
-    tmppatient.setmedadm(ui->NomMed_2->text());
-    tmppatient.setnomacc(ui->NomAc_2->text());
-    tmppatient.setprenomacc(ui->PrenomAC_2->text());
-    tmppatient.setlienpar(ui->Lien_P_2->text());
-    tmppatient.setdateent(ui->Date_entree_2->text());
-    tmppatient.setdatesor(ui->Date_sortie_2->text());
-    tmppatient.setmotifsor(ui->motif_S_2->text());
-    tmppatient.setresultatsor(ui->Resu_S_2->text());
-    tmppatient.setdatedec(ui->Date_deces_2->text());
-    tmppatient.setmotifdec(ui->motifDEC_2->text());
-
-
-}*/
-
-/*void MainWindow::on_recherche_tri_textChanged(const QString &arg1)
-{
-    ui->tab_patients->setModel(tmppatient.recherche(champ,arg1,etat));
-   valeur=arg1;
-}*/
-
-
-/*void MainWindow::on_modifier_p_clicked2()
-{
-
-
-
-     //tmprdv.setid_p(ui->Nom_2->text());
-     //tmprdv.setcoderdv(ui->Nom_2->text());
-     tmprdv.setmedecin(ui->Docteur_3->text());
-     tmprdv.setdate_rdv(ui->dateEdit_5->text());
-     tmprdv.settime_rdv(ui->timeEdit_2->text());
-     tmprdv.setservice(ui->Service_3->text());
-
-}*/
 
 void MainWindow::on_pb_modifier_clicked(){
 
@@ -276,27 +191,27 @@ void MainWindow::on_pb_modifier_clicked(){
 
 
         rdv r(coderdv, medecin, service, date_rdv, time_rdv, id_p);
-        bool test=r.modifier_rdv(coderdv);
+        bool test=r.modifier_rdv();
 
         ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
 
 
 
-        if(test && r.search(coderdv)==true){
+        if(test /*&& r.search(coderdv)==true*/){
+                ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
 
-
-            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+            /*foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
                le->clear();
-            }
+            }*/
 
-          QMessageBox::information(this, QObject::tr("Modifier une annonce"),
-          QObject::tr("Annonce modifiée.\n"
+          QMessageBox::information(this, QObject::tr("Modifier un rdv"),
+          QObject::tr("rdv modifiée.\n"
                       "Click Cancel to exit."), QMessageBox::Cancel);
 
 
       }
         else
-            QMessageBox::critical(this, QObject::tr("Modifier une annonce"),
+            QMessageBox::critical(this, QObject::tr("Modifier un rdv"),
                         QObject::tr("Erreur !.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
 }
@@ -348,111 +263,34 @@ void MainWindow::on_pb_modifier_clicked_2(){
     QString date_naissance = ui->Datenaissance_2->text();
     ui->Datenaissance_2->setValidator(validator_String);
 
-    QString lienpar = ui->Lien_P_2->text();
-    ui->Lien_P_2->setValidator(validator_String);
 
-    QString medadm = ui->NomMed_2->text();
-    ui->NomMed_2->setValidator(validator_String);
 
-    QString dateent = ui->Date_entree_2->text();
-    ui->Date_entree_2->setValidator(validator_String);
-
-    QString datetrait = ui->Date_traitment_2->text();
-    ui->Date_traitment_2->setValidator(validator_String);
-
-    /*QString designation = ui->timeEdit_2->text();
-    ui->timeEdit_2->setValidator(validator_String);*/
-
-    QString datesor= ui->Date_sortie_2->text();
-    ui->Date_sortie_2->setValidator(validator_String);
-
-    QString motifsor = ui->motif_S_2->text();
-    ui->motif_S_2->setValidator(validator_String);
-
-    QString resultatsor = ui->Resu_S_2->text();
-    ui->Resu_S_2->setValidator(validator_String);
-
-    QString datedec = ui->Date_deces_2->text();
-    ui->Date_deces_2->setValidator(validator_String);
-
-    QString motifdec = ui->motifDEC_2->text();
-    ui->motifDEC_2->setValidator(validator_String);
-
-    QString datecon = ui->Date_consultaion_2->text();
-    ui->Date_consultaion_2->setValidator(validator_String);
-
-    QString typecon = ui->TypeC_2->text();
-    ui->TypeC_2->setValidator(validator_String);
-
-    QString datepres = ui->Date_Prescription_2->text();
-    ui->Date_Prescription_2->setValidator(validator_String);
-
-    QString note = ui->NotePres2->text();
-    ui->NotePres2->setValidator(validator_String);
-
-    QString designationexr = ui->DesiER_2->text();
-    ui->DesiER_2->setValidator(validator_String);
-
-    QString resultatexr = ui->resER_2->text();
-    ui->resER_2->setValidator(validator_String);
-
-    QString designationexb = ui->DesiEB_2->text();
-    ui->DesiEB_2->setValidator(validator_String);
-
-    QString resultatexb = ui->resEB_2->text();
-    ui->resEB_2->setValidator(validator_String);
-
-    QString chirurigien = ui->Chirurigien_2->text();
-    ui->Chirurigien_2->setValidator(validator_String);
-
-    QString anesthesist = ui->anesthesist_2->text();
-    ui->anesthesist_2->setValidator(validator_String);
-
-    QString dateadm = ui->Date_admission_2->text();
-    ui->Date_admission_2->setValidator(validator_String);
-
-    QString typeadm = ui->Type_A_2->text();
-    ui->Type_A_2->setValidator(validator_String);
-
-    QString motifadm = ui->Motif_A_2->text();
-    ui->Motif_A_2->setValidator(validator_String);
-
-    QString nomacc = ui->NomAc_2->text();
-    ui->NomAc_2->setValidator(validator_String);
-
-    QString prenomacc = ui->PrenomAC_2->text();
-    ui->PrenomAC_2->setValidator(validator_String);
-
-patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe,datepres,note,designationexr,resultatexr,designationexb,resultatexb,chirurigien,anesthesist,dateadm,typeadm,motifadm,nomacc,prenomacc,lienpar,dateent,datesor,motifsor,resultatsor,datedec,motifdec,datetrait,medadm);
-        bool test=p.modifier_patient(id);
+patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe/*,datepres,note,designationexr,resultatexr,designationexb,resultatexb,chirurigien,anesthesist,dateadm,typeadm,motifadm,nomacc,prenomacc,lienpar,dateent,datesor,motifsor,resultatsor,datedec,motifdec,datetrait,medadm*/);
+        bool test=p.modifier_patient();
 
         ui->tab_patients->setModel(tmppatient.afficher());   //refresh
 
 
 
-        if(test && p.search(id)==true){
+        if(test /*&& p.search(id)==true*/){
+             ui->tab_patients->setModel(tmppatient.afficher());   //refresh
 
-
-            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+            /*foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
                le->clear();
-            }
+            }*/
 
-          QMessageBox::information(this, QObject::tr("Modifier une annonce"),
-          QObject::tr("Annonce modifiée.\n"
+          QMessageBox::information(this, QObject::tr("Modifier un patient"),
+          QObject::tr("Annonce patient.\n"
                       "Click Cancel to exit."), QMessageBox::Cancel);
 
 
       }
         else
-            QMessageBox::critical(this, QObject::tr("Modifier une annonce"),
+            QMessageBox::critical(this, QObject::tr("Modifier un patient"),
                         QObject::tr("Erreur !.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
 }
-/*void MainWindow::on_recherche_tri_textChanged2(const QString &arg1)
-{
-    ui->tab_rdv->setModel(tmprdv.recherche(champ,arg1,etat));
-   valeur=arg1;
-}*/
+
 void MainWindow::on_pb_asc_tri_clicked(){
     ui->tmprdv_tri->setModel(tmprdv.afficher_asc());
 }
@@ -461,11 +299,11 @@ void MainWindow::on_pb_desc_tri_clicked(){
     ui->tmprdv_tri->setModel(tmprdv.afficher_desc());
 }
 void MainWindow::on_pb_asc_tri_clicked_2(){
-    ui->tmppatient_tri->setModel(tmprdv.afficher_asc());
+    ui->tmppatient_tri->setModel(tmppatient.afficher_asc());
 }
 
 void MainWindow::on_pb_desc_tri_clicked_2(){
-    ui->tmppatient_tri->setModel(tmprdv.afficher_desc());
+    ui->tmppatient_tri->setModel(tmppatient.afficher_desc());
 }
 
 void MainWindow::on_pushButton_2_clicked(){

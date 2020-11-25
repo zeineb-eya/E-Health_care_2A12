@@ -7,14 +7,11 @@ patient::patient()
 id=0; nom=""; prenom="";
 sexe=""; adresse=""; situationf="";assurancemed=""; codeassurance=""; nompap="";prenompap="";typep="";
 tel=0; telpap=0; date_naissance="";
-datecon="";typecon="";datepres="";nom="";prenom="";note="";designationexb=""; designationexr="";
-resultatexr="";
-resultatexb="";chirurigien="";anesthesist="";dateadm="";typeadm="";motifadm="";nomacc="";prenomacc="";
-lienpar="";dateent="";datesor="";motifsor="";resultatsor="";datedec="";motifdec="";medadm="";datetrait="";
+
 }
 
 
-patient::patient(int id,int tel,int telpap,QString nom,QString prenom,QString nompap,QString prenompap,QString adresse,QString situationf,QString assurancemed,QString codeassurance,QString typep,QString date_naissance,QString sexe,QString datepres,QString note,QString designationexr,QString resultatexr,QString designationexb,QString resultatexb,QString chirurigien,QString anesthesist,QString dateadm,QString typeadm,QString motifadm,QString nomacc,QString prenomacc,QString lienpar,QString dateent,QString datesor,QString motifsor,QString resultatsor,QString datedec,QString motifdec,QString datetrait,QString medadm)
+patient::patient(int id,int tel,int telpap,QString nom,QString prenom,QString nompap,QString prenompap,QString adresse,QString situationf,QString assurancemed,QString codeassurance,QString typep,QString date_naissance,QString sexe/*,QString datepres,QString note,QString designationexr,QString resultatexr,QString designationexb,QString resultatexb,QString chirurigien,QString anesthesist,QString dateadm,QString typeadm,QString motifadm,QString nomacc,QString prenomacc,QString lienpar,QString dateent,QString datesor,QString motifsor,QString resultatsor,QString datedec,QString motifdec,QString datetrait,QString medadm*/)
 {   this->id=id;
     this->nom=nom;
     this->prenom=prenom;
@@ -29,28 +26,6 @@ patient::patient(int id,int tel,int telpap,QString nom,QString prenom,QString no
     this->codeassurance=codeassurance;
     this->date_naissance=date_naissance;
     this->typep=typep;
-    this->datepres=datepres;
-    this->note=note;
-    this->designationexb=designationexb;
-    this->resultatexb=resultatexb;
-    this->designationexr=designationexr;
-    this->resultatexr=resultatexr;
-    this->chirurigien=chirurigien;
-    this->anesthesist=anesthesist;
-    this->dateadm=dateadm;
-    this->typeadm=typeadm;
-    this->motifadm=motifadm;
-    this->nomacc=nomacc;
-    this->prenomacc=prenomacc;
-    this->lienpar=lienpar;
-    this->dateent=dateent;
-    this->datesor=datesor;
-    this->motifsor=motifsor;
-    this->resultatsor=resultatsor;
-    this->datedec=datedec;
-    this->motifdec=motifdec;
-    this->datetrait=datetrait;
-    this->medadm=medadm;
 
 }
 
@@ -69,30 +44,6 @@ QString patient::getnompap(){return  nompap;}
 QString patient::getprenompap(){return  prenompap;}
 QString patient::gettypep(){return  typep;}
 QString patient::get_date_naissance(){return  nom;}
-QString patient::getdatecon(){return datecon;}
-QString patient::gettypecon(){return typecon;}
-QString patient::getdatepres(){return datepres;}
-QString patient::getnote(){return note;}
-QString patient::getdatetrait(){return datetrait;}
-QString patient::getdesignationexb(){return designationexb;}
-QString patient::getresultatexb(){return resultatexb;}
-QString patient::getdesignationexr(){return designationexr;}
-QString patient::getresultatexr(){return resultatexr;}
-QString patient::getchirurigien(){return chirurigien;}
-QString patient::getanesthesist(){return anesthesist;}
-QString patient::getdateadm(){return dateadm;}
-QString patient::gettypeadm(){return typeadm;}
-QString patient::getmotifadm(){return motifadm;}
-QString patient::getmedadm(){return medadm;}
-QString patient::getnomacc(){return nomacc;}
-QString patient::getprenomacc(){return prenomacc;}
-QString patient::getlienpar(){return lienpar;}
-QString patient::getdateent(){return dateent;}
-QString patient::getdatesor(){return datesor;}
-QString patient::getmotifsor(){return motifsor;}
-QString patient::getresultatsor(){return resultatsor;}
-QString patient::getdatedec(){return datedec;}
-QString patient::getmotifdec(){return motifdec;}
 
 void patient::setid(int id){this->id=id;}
 void patient::settel(int tel){this->tel=tel;}
@@ -108,44 +59,19 @@ void patient::setnompap(QString nompap){this->nompap=nompap;}
 void patient::setprenompap(QString prenompap){this->prenompap=prenompap;}
 void patient::settypep(QString typep){this->typep=typep;}
 void patient::setdate_naissance(QString date_naissance){this->date_naissance=date_naissance;}
-void patient::setdatecon(QString datecon){this->datecon=datecon;}
-void patient::settypecon(QString typecon){this->typecon=typecon;}
-void patient::setdatepres(QString datepres){this->datepres=datepres;}
-void patient::setnote(QString note){this->note=note;}
-void patient::setdatetrait(QString datetrait){this->datetrait=datetrait;}
-void patient::setdesignationexb(QString designationexb){this->designationexb=designationexb;}
-void patient::setresultatexb(QString resultatexb){this->resultatexb=resultatexb;}
-void patient::setdesignationexr(QString designationexr){this->designationexr=designationexr;}
-void patient::setresultatexr(QString resultatexr){this->resultatexr=resultatexr;}
-void patient::setchirurigien(QString chirurigien){this->chirurigien=chirurigien;}
-void patient::setanesthesist(QString anesthesist){this->anesthesist=anesthesist;}
-void patient::setdateadm(QString dateadm){this->dateadm=dateadm;}
-void patient::settypeadm(QString typeadm){this->typeadm=typeadm;}
-void patient::setmotifadm(QString motifadm){this->motifadm=motifadm;}
-void patient::setmedadm(QString medadm){this->medadm=medadm;}
-void patient::setnomacc(QString nomacc){this->nomacc=nomacc;}
-void patient::setprenomacc(QString prenomacc){this->prenomacc=prenomacc;}
-void patient::setlienpar(QString lienpar){this->lienpar=lienpar;}
-void patient::setdateent(QString dateent){this->dateent=dateent;}
-void patient::setdatesor(QString datesor){this->datesor=datesor;}
-void patient::setmotifsor(QString motifsor){this->motifsor=motifsor;}
-void patient::setresultatsor(QString resultatsor){this->resultatsor=resultatsor;}
-void patient::setdatedec(QString datedec){this->datedec=datedec;}
-void patient::setmotifdec(QString motifdec){this->motifdec=motifdec;}
+
 
 
 bool patient::ajouter()
 {
 
-    QSqlQuery query;
+  QSqlQuery query;
   QString id_string= QString::number(id);
   QString tel_string= QString::number(tel);
   QString telpap_string= QString::number(telpap);
-  /*query.prepare("INSERT INTO patients (id, nom, prenom, sexe, tel, nompap, prenompap, telpap, adresse, situationf, assurancemed, codeassurance, date_naissance, typep, datecon, typecon, datepres, note, datetrait, designationexb, resultatexb, designationexr, resultatexr, chirurigien, anesthesist, dateadm, typeadm, motifadm, medadm, nomacc, prenomacc, lienpar, dateent, datesor, motifsor, resultatsor, datedec, motifdec) "
-                       "VALUES (:id, :nom, :prenom, :sexe, :tel, :nomp_a_prevenir, :prenomp_a_prevenir, :telp_a_prevenir, :adresse, :situation_familliale, :assurance_medical, :code_assurance, :date_naissance, :typepatient, :DATE_CONSULTATION, :TYPE_CONSULTATION, :DATE_PRESCRIPTION, :NOTE, :DATE_TRAITMENT, :DESIGNATIONEXB, :RESULTATEXB, :DESIGNATIONEXR, :RESULTATEXR, :CHIRURIGIEN, :ANESTHESIST, :DATE_ADMISSION, :TYPE_ADMISSION, :MOTIF_ADMISSION, :MEDECIN_ADMISSION, :NOM_ACCOMPAGNANT, :PRENOM_ACCOMPAGNANT, :LIEN_PARENTE, :DATE_ENTREE, :DATE_SORTIE, :MOTIF_SORTIE, :RESULTAT_SORTIE, :DATE_DECES, :MOTIF_DECES )");
-*/
-query.prepare("INSERT INTO patients (id, nom, prenom, sexe, tel, nomp_a_prevenir, prenomp_a_prevenir, telp_a_prevenir, adresse, situation_familliale, assurance_medical, code_assurance, date_naissance, typepatient, DATE_CONSULTATION, TYPE_CONSULTATION, DATE_PRESCRIPTION, NOTE, DATE_TRAITMENT, DESIGNATIONEXB, RESULTATEXB, DESIGNATIONEXR, RESULTATEXR, CHIRURIGIEN, ANESTHESIST, DATE_ADMISSION, TYPE_ADMISSION, MOTIF_ADMISSION, MEDECIN_ADMISSION, NOM_ACCOMPAGNANT, PRENOM_ACCOMPAGNANT, LIEN_PARENTE, DATE_ENTREE, DATE_SORTIE, MOTIF_SORTIE, RESULTAT_SORTIE, DATE_DECES, MOTIF_DECES) "
-                         "VALUES (:id, :nom, :prenom, :sexe, :tel, :nompap, :prenompap, :telpap, :adresse, :situationf, :assurancemed, :codeassurance, :date_naissance, :typep, :datecon, :typecon, :datepres, :note, :datetrait, :designationexb, :resultatexb, :designationexr, :resultatexr, :chirurigien, :anesthesist, :dateadm, :typeadm, :motifadm, :medadm, :nomacc, :prenomacc, :lienpar, :dateent, :datesor, :motifsor, :resultatsor, :datedec, :motifdec )");
+
+  query.prepare("INSERT INTO patients (ID, NOM, PRENOM, SEXE, TEL, NOMP_A_PREVENIR, PRENOMP_A_PREVENIR, TELP_A_PREVENIR, ADRESSE, SITUATION_FAMILLIALE, ASSURANCE_MEDICAL, CODE_ASSURANCE, DATE_NAISSANCE, TYPEPATIENT)"
+                           "VALUES (:id, :nom, :prenom, :sexe, :tel, :nompap, :prenompap, :telpap, :adresse, :situationf, :assurancemed, :codeassurance, :date_naissance, :typep )");
 
          query.bindValue(":id",id_string);
          query.bindValue(":nom", nom);
@@ -161,30 +87,7 @@ query.prepare("INSERT INTO patients (id, nom, prenom, sexe, tel, nomp_a_prevenir
          query.bindValue(":codeassurance", codeassurance);
          query.bindValue(":date_naissance", date_naissance);
          query.bindValue(":typep", typep);
-         query.bindValue(":datecon", datecon);
-         query.bindValue(":typecon", typecon);
-         query.bindValue(":datepres", datepres);
-         query.bindValue(":note", note);
-         query.bindValue(":datetrait", datetrait);
-         query.bindValue(":designationexb", designationexb);
-         query.bindValue(":resultatexb", resultatexb);
-         query.bindValue(":designationexr", designationexr);
-         query.bindValue(":resultatexr", resultatexr);
-         query.bindValue(":chirurigien", chirurigien);
-         query.bindValue(":anesthesist", anesthesist);
-         query.bindValue(":dateadm", dateadm);
-         query.bindValue(":typeadm", typeadm);
-         query.bindValue(":motifadm", motifadm);
-         query.bindValue(":medadm", medadm);
-         query.bindValue(":nomacc", nomacc);
-         query.bindValue(":prenomacc", prenomacc);
-         query.bindValue(":lienpar", lienpar);
-         query.bindValue(":dateent", dateent);
-         query.bindValue(":datesor", datesor);
-         query.bindValue(":motifsor", motifsor);
-         query.bindValue(":resultatsor", resultatsor);
-         query.bindValue(":datedec", datedec);
-         query.bindValue(":motifdec", motifdec);
+
 
 
         return query.exec();
@@ -235,39 +138,17 @@ QSqlQueryModel* patient::afficher()
    model->setHeaderData(11, Qt::Horizontal, QObject::tr("code_assurance"));
    model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
    model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
-   model->setHeaderData(14, Qt::Horizontal, QObject::tr("DATE_CONSULTATION"));
-   model->setHeaderData(15, Qt::Horizontal, QObject::tr("TYPE_CONSULTATION"));
-   model->setHeaderData(15, Qt::Horizontal, QObject::tr("DATE_PRESCRIPTION"));
-   model->setHeaderData(16, Qt::Horizontal, QObject::tr("NOTE"));
-   model->setHeaderData(17, Qt::Horizontal, QObject::tr("DATE_TRAITMENT"));
-   model->setHeaderData(18, Qt::Horizontal, QObject::tr("DESIGNATIONEXB"));
-   model->setHeaderData(19, Qt::Horizontal, QObject::tr("RESULTATEXB"));
-   model->setHeaderData(20, Qt::Horizontal, QObject::tr("DESIGNATIONEXR"));
-   model->setHeaderData(21, Qt::Horizontal, QObject::tr("RESULTATEXR"));
-   model->setHeaderData(22, Qt::Horizontal, QObject::tr("CHIRURIGIEN"));
-   model->setHeaderData(23, Qt::Horizontal, QObject::tr("ANESTHESIST"));
-   model->setHeaderData(24, Qt::Horizontal, QObject::tr("DATE_ADMISSION"));
-   model->setHeaderData(26, Qt::Horizontal, QObject::tr("TYPE_ADMISSION"));
-   model->setHeaderData(27, Qt::Horizontal, QObject::tr("MOTIF_ADMISSION"));
-   model->setHeaderData(28, Qt::Horizontal, QObject::tr("MEDECIN_ADMISSION"));
-   model->setHeaderData(29, Qt::Horizontal, QObject::tr("NOM_ACCOMPAGNANT"));
-   model->setHeaderData(30, Qt::Horizontal, QObject::tr("PRENOM_ACCOMPAGNANT"));
-   model->setHeaderData(31, Qt::Horizontal, QObject::tr("LIEN_PARENTE"));
-   model->setHeaderData(32, Qt::Horizontal, QObject::tr("DATE_ENTREE"));
-   model->setHeaderData(33, Qt::Horizontal, QObject::tr("DATE_SORTIE"));
-   model->setHeaderData(34, Qt::Horizontal, QObject::tr("MOTIF_SORTIE"));
-   model->setHeaderData(35, Qt::Horizontal, QObject::tr("RESULTAT_SORTIE"));
-   model->setHeaderData(36, Qt::Horizontal, QObject::tr("DATE_DECES"));
-   model->setHeaderData(37, Qt::Horizontal, QObject::tr("MOTIF_DECES"));
+
   return  model;
 }
-bool patient::modifier_patient(int id){
+bool patient::modifier_patient(){
 
         QSqlQuery query;
         QString id_string= QString::number(id);
         QString tel_string= QString::number(tel);
         QString telpap_string= QString::number(telpap);
-        query.prepare("UPDATE patients set nom=:nom, prenom=:prenom, sexe=:sexe, tel=:tel, nomp_a_prevenir=:nompap, prenomp_a_prevenir=:prenompap, telp_a_prevenir=:telpap, adresse=:adresse, situation_familliale=:situationf, assurance_medical=:assurancemed, code_assurance=:codeassurance, date_naissance=:date_naissance, typepatient=:typep, DATE_CONSULTATION=:datecon, TYPE_CONSULTATION=:typecon, DATE_PRESCRIPTION=:datepres, NOTE=:note, DATE_TRAITMENT:datetrait, DESIGNATIONEXB=:designationexb, RESULTATEXB=:resultatexb, DESIGNATIONEXR=:designationexr, RESULTATEXR=:resultatexr, CHIRURIGIEN=:chirurigien, ANESTHESIST=:anesthesist, DATE_ADMISSION=:dateadm, TYPE_ADMISSION=:typeadm, MOTIF_ADMISSION=:motifadm, MEDECIN_ADMISSION=:medadm, NOM_ACCOMPAGNANT=:nomacc, PRENOM_ACCOMPAGNANT=:prenomacc, LIEN_PARENTE=:lienpar, DATE_ENTREE=:dateent, DATE_SORTIE=:datesor, MOTIF_SORTIE=:motifsor, RESULTAT_SORTIE=:resultatsor, DATE_DECES=:datedec, MOTIF_DECES=:motifdec where id=:id");
+
+        query.prepare("UPDATE patients set nom=:nom, prenom=:prenom, sexe=:sexe, tel=:tel, nomp_a_prevenir=:nompap, prenomp_a_prevenir=:prenompap, telp_a_prevenir=:telpap, adresse=:adresse, situation_familliale=:situationf, assurance_medical=:assurancemed, code_assurance=:codeassurance, date_naissance=:date_naissance, typepatient=:typep where id=:id");
 
 
         query.bindValue(":id",id_string);
@@ -284,30 +165,7 @@ bool patient::modifier_patient(int id){
         query.bindValue(":codeassurance", codeassurance);
         query.bindValue(":date_naissance", date_naissance);
         query.bindValue(":typep", typep);
-        query.bindValue(":datecon", datecon);
-        query.bindValue(":typecon", typecon);
-        query.bindValue(":datepres", datepres);
-        query.bindValue(":note", note);
-        query.bindValue(":datetrait", datetrait);
-        query.bindValue(":designationexb", designationexb);
-        query.bindValue(":resultatexb", resultatexb);
-        query.bindValue(":designationexr", designationexr);
-        query.bindValue(":resultatexr", resultatexr);
-        query.bindValue(":chirurigien", chirurigien);
-        query.bindValue(":anesthesist", anesthesist);
-        query.bindValue(":dateadm", dateadm);
-        query.bindValue(":typeadm", typeadm);
-        query.bindValue(":motifadm", motifadm);
-        query.bindValue(":medadm", medadm);
-        query.bindValue(":nomacc", nomacc);
-        query.bindValue(":prenomacc", prenomacc);
-        query.bindValue(":lienpar", lienpar);
-        query.bindValue(":dateent", dateent);
-        query.bindValue(":datesor", datesor);
-        query.bindValue(":motifsor", motifsor);
-        query.bindValue(":resultatsor", resultatsor);
-        query.bindValue(":datedec", datedec);
-        query.bindValue(":motifdec", motifdec);
+
         return    query.exec();
 
 
@@ -462,30 +320,7 @@ QSqlQueryModel* patient::afficher_asc()//tri asc
     model->setHeaderData(11, Qt::Horizontal, QObject::tr("code_assurance"));
     model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
     model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
-    model->setHeaderData(14, Qt::Horizontal, QObject::tr("DATE_CONSULTATION"));
-    model->setHeaderData(15, Qt::Horizontal, QObject::tr("TYPE_CONSULTATION"));
-    model->setHeaderData(15, Qt::Horizontal, QObject::tr("DATE_PRESCRIPTION"));
-    model->setHeaderData(16, Qt::Horizontal, QObject::tr("NOTE"));
-    model->setHeaderData(17, Qt::Horizontal, QObject::tr("DATE_TRAITMENT"));
-    model->setHeaderData(18, Qt::Horizontal, QObject::tr("DESIGNATIONEXB"));
-    model->setHeaderData(19, Qt::Horizontal, QObject::tr("RESULTATEXB"));
-    model->setHeaderData(20, Qt::Horizontal, QObject::tr("DESIGNATIONEXR"));
-    model->setHeaderData(21, Qt::Horizontal, QObject::tr("RESULTATEXR"));
-    model->setHeaderData(22, Qt::Horizontal, QObject::tr("CHIRURIGIEN"));
-    model->setHeaderData(23, Qt::Horizontal, QObject::tr("ANESTHESIST"));
-    model->setHeaderData(24, Qt::Horizontal, QObject::tr("DATE_ADMISSION"));
-    model->setHeaderData(26, Qt::Horizontal, QObject::tr("TYPE_ADMISSION"));
-    model->setHeaderData(27, Qt::Horizontal, QObject::tr("MOTIF_ADMISSION"));
-    model->setHeaderData(28, Qt::Horizontal, QObject::tr("MEDECIN_ADMISSION"));
-    model->setHeaderData(29, Qt::Horizontal, QObject::tr("NOM_ACCOMPAGNANT"));
-    model->setHeaderData(30, Qt::Horizontal, QObject::tr("PRENOM_ACCOMPAGNANT"));
-    model->setHeaderData(31, Qt::Horizontal, QObject::tr("LIEN_PARENTE"));
-    model->setHeaderData(32, Qt::Horizontal, QObject::tr("DATE_ENTREE"));
-    model->setHeaderData(33, Qt::Horizontal, QObject::tr("DATE_SORTIE"));
-    model->setHeaderData(34, Qt::Horizontal, QObject::tr("MOTIF_SORTIE"));
-    model->setHeaderData(35, Qt::Horizontal, QObject::tr("RESULTAT_SORTIE"));
-    model->setHeaderData(36, Qt::Horizontal, QObject::tr("DATE_DECES"));
-    model->setHeaderData(37, Qt::Horizontal, QObject::tr("MOTIF_DECES"));
+
         return model;
     }
 
@@ -507,29 +342,6 @@ QSqlQueryModel* patient::afficher_desc() //trie desc
     model->setHeaderData(11, Qt::Horizontal, QObject::tr("code_assurance"));
     model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
     model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
-    model->setHeaderData(14, Qt::Horizontal, QObject::tr("DATE_CONSULTATION"));
-    model->setHeaderData(15, Qt::Horizontal, QObject::tr("TYPE_CONSULTATION"));
-    model->setHeaderData(15, Qt::Horizontal, QObject::tr("DATE_PRESCRIPTION"));
-    model->setHeaderData(16, Qt::Horizontal, QObject::tr("NOTE"));
-    model->setHeaderData(17, Qt::Horizontal, QObject::tr("DATE_TRAITMENT"));
-    model->setHeaderData(18, Qt::Horizontal, QObject::tr("DESIGNATIONEXB"));
-    model->setHeaderData(19, Qt::Horizontal, QObject::tr("RESULTATEXB"));
-    model->setHeaderData(20, Qt::Horizontal, QObject::tr("DESIGNATIONEXR"));
-    model->setHeaderData(21, Qt::Horizontal, QObject::tr("RESULTATEXR"));
-    model->setHeaderData(22, Qt::Horizontal, QObject::tr("CHIRURIGIEN"));
-    model->setHeaderData(23, Qt::Horizontal, QObject::tr("ANESTHESIST"));
-    model->setHeaderData(24, Qt::Horizontal, QObject::tr("DATE_ADMISSION"));
-    model->setHeaderData(26, Qt::Horizontal, QObject::tr("TYPE_ADMISSION"));
-    model->setHeaderData(27, Qt::Horizontal, QObject::tr("MOTIF_ADMISSION"));
-    model->setHeaderData(28, Qt::Horizontal, QObject::tr("MEDECIN_ADMISSION"));
-    model->setHeaderData(29, Qt::Horizontal, QObject::tr("NOM_ACCOMPAGNANT"));
-    model->setHeaderData(30, Qt::Horizontal, QObject::tr("PRENOM_ACCOMPAGNANT"));
-    model->setHeaderData(31, Qt::Horizontal, QObject::tr("LIEN_PARENTE"));
-    model->setHeaderData(32, Qt::Horizontal, QObject::tr("DATE_ENTREE"));
-    model->setHeaderData(33, Qt::Horizontal, QObject::tr("DATE_SORTIE"));
-    model->setHeaderData(34, Qt::Horizontal, QObject::tr("MOTIF_SORTIE"));
-    model->setHeaderData(35, Qt::Horizontal, QObject::tr("RESULTAT_SORTIE"));
-    model->setHeaderData(36, Qt::Horizontal, QObject::tr("DATE_DECES"));
-    model->setHeaderData(37, Qt::Horizontal, QObject::tr("MOTIF_DECES"));
+
         return model;
     }
