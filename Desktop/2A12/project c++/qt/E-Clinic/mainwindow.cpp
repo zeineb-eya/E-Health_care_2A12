@@ -2,7 +2,7 @@
 
 #include "patient.h"
 #include "rdv.h"
-
+#include <QMediaPlaylist>
 #include <QMessageBox>
 //mainwindow
 MainWindow::MainWindow(QWidget *parent) :
@@ -13,7 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tab_patients->setModel(tmppatient.afficher());
     ui->tab_rdv->setModel(tmprdv.afficher());
 
-
+connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(close()));
+connect(ui->cancelButton_2, SIGNAL(clicked()), this, SLOT(close()));
     // Connect all signals and slots
     connect(ui->pb_ajouter, SIGNAL(clicked(bool)), this, SLOT(on_pb_ajouter_clicked())); //ajout p
     connect(ui->pb_ajouter_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_ajouter_clicked2())); //ajout r
@@ -21,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->supprimerp, SIGNAL(clicked(bool)), this, SLOT(on_pb_supprimer_clicked())); //supp p
     connect(ui->supprimerr, SIGNAL(clicked(bool)), this, SLOT(on_pb_supprimer_clicked2())); //sup r
 
-    connect(ui->pb_modifier, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked())); //modifier r
+    connect(ui->pb_modifierrdv, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked())); //modifier r
     connect(ui->pb_modifier_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked_2())); //modifier p
     connect(ui->pushButton_1, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_2_clicked())); // print
 
@@ -32,6 +33,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->pb_aff_client, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_client_clicked()));//recherche par id patient
 
+    timer = new QTimer(this);
+    connect(timer,SIGNAL(timeout()),this,SLOT(timefct()));
+    timer->start(1000);
     //connect(ui->rechercherp, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged(const QString &arg1)));
     //connect(ui->rechercherr, SIGNAL(clicked(bool)), this, SLOT(on_recherche_tri_textChanged2(const QString &arg1)));
 
@@ -53,23 +57,25 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pb_ajouter_clicked()
 {   //IP
-    int id=ui->ID->text().toInt();
-    int tel=ui->Tel->text().toInt();
-    int telpap=ui->Telpap->text().toInt();
-    QString nom=ui->Nom->text();
-    QString prenom=ui->Prenom->text();
-    QString sexe=ui->Sexe->text();
-    QString date_naissance=ui->Datenaissance->text();
-    QString typep=ui->TypePatients->text();
-    QString adresse=ui->Adresse->text();
-    QString situationf=ui->SituationF->text();
-    QString assurancemed=ui->AssuranceMed->text();
-    QString codeassurance=ui->CodeAssurance->text();
-    QString nompap=ui->Nompap->text();
-    QString prenompap=ui->Prenompap->text();
+    int id = ui->ID->text().toInt();
+    QString nom = ui->Nom->text();
+    QString prenom = ui->Prenom->text();
+    QString sexe = ui->Sexe->text();
+    int tel = ui->Tel->text().toInt();
+    QString nompap = ui->Nompap->text();
+    QString prenompap = ui->Prenompap->text();
+    int telpap = ui->Telpap->text().toInt();
+    QString adresse = ui->Adresse->text();
+    QString situationf = ui->SituationF->text();
+    QString assurancemed = ui->AssuranceMed->text();
+    QString codeassurance = ui->CodeAssurance->text();
+    QString date_naissance = ui->Datenaissance->text();
+    QString typep = ui->TypePatients->text();
 
 
- patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe/*,datepres,note,designationexr,resultatexr,designationexb,resultatexb,chirurigien,anesthesist,dateadm,typeadm,motifadm,nomacc,prenomacc,lienpar,dateent,datesor,motifsor,resultatsor,datedec,motifdec,datetrait,medadm*/);
+
+
+ patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe);
 
  bool test=p.ajouter();
 
@@ -86,7 +92,7 @@ void MainWindow::on_pb_ajouter_clicked()
 
  }
  else
-     QMessageBox::critical(nullptr, QObject::tr("Ajouter un patient"),
+ QMessageBox::critical(nullptr, QObject::tr("Ajouter un patient"),
                  QObject::tr("Erreur !.\n"
                              "Click Cancel to exit."), QMessageBox::Cancel);
 
@@ -95,19 +101,21 @@ void MainWindow::on_pb_ajouter_clicked()
 
 void MainWindow::on_pb_ajouter_clicked2()
 {
+
+
     //RDV
     int coderdv=ui->CodeRDV->text().toInt();
-    int id_p=ui->ID_3->text().toInt();
     QString medecin=ui->Docteur->text();
-    QString service=ui->Service->text();
-    QString date_rdv=ui->dateEdit_4->text();
-    QString time_rdv=ui->timeEdit->text();
+    QString date_rdv=ui->datea->text();
+    QString time_rdv=ui->timea->text();
+    QString service=ui->Servicea->text();
+    int id_p=ui->ID_3a->text().toInt();
     rdv r(coderdv,medecin,date_rdv,time_rdv,service,id_p);
 
-    bool test3=r.ajouter();
+    bool test=r.ajouter();
     QMessageBox msgBox;
 
-    if(test3)
+    if(test)
       {  msgBox.setText("Ajout avec succes.");
 
         ui->tab_rdv->setModel(tmprdv.afficher());//refresh
@@ -117,7 +125,7 @@ void MainWindow::on_pb_ajouter_clicked2()
 
     }
     else
-        QMessageBox::critical(nullptr, QObject::tr("Ajouter un rendez-vous"),
+    QMessageBox::critical(nullptr, QObject::tr("Ajouter un rendez-vous"),
                     QObject::tr("Erreur !.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 }
@@ -136,7 +144,7 @@ void MainWindow::on_pb_supprimer_clicked()
 
         }
         else
-            QMessageBox::critical(nullptr, QObject::tr("Supprimer un patient"),
+        QMessageBox::critical(nullptr, QObject::tr("Supprimer un patient"),
                         QObject::tr("Erreur !.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
 
@@ -146,80 +154,38 @@ void MainWindow::on_pb_supprimer_clicked2()
 {
 
     int coderdv = ui->CodeRDV_2->text().toInt();
-    bool test3=tmprdv.supprimer(coderdv);
+    bool test=tmprdv.supprimer(coderdv);
     QMessageBox msgBox;
-    if(test3)
+    if(test)
        {ui->tab_rdv->setModel(tmprdv.afficher());//refresh
         QMessageBox::information(nullptr, QObject::tr("Supprimer un rendez-vous"),
                     QObject::tr("rendez-vous supprimé.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
     }
     else
-        QMessageBox::critical(nullptr, QObject::tr("Supprimer un rendez-vous"),
+    QMessageBox::critical(nullptr, QObject::tr("Supprimer un rendez-vous"),
                     QObject::tr("Erreur !.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
 }
 
-/*void MainWindow::on_pb_modifier_clicked(){
-
-
-    int coderdv = ui->CodeRDV_3->text().toInt();
-    int id_p = ui->ID_4->text().toInt();
-    QString medecin = ui->Docteur_3->text();
-    QString date_rdv = ui->dateEdit_5->text();
-    QString service = ui->Service_3->text();
-    QString time_rdv = ui->timeEdit_2->text();
-    rdv r(coderdv, medecin, service, date_rdv, time_rdv, id_p);
-    bool test=r.modifier_rdv();
-
-    ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
-
-        if(test){
-                ui->tab_rdv->setModel(tmprdv.afficher());
-
-            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
-               le->clear();
-            }
-
-          QMessageBox::information(this, QObject::tr("Modifier un client"),
-          QObject::tr("Client modifiée.\n"
-                      "Click Cancel to exit."), QMessageBox::Cancel);
-
-
-      }
-        else
-            QMessageBox::critical(this, QObject::tr("Modifier un client"),
-                        QObject::tr("Erreur !.\n"
-                                    "Click Cancel to exit."), QMessageBox::Cancel);
-}*/
-
-
 void MainWindow::on_pb_modifier_clicked(){
 
-    QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
-    QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
+   QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
+   QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
 
-
-    int coderdv = ui->CodeRDV_3->text().toInt();
+    int coderdv=ui->CodeRDV_3->text().toInt();
     ui->CodeRDV_3->setValidator(validator_int);
-
-    int id_p = ui->ID_4->text().toInt();
-    ui->ID_4->setValidator(validator_int);
-
-    QString medecin = ui->Docteur_3->text();
+    QString medecin=ui->Docteur_3->text();
     ui->Docteur_3->setValidator(validator_String);
-
-    QString date_rdv = ui->dateEdit_5->text();
-    ui->dateEdit_5->setValidator(validator_String);
-
-    QString service = ui->Service_3->text();
+    QString date_rdv=ui->datem->text();
+    ui->datem->setValidator(validator_String);
+    QString time_rdv=ui->timem->text();
+    ui->timem->setValidator(validator_String);
+    QString service=ui->Service_3->text();
     ui->Service_3->setValidator(validator_String);
-
-    QString time_rdv = ui->timeEdit_2->text();
-    ui->timeEdit_2->setValidator(validator_String);
-
-
+    int id_p=ui->ID_4m->text().toInt();
+    ui->ID_4m->setValidator(validator_int);
 
         rdv r(coderdv, medecin, service, date_rdv, time_rdv, id_p);
         bool test=r.modifier_rdv();
@@ -238,7 +204,7 @@ void MainWindow::on_pb_modifier_clicked(){
 
             }
               else
-                  QMessageBox::critical(this, QObject::tr("Modifier un rendez-vous"),
+                 QMessageBox::critical(this, QObject::tr("Modifier un rendez-vous"),
                               QObject::tr("Erreur !.\n"
                                           "Click Cancel to exit."), QMessageBox::Cancel);
 }
@@ -247,48 +213,37 @@ void MainWindow::on_pb_modifier_clicked_2(){
     QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
     QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
 
+
     int id = ui->ID_2->text().toInt();
     ui->ID_2->setValidator(validator_int);
-
-    int tel = ui->Tel_2->text().toInt();
-    ui->Tel_2->setValidator(validator_int);
-
-    int telpap = ui->Telpap_2->text().toInt();
-    ui->Telpap_2->setValidator(validator_int);
-
-
     QString nom = ui->Nom_2->text();
     ui->Nom_2->setValidator(validator_String);
-
     QString prenom = ui->Prenom_2->text();
     ui->Prenom_2->setValidator(validator_String);
-
     QString sexe = ui->Sexe_2->text();
     ui->Sexe_2->setValidator(validator_String);
-
-    QString adresse = ui->Adresse_2->text();
-    ui->Adresse_2->setValidator(validator_String);
-
-    QString situationf = ui->SituationF_2->text();
-    ui->SituationF_2->setValidator(validator_String);
-
-    QString assurancemed = ui->AssuranceMed_2->text();
-    ui->AssuranceMed_2->setValidator(validator_String);
-
-    QString codeassurance = ui->CodeAssurance_2->text();
-    ui->CodeAssurance_2->setValidator(validator_String);
-
+    int tel = ui->Tel_2->text().toInt();
+    ui->Tel_2->setValidator(validator_int);
     QString nompap = ui->Nompap_2->text();
     ui->Nompap_2->setValidator(validator_String);
-
     QString prenompap = ui->Prenompap_2->text();
     ui->Prenompap_2->setValidator(validator_String);
-
+    int telpap = ui->Telpap_2->text().toInt();
+    ui->Telpap_2->setValidator(validator_int);
+    QString adresse = ui->Adresse_2->text();
+    ui->Adresse_2->setValidator(validator_String);
+    QString situationf = ui->SituationF_2->text();
+    ui->SituationF_2->setValidator(validator_String);
+    QString assurancemed = ui->AssuranceMed_2->text();
+    ui->AssuranceMed_2->setValidator(validator_String);
+    QString codeassurance = ui->CodeAssurance_2->text();
+    ui->CodeAssurance_2->setValidator(validator_String);
+    QString date_naissance = ui->Datenaissance_2->text();
+    ui->Datenaissance_2->setValidator(validator_String);
     QString typep = ui->TypePatients_2->text();
     ui->TypePatients_2->setValidator(validator_String);
 
-    QString date_naissance = ui->Datenaissance_2->text();
-    ui->Datenaissance_2->setValidator(validator_String);
+
 
 
 
@@ -309,7 +264,7 @@ patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurance
 
          }
            else
-               QMessageBox::critical(this, QObject::tr("Modifier un patient"),
+              QMessageBox::critical(this, QObject::tr("Modifier un patient"),
                            QObject::tr("Erreur !.\n"
                                        "Click Cancel to exit."), QMessageBox::Cancel);
 }
@@ -341,6 +296,33 @@ void MainWindow::on_pb_aff_client_clicked(){
     int id = ui->lineEdit_aff_idpatient->text().toInt();
     ui->tab_aff_patient->setModel(tmppatient.afficher_idpatient(id));
 }
+
+void MainWindow::timefct()
+{
+    QTime time  = QTime::currentTime();
+    QString time_text = time.toString("hh : mm : ss");
+    ui->label->setText(time_text);
+    ui->label_2->setText(time_text);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*void MainWindow::sendEmail()
 {
     // Create the email object

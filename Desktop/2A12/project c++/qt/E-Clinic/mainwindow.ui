@@ -13,14 +13,17 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/background.png);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>10</y>
-      <width>851</width>
-      <height>471</height>
+      <y>0</y>
+      <width>881</width>
+      <height>621</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -33,10 +36,10 @@
      <widget class="QTabWidget" name="tabWidget_2">
       <property name="geometry">
        <rect>
-        <x>-10</x>
-        <y>0</y>
-        <width>861</width>
-        <height>451</height>
+        <x>0</x>
+        <y>10</y>
+        <width>881</width>
+        <height>521</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -46,17 +49,30 @@
        <attribute name="title">
         <string>information patient</string>
        </attribute>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>690</x>
+          <y>0</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>time</string>
+        </property>
+       </widget>
        <widget class="QTabWidget" name="tabWidget_7">
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
-          <width>861</width>
-          <height>431</height>
+          <y>10</y>
+          <width>891</width>
+          <height>441</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_20">
          <attribute name="title">
@@ -66,7 +82,7 @@
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>0</y>
+            <y>10</y>
             <width>721</width>
             <height>371</height>
            </rect>
@@ -310,50 +326,6 @@
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" name="tab_8">
-         <attribute name="title">
-          <string>supprimer</string>
-         </attribute>
-         <widget class="QPushButton" name="quiter_3">
-          <property name="geometry">
-           <rect>
-            <x>360</x>
-            <y>210</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Quiter</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="ID_5">
-          <property name="geometry">
-           <rect>
-            <x>260</x>
-            <y>160</y>
-            <width>281</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="placeholderText">
-           <string>ID</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="supprimerp">
-          <property name="geometry">
-           <rect>
-            <x>370</x>
-            <y>180</y>
-            <width>61</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>supprimer</string>
-          </property>
-         </widget>
-        </widget>
         <widget class="QWidget" name="tab_9">
          <attribute name="title">
           <string>modifier</string>
@@ -361,8 +333,8 @@
          <widget class="QTabWidget" name="tabWidget_9">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>0</y>
+            <x>10</x>
+            <y>10</y>
             <width>721</width>
             <height>341</height>
            </rect>
@@ -614,6 +586,37 @@
           </widget>
          </widget>
         </widget>
+        <widget class="QWidget" name="tab_8">
+         <attribute name="title">
+          <string>supprimer</string>
+         </attribute>
+         <widget class="QLineEdit" name="ID_5">
+          <property name="geometry">
+           <rect>
+            <x>260</x>
+            <y>160</y>
+            <width>281</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="placeholderText">
+           <string>ID</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="supprimerp">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>180</y>
+            <width>61</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>supprimer</string>
+          </property>
+         </widget>
+        </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
           <string>recherche par id</string>
@@ -697,6 +700,19 @@
          </widget>
         </widget>
        </widget>
+       <widget class="QPushButton" name="cancelButton">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>460</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>cancel</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -706,29 +722,14 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
-          <width>821</width>
-          <height>401</height>
+          <y>10</y>
+          <width>871</width>
+          <height>431</height>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>4</number>
         </property>
-        <widget class="QWidget" name="tab_14">
-         <attribute name="title">
-          <string>Afficher RDV</string>
-         </attribute>
-         <widget class="QTableView" name="tab_rdv">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>771</width>
-            <height>331</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
         <widget class="QWidget" name="tab_13">
          <attribute name="title">
           <string>Ajouter RDV</string>
@@ -810,7 +811,7 @@
             <string>Id Patient</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="ID_3">
+          <widget class="QLineEdit" name="ID_3a">
            <property name="geometry">
             <rect>
              <x>210</x>
@@ -840,7 +841,7 @@
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Service">
+          <widget class="QLineEdit" name="Servicea">
            <property name="geometry">
             <rect>
              <x>210</x>
@@ -850,7 +851,7 @@
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="dateEdit_4">
+          <widget class="QLineEdit" name="datea">
            <property name="geometry">
             <rect>
              <x>150</x>
@@ -860,7 +861,7 @@
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="timeEdit">
+          <widget class="QLineEdit" name="timea">
            <property name="geometry">
             <rect>
              <x>280</x>
@@ -895,6 +896,193 @@
           </property>
          </widget>
         </widget>
+        <widget class="QWidget" name="tab_14">
+         <attribute name="title">
+          <string>Afficher RDV</string>
+         </attribute>
+         <widget class="QTableView" name="tab_rdv">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>851</width>
+            <height>331</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_11">
+         <attribute name="title">
+          <string>modifier</string>
+         </attribute>
+         <widget class="QCalendarWidget" name="calendarWidget_4">
+          <property name="geometry">
+           <rect>
+            <x>460</x>
+            <y>90</y>
+            <width>312</width>
+            <height>183</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>431</width>
+            <height>251</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Gestion  de modification</string>
+          </property>
+          <widget class="QLabel" name="label_19">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>30</y>
+             <width>131</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Code de rendez-vous</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_20">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>60</y>
+             <width>71</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Docteur</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_21">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>90</y>
+             <width>81</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Date</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_22">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>120</y>
+             <width>71</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>sevice</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_23">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>150</y>
+             <width>71</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Id Patient</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="ID_4m">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>150</y>
+             <width>113</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="CodeRDV_3">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>30</y>
+             <width>113</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="readOnly">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="Docteur_3">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>60</y>
+             <width>113</width>
+             <height>20</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="Service_3">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>120</y>
+             <width>113</width>
+             <height>20</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="datem">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>90</y>
+             <width>113</width>
+             <height>20</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="timem">
+           <property name="geometry">
+            <rect>
+             <x>280</x>
+             <y>90</y>
+             <width>113</width>
+             <height>20</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pb_modifierrdv">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>220</y>
+             <width>151</width>
+             <height>23</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Modifier</string>
+           </property>
+          </widget>
+         </widget>
+        </widget>
         <widget class="QWidget" name="tab_19">
          <attribute name="title">
           <string>Trie par date</string>
@@ -904,7 +1092,7 @@
            <rect>
             <x>10</x>
             <y>40</y>
-            <width>631</width>
+            <width>851</width>
             <height>321</height>
            </rect>
           </property>
@@ -912,7 +1100,7 @@
          <widget class="QPushButton" name="pb_asc_tri">
           <property name="geometry">
            <rect>
-            <x>166</x>
+            <x>290</x>
             <y>10</y>
             <width>91</width>
             <height>23</height>
@@ -925,7 +1113,7 @@
          <widget class="QPushButton" name="pb_desc_tri">
           <property name="geometry">
            <rect>
-            <x>340</x>
+            <x>464</x>
             <y>10</y>
             <width>91</width>
             <height>23</height>
@@ -933,6 +1121,37 @@
           </property>
           <property name="text">
            <string>Descendant</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_10">
+         <attribute name="title">
+          <string>supprimer</string>
+         </attribute>
+         <widget class="QPushButton" name="supprimerr">
+          <property name="geometry">
+           <rect>
+            <x>320</x>
+            <y>180</y>
+            <width>61</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>supprimer</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="CodeRDV_2">
+          <property name="geometry">
+           <rect>
+            <x>262</x>
+            <y>150</y>
+            <width>201</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="placeholderText">
+           <string>CodeRDV</string>
           </property>
          </widget>
         </widget>
@@ -1218,222 +1437,32 @@
           </layout>
          </widget>
         </widget>
-        <widget class="QWidget" name="tab_10">
-         <attribute name="title">
-          <string>supprimer</string>
-         </attribute>
-         <widget class="QPushButton" name="supprimerr">
-          <property name="geometry">
-           <rect>
-            <x>320</x>
-            <y>180</y>
-            <width>61</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>supprimer</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="CodeRDV_2">
-          <property name="geometry">
-           <rect>
-            <x>262</x>
-            <y>150</y>
-            <width>201</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="placeholderText">
-           <string>CodeRDV</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="quiter_2">
-          <property name="geometry">
-           <rect>
-            <x>310</x>
-            <y>210</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Quiter</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="tab_11">
-         <attribute name="title">
-          <string>modifier</string>
-         </attribute>
-         <widget class="QCalendarWidget" name="calendarWidget_4">
-          <property name="geometry">
-           <rect>
-            <x>460</x>
-            <y>90</y>
-            <width>312</width>
-            <height>183</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QGroupBox" name="groupBox_4">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>60</y>
-            <width>431</width>
-            <height>251</height>
-           </rect>
-          </property>
-          <property name="title">
-           <string>Gestion  de modification</string>
-          </property>
-          <widget class="QLabel" name="label_19">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>30</y>
-             <width>131</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Code de rendez-vous</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_20">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>60</y>
-             <width>71</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Docteur</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_21">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>90</y>
-             <width>81</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Date</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_22">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>120</y>
-             <width>71</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>sevice</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_23">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>150</y>
-             <width>71</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Id Patient</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="ID_4">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>150</y>
-             <width>113</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="readOnly">
-            <bool>false</bool>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="CodeRDV_3">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>30</y>
-             <width>113</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="readOnly">
-            <bool>false</bool>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Docteur_3">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>60</y>
-             <width>113</width>
-             <height>20</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Service_3">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>120</y>
-             <width>113</width>
-             <height>20</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="dateEdit_5">
-           <property name="geometry">
-            <rect>
-             <x>150</x>
-             <y>90</y>
-             <width>113</width>
-             <height>20</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="timeEdit_2">
-           <property name="geometry">
-            <rect>
-             <x>280</x>
-             <y>90</y>
-             <width>113</width>
-             <height>20</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="pb_modifier">
-           <property name="geometry">
-            <rect>
-             <x>200</x>
-             <y>220</y>
-             <width>151</width>
-             <height>23</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Modifier</string>
-           </property>
-          </widget>
-         </widget>
-        </widget>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>0</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>time</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="cancelButton_2">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>450</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>cancel</string>
+        </property>
        </widget>
       </widget>
      </widget>

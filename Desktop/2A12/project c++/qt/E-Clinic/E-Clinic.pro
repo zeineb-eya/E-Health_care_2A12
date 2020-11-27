@@ -1,7 +1,7 @@
 QT       += core gui sql
 QT       += core gui sql printsupport
 QT       += core gui network
-
+QT       += core gui sql multimedia printsupport
 
 #https://github.com/zeineb-eya/E-Health_care_2A12.git
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -27,6 +27,7 @@ SOURCES += \
     SMTPClient/emailaddress.cpp \
     SMTPClient/smtpclient.cpp \
     connexion.cpp \
+    mail.cpp \
     main.cpp \
     mainwindow.cpp \
     patient.cpp \
@@ -37,11 +38,13 @@ HEADERS += \
     SMTPClient/emailaddress.h \
     SMTPClient/smtpclient.h \
     connexion.h \
+    mail.h \
     mainwindow.h \
     patient.h \
     rdv.h
 
 FORMS += \
+    mail.ui \
     mainwindow.ui
 
 # Default rules for deployment.
@@ -50,4 +53,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    Mortified.mp3 \
     SMTPClient/SMTPClient.pri
+
+RESOURCES += \
+    resource.qrc

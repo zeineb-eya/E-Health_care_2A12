@@ -10,6 +10,12 @@
 #include <QString>
 #include <QPrinter>
 #include <QPrintDialog>
+#include <QTimer>
+#include <QDate>
+#include <QTextEdit>
+#include <QString>
+#include <QMouseEvent>
+#include <QWheelEvent>
 /*#include "C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/email.h"
 #include "C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/smtpclient.h"
 #include "C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/emailaddress.h"*/
@@ -45,6 +51,16 @@ void on_pb_asc_tri_clicked_2();
 void on_pb_desc_tri_clicked_2();
 void on_pb_aff_client_clicked();
 void on_pushButton_2_clicked();
+
+
+
+void timefct();
+
+/*protected:
+    void    mousePressEvent(QMouseEvent *event) override;
+    void    mouseReleaseEvent(QMouseEvent *event) override;
+    void    mouseDoubleClickEvent(QMouseEvent *event) override;*/
+
 /*void sendEmail();
 void clearFields();
 
@@ -63,7 +79,8 @@ private:
 
     int etat=0;
    QString valeur,sexe;
-
+  // QMediaPlayer* player;
+   QTimer *timer;
    QString champ="";
 
 };

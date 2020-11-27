@@ -1,15 +1,27 @@
 #include "mainwindow.h"
+#include "mail.h"
 #include <QApplication>
 #include <QMessageBox>
 #include <QDebug>
 #include "connexion.h"
+#include <QMediaPlaylist>
+#include <QMediaPlayer>
 //main
 int main(int argc, char *argv[])
-{
+{   //loop play
+    QMediaPlaylist *playlist = new QMediaPlaylist();
+    playlist->addMedia(QUrl("C:/users/HP/Desktop/2A12/project c++/qt/E-Clinic/Mortified.mp3"));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);
+
+    QMediaPlayer *music = new QMediaPlayer();
+    music->setPlaylist(playlist);
+    music->play();
+
     QApplication a(argc, argv);
     Connexion c;
     bool test=c.ouvrirConnexion();
     MainWindow w;
+    //Email m;
                if(test)
  {
          w.show();

@@ -122,7 +122,6 @@ QSqlQueryModel* patient::afficher()
 {
   QSqlQueryModel* model=new QSqlQueryModel();
 
-
    model->setQuery("SELECT* FROM patients");
    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
@@ -202,19 +201,19 @@ QSqlQueryModel* patient::afficher_asc()//tri asc
     QSqlQueryModel* model= new QSqlQueryModel();
     model->setQuery("select * from PATIENTS ORDER BY id");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prenom"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("sexe"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("nomp_a_prevenir"));
-    model->setHeaderData(6, Qt::Horizontal, QObject::tr("prenomp_a_prevenir"));
-    model->setHeaderData(7, Qt::Horizontal, QObject::tr("telp_a_prevenir"));
-    model->setHeaderData(8, Qt::Horizontal, QObject::tr("adresse"));
-    model->setHeaderData(9, Qt::Horizontal, QObject::tr("situation_familliale"));
-    model->setHeaderData(10, Qt::Horizontal, QObject::tr("assurance_medical"));
-    model->setHeaderData(11, Qt::Horizontal, QObject::tr("code_assurance"));
-    model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
-    model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("SEXE"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("DATE_NAISSANCE"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("SITUATION_FAMILLIALE"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("ASSURANCE_MEDICAL"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("CODE_ASSURANCE"));
+    model->setHeaderData(8, Qt::Horizontal, QObject::tr("NOMP_A_PREVENIR"));
+    model->setHeaderData(9, Qt::Horizontal, QObject::tr("PRENOMP_A_PREVENIR"));
+    model->setHeaderData(10, Qt::Horizontal, QObject::tr("TELP_A_PREVENIR"));
+    model->setHeaderData(11, Qt::Horizontal, QObject::tr("TEL"));
+    model->setHeaderData(12, Qt::Horizontal, QObject::tr("TYPEPATIENT"));
+    model->setHeaderData(13, Qt::Horizontal, QObject::tr("ADRESSE"));
 
         return model;
     }
@@ -224,19 +223,19 @@ QSqlQueryModel* patient::afficher_desc() //trie desc
     QSqlQueryModel* model= new QSqlQueryModel();
     model->setQuery("select * from PATIENTS ORDER BY id DESC");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prenom"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("sexe"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("nomp_a_prevenir"));
-    model->setHeaderData(6, Qt::Horizontal, QObject::tr("prenomp_a_prevenir"));
-    model->setHeaderData(7, Qt::Horizontal, QObject::tr("telp_a_prevenir"));
-    model->setHeaderData(8, Qt::Horizontal, QObject::tr("adresse"));
-    model->setHeaderData(9, Qt::Horizontal, QObject::tr("situation_familliale"));
-    model->setHeaderData(10, Qt::Horizontal, QObject::tr("assurance_medical"));
-    model->setHeaderData(11, Qt::Horizontal, QObject::tr("code_assurance"));
-    model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
-    model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("SEXE"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("DATE_NAISSANCE"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("SITUATION_FAMILLIALE"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("ASSURANCE_MEDICAL"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("CODE_ASSURANCE"));
+    model->setHeaderData(8, Qt::Horizontal, QObject::tr("NOMP_A_PREVENIR"));
+    model->setHeaderData(9, Qt::Horizontal, QObject::tr("PRENOMP_A_PREVENIR"));
+    model->setHeaderData(10, Qt::Horizontal, QObject::tr("TELP_A_PREVENIR"));
+    model->setHeaderData(11, Qt::Horizontal, QObject::tr("TEL"));
+    model->setHeaderData(12, Qt::Horizontal, QObject::tr("TYPEPATIENT"));
+    model->setHeaderData(13, Qt::Horizontal, QObject::tr("ADRESSE"));
 
         return model;
     }
@@ -248,18 +247,18 @@ QSqlQueryModel* patient::afficher_idpatient(int id){
     query.exec();
     model->setQuery(query);
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prenom"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("sexe"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("tel"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("nomp_a_prevenir"));
-    model->setHeaderData(6, Qt::Horizontal, QObject::tr("prenomp_a_prevenir"));
-    model->setHeaderData(7, Qt::Horizontal, QObject::tr("telp_a_prevenir"));
-    model->setHeaderData(8, Qt::Horizontal, QObject::tr("adresse"));
-    model->setHeaderData(9, Qt::Horizontal, QObject::tr("situation_familliale"));
-    model->setHeaderData(10, Qt::Horizontal, QObject::tr("assurance_medical"));
-    model->setHeaderData(11, Qt::Horizontal, QObject::tr("code_assurance"));
-    model->setHeaderData(12, Qt::Horizontal, QObject::tr("date_naissance"));
-    model->setHeaderData(13, Qt::Horizontal, QObject::tr("typepatient"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("SEXE"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("DATE_NAISSANCE"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("SITUATION_FAMILLIALE"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("ASSURANCE_MEDICAL"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("CODE_ASSURANCE"));
+    model->setHeaderData(8, Qt::Horizontal, QObject::tr("NOMP_A_PREVENIR"));
+    model->setHeaderData(9, Qt::Horizontal, QObject::tr("PRENOMP_A_PREVENIR"));
+    model->setHeaderData(10, Qt::Horizontal, QObject::tr("TELP_A_PREVENIR"));
+    model->setHeaderData(11, Qt::Horizontal, QObject::tr("TEL"));
+    model->setHeaderData(12, Qt::Horizontal, QObject::tr("TYPEPATIENT"));
+    model->setHeaderData(13, Qt::Horizontal, QObject::tr("ADRESSE"));
         return model;
     }

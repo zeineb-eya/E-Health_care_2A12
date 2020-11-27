@@ -67,12 +67,13 @@ QSqlQueryModel* rdv::afficher()
 
 
    model->setQuery("SELECT* FROM rdv");
-   model->setHeaderData(0, Qt::Horizontal, QObject::tr("coderdv"));
-   model->setHeaderData(1, Qt::Horizontal, QObject::tr("daterdv"));
-   model->setHeaderData(2, Qt::Horizontal, QObject::tr("timerdv"));
-   model->setHeaderData(3, Qt::Horizontal, QObject::tr("doctor"));
-   model->setHeaderData(4, Qt::Horizontal, QObject::tr("service"));
-   model->setHeaderData(5, Qt::Horizontal, QObject::tr("id"));
+   model->setQuery("select * from rdv ORDER BY daterdv");
+   model->setHeaderData(0, Qt::Horizontal, QObject::tr("CODERDV"));
+   model->setHeaderData(1, Qt::Horizontal, QObject::tr("DOCTOR"));
+   model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATERDV"));
+   model->setHeaderData(4, Qt::Horizontal, QObject::tr("SERVICE"));
+   model->setHeaderData(5, Qt::Horizontal, QObject::tr("ID"));
+   model->setHeaderData(6, Qt::Horizontal, QObject::tr("TIMERDV"));
 
 
   return  model;
@@ -128,13 +129,12 @@ QSqlQueryModel* rdv::afficher_asc()//tri asc
 {
     QSqlQueryModel* model= new QSqlQueryModel();
     model->setQuery("select * from rdv ORDER BY daterdv");
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("coderdv"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nb place"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("daterdv"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("TIMERDV"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("doctor"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("service"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("id"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("CODERDV"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("DOCTOR"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATERDV"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("SERVICE"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("TIMERDV"));
         return model;
     }
 
@@ -142,12 +142,12 @@ QSqlQueryModel* rdv::afficher_desc() //trie desc
 {
     QSqlQueryModel* model= new QSqlQueryModel();
     model->setQuery("select * from rdv ORDER BY daterdv DESC");
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("coderdv"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nb place"));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("daterdv"));
-    model->setHeaderData(4, Qt::Horizontal, QObject::tr("TIMERDV"));
-    model->setHeaderData(3, Qt::Horizontal, QObject::tr("doctor"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("service"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("id"));
+
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("CODERDV"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("DOCTOR"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATERDV"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("SERVICE"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("ID"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("TIMERDV"));
         return model;
     }
