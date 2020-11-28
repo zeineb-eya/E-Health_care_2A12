@@ -55,6 +55,8 @@ QSqlQueryModel* afficher_idpatient(int id);//search by id
 
     QSqlQueryModel* afficher_asc();
     QSqlQueryModel* afficher_desc();
+    QSqlQueryModel* afficher_asctype();
+    QSqlQueryModel* afficher_desctype();
     bool search(int id);
 private:
     int id,tel ,telpap;

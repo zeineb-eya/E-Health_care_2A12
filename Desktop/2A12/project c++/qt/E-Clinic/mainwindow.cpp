@@ -25,14 +25,28 @@ connect(ui->cancelButton_2, SIGNAL(clicked()), this, SLOT(close()));
     connect(ui->pb_modifierrdv, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked())); //modifier r
     connect(ui->pb_modifier_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_modifier_clicked_2())); //modifier p
     connect(ui->pushButton_1, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_2_clicked())); // print
-
+//trie rdv
     connect(ui->pb_asc_tri, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_tri_clicked()));
     connect(ui->pb_desc_tri, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_tri_clicked()));
+    connect(ui->pb_asc_tri_3, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_triID_clicked()));
+    connect(ui->pb_desc_tri_3, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_triID_clicked()));
+    connect(ui->pb_asc_tri_4, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_triDoc_clicked()));
+    connect(ui->pb_desc_tri_4, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_triDoc_clicked()));
+
+//trie patient
     connect(ui->pb_asc_tri_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_tri_clicked_2()));
     connect(ui->pb_desc_tri_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_tri_clicked_2()));
+    connect(ui->pb_asc_tri_5, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_triTYPE_clicked_2()));
+    connect(ui->pb_desc_tri_5, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_triTYPE_clicked_2()));
 
-    connect(ui->pb_aff_client, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_client_clicked()));//recherche par id patient
 
+
+//recherche par id patient
+    connect(ui->pb_aff_client, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_client_clicked()));
+
+
+
+    //connect(ui->verify, SIGNAL(clicked(bool)), this, SLOT(verify()));//update
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timefct()));
     timer->start(1000);
@@ -268,6 +282,7 @@ patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurance
                            QObject::tr("Erreur !.\n"
                                        "Click Cancel to exit."), QMessageBox::Cancel);
 }
+//tri rdv
 
 void MainWindow::on_pb_asc_tri_clicked(){
     ui->tmprdv_tri->setModel(tmprdv.afficher_asc());
@@ -276,6 +291,25 @@ void MainWindow::on_pb_asc_tri_clicked(){
 void MainWindow::on_pb_desc_tri_clicked(){
     ui->tmprdv_tri->setModel(tmprdv.afficher_desc());
 }
+
+
+void MainWindow::on_pb_asc_triID_clicked(){
+    ui->tmprdv_tri->setModel(tmprdv.afficher_idCroissant());
+}
+
+void MainWindow::on_pb_desc_triID_clicked(){
+    ui->tmprdv_tri->setModel(tmprdv.afficher_idDecroissant());
+}
+void MainWindow::on_pb_asc_triDoc_clicked(){
+    ui->tmprdv_tri->setModel(tmprdv.afficher_DocCroissant());
+}
+
+void MainWindow::on_pb_desc_triDoc_clicked(){
+    ui->tmprdv_tri->setModel(tmprdv.afficher_DocDecroissant());
+}
+
+
+//tri patient
 void MainWindow::on_pb_asc_tri_clicked_2(){
     ui->tmppatient_tri->setModel(tmppatient.afficher_asc());
 }
@@ -283,7 +317,16 @@ void MainWindow::on_pb_asc_tri_clicked_2(){
 void MainWindow::on_pb_desc_tri_clicked_2(){
     ui->tmppatient_tri->setModel(tmppatient.afficher_desc());
 }
+void MainWindow::on_pb_asc_triTYPE_clicked_2(){
+    ui->tmppatient_tri->setModel(tmppatient.afficher_asctype());
+}
 
+void MainWindow::on_pb_desc_triTYPE_clicked_2(){
+    ui->tmppatient_tri->setModel(tmppatient.afficher_desctype());
+}
+
+
+//print
 void MainWindow::on_pushButton_2_clicked(){
 
     QPrinter printer;
@@ -310,7 +353,26 @@ void MainWindow::timefct()
 
 
 
+/*void MainWindow::verify()
+{
+    QString medecin= ui->doc->text();
+    int id_p =ui->idp->text().toInt() ;
+    bool test=tmprdv.exist(medecin,id_p) ;
+    ui->tab_rdv->setModel(tmprdv.afficher()) ;
+    if(test){
+         ui->tab_rdv->setModel(tmprdv.afficher()) ;   //refresh
 
+         QMessageBox::information(this, QObject::tr("update rdv"),
+         QObject::tr("rdv updated.\n"
+                     "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+     }
+       else
+          QMessageBox::critical(this, QObject::tr("update rdv"),
+                       QObject::tr("Erreur !.\n"
+                                   "Click Cancel to exit."), QMessageBox::Cancel);
+}*/
 
 
 

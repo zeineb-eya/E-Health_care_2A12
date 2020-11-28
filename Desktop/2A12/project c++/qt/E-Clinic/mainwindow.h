@@ -31,24 +31,31 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
+//void on_pushButton_2_clicked();
 void print(QString path, QByteArray ba);
 private slots:
     void on_pb_ajouter_clicked();
    void on_pb_ajouter_clicked2();
     void on_pb_supprimer_clicked();
    void on_pb_supprimer_clicked2();
-
+//void verify();
 
 void on_pb_modifier_clicked();
 void on_pb_modifier_clicked_2();
-
+//tri rdv
 void on_pb_asc_tri_clicked();
-
 void on_pb_desc_tri_clicked();
+void on_pb_asc_triID_clicked();
+void on_pb_desc_triID_clicked();
+void on_pb_asc_triDoc_clicked();
+void on_pb_desc_triDoc_clicked();
+//tri patient
 void on_pb_asc_tri_clicked_2();
-
 void on_pb_desc_tri_clicked_2();
+void on_pb_asc_triTYPE_clicked_2();
+void on_pb_desc_triTYPE_clicked_2();
+
+//recherche patient
 void on_pb_aff_client_clicked();
 void on_pushButton_2_clicked();
 

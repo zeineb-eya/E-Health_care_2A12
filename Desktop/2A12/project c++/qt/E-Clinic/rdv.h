@@ -35,6 +35,11 @@ public:
     QSqlQueryModel* afficher_asc();
     QSqlQueryModel* afficher_desc();
     bool search(int coderdv);
+    QSqlQueryModel* afficher_idCroissant();
+    QSqlQueryModel* afficher_idDecroissant();
+    QSqlQueryModel* afficher_DocCroissant();
+    QSqlQueryModel* afficher_DocDecroissant();
+   // bool exist(QString medecin,int id_p) ;
 private:
     int coderdv,id_p;
     QString medecin, service;

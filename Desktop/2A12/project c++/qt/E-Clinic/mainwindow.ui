@@ -72,7 +72,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>5</number>
         </property>
         <widget class="QWidget" name="tab_20">
          <attribute name="title">
@@ -291,6 +291,18 @@
               <height>23</height>
              </rect>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+            </property>
             <property name="text">
              <string>Ajouter</string>
             </property>
@@ -320,6 +332,18 @@
             <width>75</width>
             <height>23</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
           </property>
           <property name="text">
            <string>Print</string>
@@ -579,6 +603,18 @@
               <height>23</height>
              </rect>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+            </property>
             <property name="text">
              <string>Modifier</string>
             </property>
@@ -608,9 +644,21 @@
            <rect>
             <x>370</x>
             <y>180</y>
-            <width>61</width>
+            <width>71</width>
             <height>23</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
           </property>
           <property name="text">
            <string>supprimer</string>
@@ -629,6 +677,18 @@
             <width>111</width>
             <height>21</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
           </property>
           <property name="text">
            <string>Afficher</string>
@@ -660,32 +720,56 @@
         </widget>
         <widget class="QWidget" name="tab_53">
          <attribute name="title">
-          <string>Trie par type</string>
+          <string>Trie</string>
          </attribute>
          <widget class="QPushButton" name="pb_asc_tri_2">
           <property name="geometry">
            <rect>
-            <x>166</x>
+            <x>50</x>
             <y>10</y>
             <width>91</width>
             <height>23</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
           <property name="text">
-           <string>Ascendant </string>
+           <string>Ascendant ID</string>
           </property>
          </widget>
          <widget class="QPushButton" name="pb_desc_tri_2">
           <property name="geometry">
            <rect>
-            <x>340</x>
+            <x>164</x>
             <y>10</y>
             <width>91</width>
             <height>23</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
           <property name="text">
-           <string>Descendant</string>
+           <string>Descendant ID</string>
           </property>
          </widget>
          <widget class="QTableView" name="tmppatient_tri">
@@ -693,9 +777,59 @@
            <rect>
             <x>20</x>
             <y>50</y>
-            <width>631</width>
+            <width>831</width>
             <height>321</height>
            </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pb_asc_tri_5">
+          <property name="geometry">
+           <rect>
+            <x>570</x>
+            <y>10</y>
+            <width>111</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
+          <property name="text">
+           <string>Ascendant Type</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pb_desc_tri_5">
+          <property name="geometry">
+           <rect>
+            <x>704</x>
+            <y>10</y>
+            <width>111</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
+          <property name="text">
+           <string>Descendant Type</string>
           </property>
          </widget>
         </widget>
@@ -708,6 +842,18 @@
           <width>75</width>
           <height>23</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>cancel</string>
@@ -728,7 +874,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>4</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab_13">
          <attribute name="title">
@@ -879,6 +1025,18 @@
              <width>75</width>
              <height>23</height>
             </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
            </property>
            <property name="text">
             <string>Ajouter</string>
@@ -1077,6 +1235,18 @@
              <height>23</height>
             </rect>
            </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+           </property>
            <property name="text">
             <string>Modifier</string>
            </property>
@@ -1085,7 +1255,7 @@
         </widget>
         <widget class="QWidget" name="tab_19">
          <attribute name="title">
-          <string>Trie par date</string>
+          <string>Trie</string>
          </attribute>
          <widget class="QTableView" name="tmprdv_tri">
           <property name="geometry">
@@ -1100,27 +1270,151 @@
          <widget class="QPushButton" name="pb_asc_tri">
           <property name="geometry">
            <rect>
-            <x>290</x>
+            <x>16</x>
             <y>10</y>
-            <width>91</width>
+            <width>111</width>
             <height>23</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
           <property name="text">
-           <string>Ascendant </string>
+           <string>Ascendant code</string>
           </property>
          </widget>
          <widget class="QPushButton" name="pb_desc_tri">
           <property name="geometry">
            <rect>
-            <x>464</x>
+            <x>130</x>
             <y>10</y>
-            <width>91</width>
+            <width>111</width>
             <height>23</height>
            </rect>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
           <property name="text">
-           <string>Descendant</string>
+           <string>Descendant code</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pb_asc_tri_3">
+          <property name="geometry">
+           <rect>
+            <x>310</x>
+            <y>10</y>
+            <width>111</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
+          <property name="text">
+           <string>Ascendant ID</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pb_desc_tri_3">
+          <property name="geometry">
+           <rect>
+            <x>424</x>
+            <y>10</y>
+            <width>111</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
+          <property name="text">
+           <string>Descendant ID</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pb_asc_tri_4">
+          <property name="geometry">
+           <rect>
+            <x>606</x>
+            <y>10</y>
+            <width>111</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
+          <property name="text">
+           <string>Ascendant doctor</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pb_desc_tri_4">
+          <property name="geometry">
+           <rect>
+            <x>720</x>
+            <y>10</y>
+            <width>121</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
+          <property name="text">
+           <string>Descendant doctor</string>
           </property>
          </widget>
         </widget>
@@ -1133,9 +1427,21 @@
            <rect>
             <x>320</x>
             <y>180</y>
-            <width>61</width>
+            <width>81</width>
             <height>23</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
           </property>
           <property name="text">
            <string>supprimer</string>
@@ -1157,284 +1463,64 @@
         </widget>
         <widget class="QWidget" name="tab_7">
          <attribute name="title">
-          <string>mail</string>
+          <string>update</string>
          </attribute>
-         <widget class="QGroupBox" name="groupBoxMessage">
+         <widget class="QLineEdit" name="doc">
           <property name="geometry">
            <rect>
-            <x>427</x>
-            <y>9</y>
-            <width>371</width>
-            <height>261</height>
+            <x>300</x>
+            <y>80</y>
+            <width>113</width>
+            <height>20</height>
            </rect>
           </property>
-          <property name="title">
-           <string>Message</string>
+          <property name="inputMask">
+           <string/>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
-           <property name="spacing">
-            <number>9</number>
-           </property>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <property name="spacing">
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="labelSubject">
-               <property name="text">
-                <string>Subject</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEditSubject"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_5">
-             <property name="spacing">
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="labelContent">
-               <property name="text">
-                <string>Content</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QTextEdit" name="textEditContent"/>
-             </item>
-            </layout>
-           </item>
-          </layout>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>doctor</string>
+          </property>
          </widget>
-         <widget class="QGroupBox" name="groupBoxFrom">
+         <widget class="QPushButton" name="verify">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>120</y>
-            <width>411</width>
-            <height>74</height>
+            <x>554</x>
+            <y>290</y>
+            <width>101</width>
+            <height>23</height>
            </rect>
           </property>
-          <property name="title">
-           <string>From</string>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_8">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_9">
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="labelEmailFrom">
-               <property name="text">
-                <string>E-mail</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEditEmailFrom"/>
-             </item>
-            </layout>
-           </item>
-          </layout>
+          <property name="text">
+           <string>VERIFIER</string>
+          </property>
          </widget>
-         <widget class="QGroupBox" name="groupBoxTo">
+         <widget class="QLineEdit" name="idp">
           <property name="geometry">
            <rect>
-            <x>0</x>
-            <y>200</y>
-            <width>411</width>
-            <height>74</height>
+            <x>300</x>
+            <y>170</y>
+            <width>113</width>
+            <height>20</height>
            </rect>
           </property>
-          <property name="title">
-           <string>To</string>
+          <property name="placeholderText">
+           <string>ID patient</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <property name="spacing">
-            <number>6</number>
-           </property>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_7">
-             <property name="spacing">
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="labelEmail">
-               <property name="text">
-                <string>E-mail</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEditEmailTo"/>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="layoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>250</x>
-            <y>320</y>
-            <width>260</width>
-            <height>50</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_5">
-           <property name="spacing">
-            <number>9</number>
-           </property>
-           <property name="topMargin">
-            <number>10</number>
-           </property>
-           <property name="bottomMargin">
-            <number>10</number>
-           </property>
-           <item>
-            <widget class="QPushButton" name="pushButtonClear">
-             <property name="minimumSize">
-              <size>
-               <width>100</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="cursor">
-              <cursorShape>PointingHandCursor</cursorShape>
-             </property>
-             <property name="text">
-              <string>Clear</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButtonSend">
-             <property name="minimumSize">
-              <size>
-               <width>100</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="cursor">
-              <cursorShape>PointingHandCursor</cursorShape>
-             </property>
-             <property name="text">
-              <string>Send</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QGroupBox" name="groupBoxCredentials">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>411</width>
-            <height>111</height>
-           </rect>
-          </property>
-          <property name="title">
-           <string>From</string>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <property name="spacing">
-            <number>6</number>
-           </property>
-           <item>
-            <layout class="QGridLayout" name="gridLayout">
-             <property name="horizontalSpacing">
-              <number>9</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>6</number>
-             </property>
-             <item row="3" column="1">
-              <widget class="QLineEdit" name="lineEditHost">
-               <property name="text">
-                <string>smtp.gmail.com</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLabel" name="labelEmailCredentials">
-               <property name="text">
-                <string>E-mail</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="3">
-              <widget class="QSpinBox" name="spinBoxPort">
-               <property name="minimumSize">
-                <size>
-                 <width>50</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-               <property name="maximum">
-                <number>999999</number>
-               </property>
-               <property name="value">
-                <number>465</number>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="3">
-              <widget class="QLineEdit" name="lineEditPasswordCredentials">
-               <property name="echoMode">
-                <enum>QLineEdit::Password</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="lineEditEmailCredentials"/>
-             </item>
-             <item row="2" column="1">
-              <widget class="QLabel" name="labelHost">
-               <property name="text">
-                <string>Host</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="3">
-              <widget class="QLabel" name="labelPasswordCredentials">
-               <property name="text">
-                <string>Password</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="3">
-              <widget class="QLabel" name="labelPort">
-               <property name="text">
-                <string>Port</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
          </widget>
         </widget>
        </widget>
@@ -1459,6 +1545,18 @@
           <width>75</width>
           <height>23</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
         </property>
         <property name="text">
          <string>cancel</string>
