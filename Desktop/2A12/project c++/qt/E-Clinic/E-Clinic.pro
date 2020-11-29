@@ -53,6 +53,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    Click.mp3 \
     Mortified.mp3 \
     SMTPClient/SMTPClient.pri
 

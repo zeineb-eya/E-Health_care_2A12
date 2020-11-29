@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include "patient.h"
 #include "rdv.h"
+#include <QMediaPlayer>
 #include <QDebug>
 #include <QString>
 #include <QPrinter>
@@ -89,6 +90,7 @@ private:
   // QMediaPlayer* player;
    QTimer *timer;
    QString champ="";
+   QMediaPlayer *click;
 
 };
 
