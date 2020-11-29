@@ -136,10 +136,6 @@ public:
     QWidget *tab_10;
     QPushButton *supprimerr;
     QLineEdit *CodeRDV_2;
-    QWidget *tab_7;
-    QLineEdit *doc;
-    QPushButton *verify;
-    QLineEdit *idp;
     QLabel *label_2;
     QPushButton *cancelButton_2;
     QMenuBar *menubar;
@@ -160,7 +156,7 @@ public:
         tab->setObjectName(QStringLiteral("tab"));
         tabWidget_2 = new QTabWidget(tab);
         tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
-        tabWidget_2->setGeometry(QRect(0, 10, 881, 521));
+        tabWidget_2->setGeometry(QRect(0, 0, 881, 521));
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
         label = new QLabel(tab_5);
@@ -168,7 +164,7 @@ public:
         label->setGeometry(QRect(690, 0, 161, 21));
         tabWidget_7 = new QTabWidget(tab_5);
         tabWidget_7->setObjectName(QStringLiteral("tabWidget_7"));
-        tabWidget_7->setGeometry(QRect(0, 10, 891, 441));
+        tabWidget_7->setGeometry(QRect(0, 20, 891, 441));
         tab_20 = new QWidget();
         tab_20->setObjectName(QStringLiteral("tab_20"));
         tabWidget_8 = new QTabWidget(tab_20);
@@ -239,10 +235,10 @@ public:
         tab_21->setObjectName(QStringLiteral("tab_21"));
         tab_patients = new QTableView(tab_21);
         tab_patients->setObjectName(QStringLiteral("tab_patients"));
-        tab_patients->setGeometry(QRect(10, 30, 781, 301));
+        tab_patients->setGeometry(QRect(10, 30, 841, 301));
         pushButton_1 = new QPushButton(tab_21);
         pushButton_1->setObjectName(QStringLiteral("pushButton_1"));
-        pushButton_1->setGeometry(QRect(350, 340, 75, 23));
+        pushButton_1->setGeometry(QRect(400, 350, 75, 23));
         pushButton_1->setStyleSheet(QLatin1String("QPushButton {\n"
 "padding: 5px;\n"
 "border-radius: 5px;\n"
@@ -371,7 +367,7 @@ public:
         lineEdit_aff_idpatient->setGeometry(QRect(160, 50, 113, 21));
         tab_aff_patient = new QTableView(tab_3);
         tab_aff_patient->setObjectName(QStringLiteral("tab_aff_patient"));
-        tab_aff_patient->setGeometry(QRect(60, 110, 611, 241));
+        tab_aff_patient->setGeometry(QRect(10, 100, 841, 291));
         tabWidget_7->addTab(tab_3, QString());
         tab_53 = new QWidget();
         tab_53->setObjectName(QStringLiteral("tab_53"));
@@ -403,7 +399,7 @@ public:
 "}"));
         tmppatient_tri = new QTableView(tab_53);
         tmppatient_tri->setObjectName(QStringLiteral("tmppatient_tri"));
-        tmppatient_tri->setGeometry(QRect(20, 50, 831, 321));
+        tmppatient_tri->setGeometry(QRect(10, 50, 841, 321));
         pb_asc_tri_5 = new QPushButton(tab_53);
         pb_asc_tri_5->setObjectName(QStringLiteral("pb_asc_tri_5"));
         pb_asc_tri_5->setGeometry(QRect(570, 10, 111, 23));
@@ -433,7 +429,7 @@ public:
         tabWidget_7->addTab(tab_53, QString());
         cancelButton = new QPushButton(tab_5);
         cancelButton->setObjectName(QStringLiteral("cancelButton"));
-        cancelButton->setGeometry(QRect(390, 460, 75, 23));
+        cancelButton->setGeometry(QRect(400, 460, 75, 23));
         cancelButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "padding: 5px;\n"
 "border-radius: 5px;\n"
@@ -449,7 +445,7 @@ public:
         tab_4->setObjectName(QStringLiteral("tab_4"));
         tabWidget_5 = new QTabWidget(tab_4);
         tabWidget_5->setObjectName(QStringLiteral("tabWidget_5"));
-        tabWidget_5->setGeometry(QRect(0, 10, 871, 431));
+        tabWidget_5->setGeometry(QRect(0, 20, 871, 431));
         tab_13 = new QWidget();
         tab_13->setObjectName(QStringLiteral("tab_13"));
         groupBox_2 = new QGroupBox(tab_13);
@@ -656,7 +652,7 @@ public:
         tab_10->setObjectName(QStringLiteral("tab_10"));
         supprimerr = new QPushButton(tab_10);
         supprimerr->setObjectName(QStringLiteral("supprimerr"));
-        supprimerr->setGeometry(QRect(320, 180, 81, 23));
+        supprimerr->setGeometry(QRect(370, 180, 81, 23));
         supprimerr->setStyleSheet(QLatin1String("QPushButton {\n"
 "padding: 5px;\n"
 "border-radius: 5px;\n"
@@ -669,36 +665,14 @@ public:
 "}"));
         CodeRDV_2 = new QLineEdit(tab_10);
         CodeRDV_2->setObjectName(QStringLiteral("CodeRDV_2"));
-        CodeRDV_2->setGeometry(QRect(262, 150, 201, 20));
+        CodeRDV_2->setGeometry(QRect(262, 150, 291, 20));
         tabWidget_5->addTab(tab_10, QString());
-        tab_7 = new QWidget();
-        tab_7->setObjectName(QStringLiteral("tab_7"));
-        doc = new QLineEdit(tab_7);
-        doc->setObjectName(QStringLiteral("doc"));
-        doc->setGeometry(QRect(300, 80, 113, 20));
-        verify = new QPushButton(tab_7);
-        verify->setObjectName(QStringLiteral("verify"));
-        verify->setGeometry(QRect(554, 290, 101, 23));
-        verify->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        idp = new QLineEdit(tab_7);
-        idp->setObjectName(QStringLiteral("idp"));
-        idp->setGeometry(QRect(300, 170, 113, 20));
-        tabWidget_5->addTab(tab_7, QString());
         label_2 = new QLabel(tab_4);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(610, 0, 161, 21));
         cancelButton_2 = new QPushButton(tab_4);
         cancelButton_2->setObjectName(QStringLiteral("cancelButton_2"));
-        cancelButton_2->setGeometry(QRect(350, 450, 75, 23));
+        cancelButton_2->setGeometry(QRect(390, 470, 75, 23));
         cancelButton_2->setStyleSheet(QLatin1String("QPushButton {\n"
 "padding: 5px;\n"
 "border-radius: 5px;\n"
@@ -723,11 +697,11 @@ public:
         retranslateUi(MainWindow);
 
         tabWidget->setCurrentIndex(0);
-        tabWidget_2->setCurrentIndex(0);
+        tabWidget_2->setCurrentIndex(1);
         tabWidget_7->setCurrentIndex(5);
         tabWidget_8->setCurrentIndex(0);
         tabWidget_9->setCurrentIndex(0);
-        tabWidget_5->setCurrentIndex(3);
+        tabWidget_5->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -813,12 +787,6 @@ public:
         supprimerr->setText(QApplication::translate("MainWindow", "supprimer", Q_NULLPTR));
         CodeRDV_2->setPlaceholderText(QApplication::translate("MainWindow", "CodeRDV", Q_NULLPTR));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_10), QApplication::translate("MainWindow", "supprimer", Q_NULLPTR));
-        doc->setInputMask(QString());
-        doc->setText(QString());
-        doc->setPlaceholderText(QApplication::translate("MainWindow", "doctor", Q_NULLPTR));
-        verify->setText(QApplication::translate("MainWindow", "VERIFIER", Q_NULLPTR));
-        idp->setPlaceholderText(QApplication::translate("MainWindow", "ID patient", Q_NULLPTR));
-        tabWidget_5->setTabText(tabWidget_5->indexOf(tab_7), QApplication::translate("MainWindow", "update", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "time", Q_NULLPTR));
         cancelButton_2->setText(QApplication::translate("MainWindow", "cancel", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QApplication::translate("MainWindow", "rendez-vous", Q_NULLPTR));

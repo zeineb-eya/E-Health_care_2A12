@@ -30,7 +30,7 @@ public:
     bool supprimer(int);
 
   bool modifier_rdv();
-    QSqlQueryModel * afficher_liste_rdv();
+    //QSqlQueryModel * afficher_liste_rdv();
 
     QSqlQueryModel* afficher_asc();
     QSqlQueryModel* afficher_desc();

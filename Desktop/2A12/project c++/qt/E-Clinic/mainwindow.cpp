@@ -89,14 +89,17 @@ void MainWindow::on_pb_ajouter_clicked()
 
 
 
- patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe);
-
+ patient p(id,nom,prenom,sexe,tel,nompap,prenompap,telpap,adresse,situationf,assurancemed,codeassurance,date_naissance,typep);
  bool test=p.ajouter();
 
  QMessageBox msgBox;
-
+ui->tab_patients->setModel(tmppatient.afficher());//refresh
  if(test)
-   {  msgBox.setText("Ajout avec succes.");
+   {
+     foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+        le->clear();
+     }
+     msgBox.setText("Ajout avec succes.");
 
       ui->tab_patients->setModel(tmppatient.afficher());//refresh
      QMessageBox::information(nullptr, QObject::tr("Ajouter un patient"),
@@ -124,13 +127,16 @@ void MainWindow::on_pb_ajouter_clicked2()
     QString time_rdv=ui->timea->text();
     QString service=ui->Servicea->text();
     int id_p=ui->ID_3a->text().toInt();
-    rdv r(coderdv,medecin,date_rdv,time_rdv,service,id_p);
+     rdv r(coderdv, medecin, date_rdv, time_rdv, service, id_p);
 
     bool test=r.ajouter();
     QMessageBox msgBox;
-
+ui->tab_rdv->setModel(tmprdv.afficher());//refresh
     if(test)
-      {  msgBox.setText("Ajout avec succes.");
+      { foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+            le->clear();
+         }
+        msgBox.setText("Ajout avec succes.");
 
         ui->tab_rdv->setModel(tmprdv.afficher());//refresh
         QMessageBox::information(nullptr, QObject::tr("Ajouter un rendez-vous"),
@@ -150,8 +156,12 @@ void MainWindow::on_pb_supprimer_clicked()
 
         int id = ui->ID_5->text().toInt();
         bool test=tmppatient.supprimer(id);
+        ui->tab_patients->setModel(tmppatient.afficher());//refresh
         if(test)
-        {ui->tab_patients->setModel(tmppatient.afficher());//refresh
+        {foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+                le->clear();
+             }
+            ui->tab_patients->setModel(tmppatient.afficher());//refresh
             QMessageBox::information(nullptr, QObject::tr("Supprimer un patient"),
                         QObject::tr("patient supprimé.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
@@ -170,8 +180,12 @@ void MainWindow::on_pb_supprimer_clicked2()
     int coderdv = ui->CodeRDV_2->text().toInt();
     bool test=tmprdv.supprimer(coderdv);
     QMessageBox msgBox;
+    ui->tab_rdv->setModel(tmprdv.afficher());//refresh
     if(test)
-       {ui->tab_rdv->setModel(tmprdv.afficher());//refresh
+       {foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+            le->clear();
+         }
+        ui->tab_rdv->setModel(tmprdv.afficher());//refresh
         QMessageBox::information(nullptr, QObject::tr("Supprimer un rendez-vous"),
                     QObject::tr("rendez-vous supprimé.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
@@ -189,27 +203,32 @@ void MainWindow::on_pb_modifier_clicked(){
    QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
 
     int coderdv=ui->CodeRDV_3->text().toInt();
-    ui->CodeRDV_3->setValidator(validator_int);
+   ui->CodeRDV_3->setValidator(validator_int);
     QString medecin=ui->Docteur_3->text();
-    ui->Docteur_3->setValidator(validator_String);
+   ui->Docteur_3->setValidator(validator_String);
     QString date_rdv=ui->datem->text();
-    ui->datem->setValidator(validator_String);
+   ui->datem->setValidator(validator_String);
     QString time_rdv=ui->timem->text();
-    ui->timem->setValidator(validator_String);
+  ui->timem->setValidator(validator_String);
     QString service=ui->Service_3->text();
-    ui->Service_3->setValidator(validator_String);
+   ui->Service_3->setValidator(validator_String);
     int id_p=ui->ID_4m->text().toInt();
-    ui->ID_4m->setValidator(validator_int);
+   ui->ID_4m->setValidator(validator_int);
 
-        rdv r(coderdv, medecin, service, date_rdv, time_rdv, id_p);
+        rdv r(coderdv, medecin, date_rdv, time_rdv, service, id_p);
         bool test=r.modifier_rdv();
 
-        ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
+       ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
+ // ui->tab_rdv->setModel(tmprdv.afficher_liste_rdv());
+QMessageBox msgBox;
 
+        if(test/* && r.search(coderdv)==true*/){
+            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+               le->clear();
+            }
+             ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
 
-
-        if(test && r.search(coderdv)==true){
-                ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
+            msgBox.setText("modifier avec succes.");
 
                 QMessageBox::information(this, QObject::tr("Modifier un rendez-vous"),
                 QObject::tr("rendez-vous modifiée.\n"
@@ -261,14 +280,18 @@ void MainWindow::on_pb_modifier_clicked_2(){
 
 
 
-patient p(id,tel,telpap,nom,prenom,nompap,prenompap,adresse,situationf,assurancemed,codeassurance, typep, date_naissance,sexe/*,datepres,note,designationexr,resultatexr,designationexb,resultatexb,chirurigien,anesthesist,dateadm,typeadm,motifadm,nomacc,prenomacc,lienpar,dateent,datesor,motifsor,resultatsor,datedec,motifdec,datetrait,medadm*/);
+patient p(id,nom,prenom,sexe,tel,nompap,prenompap,telpap,adresse,situationf,assurancemed,codeassurance,date_naissance,typep);
         bool test=p.modifier_patient();
-
+QMessageBox msgBox;
         ui->tab_patients->setModel(tmppatient.afficher());   //refresh
 
 
 
         if(test && p.search(id)==true){
+            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+               le->clear();
+            }
+            msgBox.setText("modifier avec succes.");
              ui->tab_patients->setModel(tmppatient.afficher());   //refresh
 
              QMessageBox::information(this, QObject::tr("Modifier un patient"),

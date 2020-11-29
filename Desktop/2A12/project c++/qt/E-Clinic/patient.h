@@ -11,7 +11,7 @@ class patient
 
 public:
     patient();
-    patient(int,int,int,QString,QString,QString,QString,QString,QString,QString,QString,QString,QString,QString);
+    patient(int,QString,QString,QString,int,QString,QString,int,QString,QString,QString,QString,QString,QString);
     int getid();
     int gettel();
     int gettelpap();
@@ -51,7 +51,7 @@ public:
     bool supprimer(int);
 QSqlQueryModel* afficher_idpatient(int id);//search by id
    bool modifier_patient();
-    QSqlQueryModel * afficher_liste_patient();
+   // QSqlQueryModel * afficher_liste_patient();
 
     QSqlQueryModel* afficher_asc();
     QSqlQueryModel* afficher_desc();
