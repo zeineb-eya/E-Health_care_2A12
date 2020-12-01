@@ -60,7 +60,8 @@ void on_pb_desc_triTYPE_clicked_2();
 void on_pb_aff_client_clicked();
 void on_pushButton_2_clicked();
 
-
+//recherche rdv
+void on_pb_aff_rdv_clicked();
 
 void timefct();
 

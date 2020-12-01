@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>875</width>
-    <height>586</height>
+    <height>681</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
       <x>0</x>
       <y>0</y>
       <width>881</width>
-      <height>621</height>
+      <height>661</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -37,13 +37,13 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>80</y>
         <width>881</width>
         <height>521</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -72,7 +72,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>5</number>
+         <number>4</number>
         </property>
         <widget class="QWidget" name="tab_20">
          <attribute name="title">
@@ -319,7 +319,7 @@ color :white;
            <rect>
             <x>10</x>
             <y>30</y>
-            <width>841</width>
+            <width>851</width>
             <height>301</height>
            </rect>
           </property>
@@ -874,7 +874,7 @@ color :white;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>4</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_13">
          <attribute name="title">
@@ -1418,6 +1418,59 @@ color :white;
           </property>
          </widget>
         </widget>
+        <widget class="QWidget" name="tab_7">
+         <attribute name="title">
+          <string>recherche par code</string>
+         </attribute>
+         <widget class="QTableView" name="tab_aff_rdv">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>841</width>
+            <height>291</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit_aff_coderdv">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>30</y>
+            <width>113</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="placeholderText">
+           <string>code_rdv</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pb_aff_rdv">
+          <property name="geometry">
+           <rect>
+            <x>440</x>
+            <y>30</y>
+            <width>111</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+padding: 5px;
+border-radius: 5px;
+background-color:#0094ff;
+font-weight: bold;
+}
+QPushButton:hover
+{
+color :white;
+}</string>
+          </property>
+          <property name="text">
+           <string>Afficher</string>
+          </property>
+         </widget>
+        </widget>
         <widget class="QWidget" name="tab_10">
          <attribute name="title">
           <string>supprimer</string>
@@ -1501,6 +1554,22 @@ color :white;
         </property>
        </widget>
       </widget>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>0</y>
+        <width>91</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/logoeclinic.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
      </widget>
     </widget>
    </widget>

@@ -49,7 +49,7 @@ public:
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(int);
-QSqlQueryModel* afficher_idpatient(int id);//search by id
+   QSqlQueryModel* afficher_idpatient(int id);//search by id
    bool modifier_patient();
    // QSqlQueryModel * afficher_liste_patient();
 

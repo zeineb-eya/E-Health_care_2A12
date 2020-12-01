@@ -28,9 +28,10 @@ public:
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(int);
+QSqlQueryModel* afficher_coderdv(int coderdv);
+    bool modifier_rdv();
 
-  bool modifier_rdv();
-    //QSqlQueryModel * afficher_liste_rdv();
+bool modifier_r();
 
     QSqlQueryModel* afficher_asc();
     QSqlQueryModel* afficher_desc();

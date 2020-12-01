@@ -50,8 +50,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 //recherche par id patient
     connect(ui->pb_aff_client, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_client_clicked()));
-
-
+//recherche par coderdv
+     connect(ui->pb_aff_rdv, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_rdv_clicked()));
 
     //connect(ui->verify, SIGNAL(clicked(bool)), this, SLOT(verify()));//update
     timer = new QTimer(this);
@@ -81,8 +81,10 @@ void MainWindow::on_pb_ajouter_clicked()
     click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
     click->play();
     qDebug()<<click ->errorString();
-
+    //QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
+    //QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
     int id = ui->ID->text().toInt();
+    ui->ID->setValidator(new QIntValidator(0,99999999,this));
     QString nom = ui->Nom->text();
     QString prenom = ui->Prenom->text();
     QString sexe = ui->Sexe->text();
@@ -136,11 +138,13 @@ void MainWindow::on_pb_ajouter_clicked2()
 
     //RDV
     int coderdv=ui->CodeRDV->text().toInt();
+    ui->CodeRDV->setValidator(new QIntValidator(0,999,this));
     QString medecin=ui->Docteur->text();
     QString date_rdv=ui->datea->text();
     QString time_rdv=ui->timea->text();
     QString service=ui->Servicea->text();
     int id_p=ui->ID_3a->text().toInt();
+    ui->ID_3a->setValidator(new QIntValidator(0,99999999,this));
      rdv r(coderdv, medecin, date_rdv, time_rdv, service, id_p);
 
     bool test=r.ajouter();
@@ -223,47 +227,49 @@ void MainWindow::on_pb_modifier_clicked(){
         click->play();
         qDebug()<<click ->errorString();
 
-   QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
-   QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
+    // QValidator *validator_String=new QRegExpValidator(QRegExp("[A-Za-z]+"),this);
+       QValidator *validator_int=new QRegExpValidator(QRegExp("[0-9]+"),this);
 
     int coderdv=ui->CodeRDV_3->text().toInt();
-   ui->CodeRDV_3->setValidator(validator_int);
+    ui->CodeRDV_3->setValidator(new QIntValidator(0,999,this));
+    ui->CodeRDV_3->setValidator(validator_int);
     QString medecin=ui->Docteur_3->text();
-   ui->Docteur_3->setValidator(validator_String);
+  //ui->Docteur_3->setValidator(validator_String);
     QString date_rdv=ui->datem->text();
-   ui->datem->setValidator(validator_String);
+  //ui->datem->setValidator(validator_String);
     QString time_rdv=ui->timem->text();
-  ui->timem->setValidator(validator_String);
+   //ui->timem->setValidator(validator_String);
     QString service=ui->Service_3->text();
-   ui->Service_3->setValidator(validator_String);
+  //ui->Service_3->setValidator(validator_String);
     int id_p=ui->ID_4m->text().toInt();
-   ui->ID_4m->setValidator(validator_int);
+     ui->ID_4m->setValidator(validator_int);
+      ui->ID_4m->setValidator(new QIntValidator(0,99999999,this));
 
-        rdv r(coderdv, medecin, date_rdv, time_rdv, service, id_p);
-        bool test=r.modifier_rdv();
+      rdv r(coderdv, medecin, date_rdv, time_rdv, service, id_p);
+      bool test=r.modifier_r();
 
-       ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
-
-QMessageBox msgBox;
-
-        if(test/* && r.search(coderdv)==true*/){
-            foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
-               le->clear();
-            }
-             ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
-
-            msgBox.setText("modifier avec succes.");
-
-                QMessageBox::information(this, QObject::tr("Modifier un rendez-vous"),
-                QObject::tr("rendez-vous modifiée.\n"
-                            "Click Cancel to exit."), QMessageBox::Cancel);
+      ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
+      QMessageBox msgBox;
+              ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
 
 
-            }
-              else
-                 QMessageBox::critical(this, QObject::tr("Modifier un rendez-vous"),
-                              QObject::tr("Erreur !.\n"
-                                          "Click Cancel to exit."), QMessageBox::Cancel);
+              if(test /*&& r.search(coderdv)==true*/){
+                  foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
+                     le->clear();
+                  }
+                  msgBox.setText("modifier avec succes.");
+                   ui->tab_rdv->setModel(tmprdv.afficher());   //refresh
+
+                   QMessageBox::information(this, QObject::tr("Modifier un rdv"),
+                   QObject::tr("rdv modifiée.\n"
+                               "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+               }
+                 else
+                    QMessageBox::critical(this, QObject::tr("Modifier un rdv"),
+                                 QObject::tr("Erreur !.\n"
+                                             "Click Cancel to exit."), QMessageBox::Cancel);
 }
 void MainWindow::on_pb_modifier_clicked_2(){
     //button sound
@@ -276,6 +282,7 @@ void MainWindow::on_pb_modifier_clicked_2(){
 
 
     int id = ui->ID_2->text().toInt();
+    ui->ID_2->setValidator(new QIntValidator(0,99999999,this));
     ui->ID_2->setValidator(validator_int);
     QString nom = ui->Nom_2->text();
     ui->Nom_2->setValidator(validator_String);
@@ -315,7 +322,7 @@ QMessageBox msgBox;
 
 
 
-        if(test && p.search(id)==true){
+        if(test /*&& p.search(id)==true*/){
             foreach(QLineEdit* le, findChildren<QLineEdit*>()) {
                le->clear();
             }
@@ -413,6 +420,7 @@ void MainWindow::on_pb_desc_triTYPE_clicked_2(){
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
+
     ui->tmppatient_tri->setModel(tmppatient.afficher_desctype());
 }
 
@@ -437,6 +445,15 @@ void MainWindow::on_pb_aff_client_clicked(){
         qDebug()<<click ->errorString();
     int id = ui->lineEdit_aff_idpatient->text().toInt();
     ui->tab_aff_patient->setModel(tmppatient.afficher_idpatient(id));
+}
+
+void MainWindow::on_pb_aff_rdv_clicked(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+    int coderdv = ui->lineEdit_aff_coderdv->text().toInt();
+    ui->tab_aff_rdv->setModel(tmprdv.afficher_coderdv(coderdv));
 }
 
 void MainWindow::timefct()

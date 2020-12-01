@@ -264,7 +264,7 @@ QSqlQueryModel* patient::afficher_asctype()//tri asc
 QSqlQueryModel* patient::afficher_desctype() //trie desc
 {
     QSqlQueryModel* model= new QSqlQueryModel();
-    model->setQuery("select * from PATIENTS ORDER BY id typepatient");
+    model->setQuery("select * from PATIENTS ORDER BY typepatient DESC");
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
