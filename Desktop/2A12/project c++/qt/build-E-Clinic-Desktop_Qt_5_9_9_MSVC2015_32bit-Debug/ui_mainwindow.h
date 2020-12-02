@@ -21,6 +21,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
@@ -59,6 +60,29 @@ public:
     QWidget *tab_21;
     QTableView *tab_patients;
     QPushButton *pushButton_1;
+    QPushButton *afficher;
+    QStackedWidget *widgetrecherche_2;
+    QWidget *page_26;
+    QPushButton *Rechercher_2;
+    QWidget *page_27;
+    QPushButton *pushButton_47;
+    QLineEdit *lineEdit_aff_idpatient;
+    QPushButton *pb_aff_client;
+    QLineEdit *lineEdit_aff_nompatient;
+    QPushButton *pb_aff_client_2;
+    QLineEdit *lineEdit_aff_prenompatient;
+    QPushButton *pb_aff_client_3;
+    QStackedWidget *widgettrie_2;
+    QWidget *page_28;
+    QPushButton *Trie_2;
+    QWidget *page_29;
+    QPushButton *pushButton_48;
+    QPushButton *pb_desc_tri_6;
+    QPushButton *pb_asc_tri_2;
+    QPushButton *pb_desc_tri_2;
+    QPushButton *pb_desc_tri_5;
+    QPushButton *pb_asc_tri_5;
+    QPushButton *pb_asc_tri_6;
     QWidget *tab_9;
     QTabWidget *tabWidget_9;
     QWidget *tab_6;
@@ -80,16 +104,6 @@ public:
     QWidget *tab_8;
     QLineEdit *ID_5;
     QPushButton *supprimerp;
-    QWidget *tab_3;
-    QPushButton *pb_aff_client;
-    QLineEdit *lineEdit_aff_idpatient;
-    QTableView *tab_aff_patient;
-    QWidget *tab_53;
-    QPushButton *pb_asc_tri_2;
-    QPushButton *pb_desc_tri_2;
-    QTableView *tmppatient_tri;
-    QPushButton *pb_asc_tri_5;
-    QPushButton *pb_desc_tri_5;
     QPushButton *cancelButton;
     QWidget *tab_4;
     QTabWidget *tabWidget_5;
@@ -110,6 +124,29 @@ public:
     QCalendarWidget *calendarWidget_2;
     QWidget *tab_14;
     QTableView *tab_rdv;
+    QPushButton *afficher_2;
+    QStackedWidget *widgetrecherche;
+    QWidget *page_22;
+    QPushButton *Rechercher;
+    QWidget *page_23;
+    QPushButton *pushButton_45;
+    QLineEdit *lineEdit_aff_coderdv;
+    QPushButton *pb_aff_rdv;
+    QLineEdit *lineEdit_aff_doc;
+    QPushButton *pb_aff_rdv_2;
+    QLineEdit *lineEdit_aff_ID;
+    QPushButton *pb_aff_rdv_3;
+    QStackedWidget *widgettrie;
+    QWidget *page_24;
+    QPushButton *Trie;
+    QWidget *page_25;
+    QPushButton *pushButton_46;
+    QPushButton *pb_desc_tri_3;
+    QPushButton *pb_desc_tri_4;
+    QPushButton *pb_asc_tri_4;
+    QPushButton *pb_desc_tri;
+    QPushButton *pb_asc_tri_3;
+    QPushButton *pb_asc_tri;
     QWidget *tab_11;
     QCalendarWidget *calendarWidget_4;
     QGroupBox *groupBox_4;
@@ -125,19 +162,12 @@ public:
     QLineEdit *datem;
     QLineEdit *timem;
     QPushButton *pb_modifierrdv;
-    QWidget *tab_19;
-    QTableView *tmprdv_tri;
-    QPushButton *pb_asc_tri;
-    QPushButton *pb_desc_tri;
-    QPushButton *pb_asc_tri_3;
-    QPushButton *pb_desc_tri_3;
-    QPushButton *pb_asc_tri_4;
-    QPushButton *pb_desc_tri_4;
     QWidget *tab_10;
     QPushButton *supprimerr;
     QLineEdit *CodeRDV_2;
     QLabel *label_2;
     QPushButton *cancelButton_2;
+    QLabel *label_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -145,18 +175,18 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(875, 586);
+        MainWindow->resize(875, 681);
         MainWindow->setStyleSheet(QStringLiteral("background-image: url(:/background.png);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 881, 621));
+        tabWidget->setGeometry(QRect(0, 0, 881, 661));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         tabWidget_2 = new QTabWidget(tab);
         tabWidget_2->setObjectName(QStringLiteral("tabWidget_2"));
-        tabWidget_2->setGeometry(QRect(0, 0, 881, 521));
+        tabWidget_2->setGeometry(QRect(0, 80, 881, 561));
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
         label = new QLabel(tab_5);
@@ -164,7 +194,7 @@ public:
         label->setGeometry(QRect(690, 0, 161, 21));
         tabWidget_7 = new QTabWidget(tab_5);
         tabWidget_7->setObjectName(QStringLiteral("tabWidget_7"));
-        tabWidget_7->setGeometry(QRect(0, 20, 891, 441));
+        tabWidget_7->setGeometry(QRect(-10, 0, 891, 491));
         tab_20 = new QWidget();
         tab_20->setObjectName(QStringLiteral("tab_20"));
         tabWidget_8 = new QTabWidget(tab_20);
@@ -235,10 +265,10 @@ public:
         tab_21->setObjectName(QStringLiteral("tab_21"));
         tab_patients = new QTableView(tab_21);
         tab_patients->setObjectName(QStringLiteral("tab_patients"));
-        tab_patients->setGeometry(QRect(10, 30, 841, 301));
+        tab_patients->setGeometry(QRect(200, 160, 671, 301));
         pushButton_1 = new QPushButton(tab_21);
         pushButton_1->setObjectName(QStringLiteral("pushButton_1"));
-        pushButton_1->setGeometry(QRect(400, 350, 75, 23));
+        pushButton_1->setGeometry(QRect(50, 250, 75, 23));
         pushButton_1->setStyleSheet(QLatin1String("QPushButton {\n"
 "padding: 5px;\n"
 "border-radius: 5px;\n"
@@ -249,6 +279,215 @@ public:
 "{\n"
 "color :white;\n"
 "}"));
+        afficher = new QPushButton(tab_21);
+        afficher->setObjectName(QStringLiteral("afficher"));
+        afficher->setGeometry(QRect(50, 320, 75, 23));
+        afficher->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgetrecherche_2 = new QStackedWidget(tab_21);
+        widgetrecherche_2->setObjectName(QStringLiteral("widgetrecherche_2"));
+        widgetrecherche_2->setGeometry(QRect(10, 10, 181, 191));
+        page_26 = new QWidget();
+        page_26->setObjectName(QStringLiteral("page_26"));
+        Rechercher_2 = new QPushButton(page_26);
+        Rechercher_2->setObjectName(QStringLiteral("Rechercher_2"));
+        Rechercher_2->setGeometry(QRect(50, 70, 75, 23));
+        Rechercher_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgetrecherche_2->addWidget(page_26);
+        page_27 = new QWidget();
+        page_27->setObjectName(QStringLiteral("page_27"));
+        pushButton_47 = new QPushButton(page_27);
+        pushButton_47->setObjectName(QStringLiteral("pushButton_47"));
+        pushButton_47->setGeometry(QRect(130, 170, 51, 21));
+        pushButton_47->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        lineEdit_aff_idpatient = new QLineEdit(page_27);
+        lineEdit_aff_idpatient->setObjectName(QStringLiteral("lineEdit_aff_idpatient"));
+        lineEdit_aff_idpatient->setGeometry(QRect(40, 20, 113, 21));
+        pb_aff_client = new QPushButton(page_27);
+        pb_aff_client->setObjectName(QStringLiteral("pb_aff_client"));
+        pb_aff_client->setGeometry(QRect(40, 40, 121, 21));
+        pb_aff_client->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        lineEdit_aff_nompatient = new QLineEdit(page_27);
+        lineEdit_aff_nompatient->setObjectName(QStringLiteral("lineEdit_aff_nompatient"));
+        lineEdit_aff_nompatient->setGeometry(QRect(40, 60, 113, 21));
+        pb_aff_client_2 = new QPushButton(page_27);
+        pb_aff_client_2->setObjectName(QStringLiteral("pb_aff_client_2"));
+        pb_aff_client_2->setGeometry(QRect(40, 90, 121, 21));
+        pb_aff_client_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        lineEdit_aff_prenompatient = new QLineEdit(page_27);
+        lineEdit_aff_prenompatient->setObjectName(QStringLiteral("lineEdit_aff_prenompatient"));
+        lineEdit_aff_prenompatient->setGeometry(QRect(40, 110, 113, 21));
+        pb_aff_client_3 = new QPushButton(page_27);
+        pb_aff_client_3->setObjectName(QStringLiteral("pb_aff_client_3"));
+        pb_aff_client_3->setGeometry(QRect(40, 140, 121, 21));
+        pb_aff_client_3->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgetrecherche_2->addWidget(page_27);
+        widgettrie_2 = new QStackedWidget(tab_21);
+        widgettrie_2->setObjectName(QStringLiteral("widgettrie_2"));
+        widgettrie_2->setGeometry(QRect(550, 0, 311, 151));
+        page_28 = new QWidget();
+        page_28->setObjectName(QStringLiteral("page_28"));
+        Trie_2 = new QPushButton(page_28);
+        Trie_2->setObjectName(QStringLiteral("Trie_2"));
+        Trie_2->setGeometry(QRect(110, 60, 75, 23));
+        Trie_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgettrie_2->addWidget(page_28);
+        page_29 = new QWidget();
+        page_29->setObjectName(QStringLiteral("page_29"));
+        pushButton_48 = new QPushButton(page_29);
+        pushButton_48->setObjectName(QStringLiteral("pushButton_48"));
+        pushButton_48->setGeometry(QRect(250, 120, 51, 21));
+        pushButton_48->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_desc_tri_6 = new QPushButton(page_29);
+        pb_desc_tri_6->setObjectName(QStringLiteral("pb_desc_tri_6"));
+        pb_desc_tri_6->setGeometry(QRect(160, 90, 141, 23));
+        pb_desc_tri_6->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_asc_tri_2 = new QPushButton(page_29);
+        pb_asc_tri_2->setObjectName(QStringLiteral("pb_asc_tri_2"));
+        pb_asc_tri_2->setGeometry(QRect(26, 30, 111, 23));
+        pb_asc_tri_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_desc_tri_2 = new QPushButton(page_29);
+        pb_desc_tri_2->setObjectName(QStringLiteral("pb_desc_tri_2"));
+        pb_desc_tri_2->setGeometry(QRect(160, 30, 111, 23));
+        pb_desc_tri_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_desc_tri_5 = new QPushButton(page_29);
+        pb_desc_tri_5->setObjectName(QStringLiteral("pb_desc_tri_5"));
+        pb_desc_tri_5->setGeometry(QRect(160, 60, 111, 23));
+        pb_desc_tri_5->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_asc_tri_5 = new QPushButton(page_29);
+        pb_asc_tri_5->setObjectName(QStringLiteral("pb_asc_tri_5"));
+        pb_asc_tri_5->setGeometry(QRect(26, 60, 111, 23));
+        pb_asc_tri_5->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_asc_tri_6 = new QPushButton(page_29);
+        pb_asc_tri_6->setObjectName(QStringLiteral("pb_asc_tri_6"));
+        pb_asc_tri_6->setGeometry(QRect(6, 90, 131, 23));
+        pb_asc_tri_6->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgettrie_2->addWidget(page_29);
         tabWidget_7->addTab(tab_21, QString());
         tab_9 = new QWidget();
         tab_9->setObjectName(QStringLiteral("tab_9"));
@@ -347,89 +586,9 @@ public:
 "color :white;\n"
 "}"));
         tabWidget_7->addTab(tab_8, QString());
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QStringLiteral("tab_3"));
-        pb_aff_client = new QPushButton(tab_3);
-        pb_aff_client->setObjectName(QStringLiteral("pb_aff_client"));
-        pb_aff_client->setGeometry(QRect(440, 50, 111, 21));
-        pb_aff_client->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        lineEdit_aff_idpatient = new QLineEdit(tab_3);
-        lineEdit_aff_idpatient->setObjectName(QStringLiteral("lineEdit_aff_idpatient"));
-        lineEdit_aff_idpatient->setGeometry(QRect(160, 50, 113, 21));
-        tab_aff_patient = new QTableView(tab_3);
-        tab_aff_patient->setObjectName(QStringLiteral("tab_aff_patient"));
-        tab_aff_patient->setGeometry(QRect(10, 100, 841, 291));
-        tabWidget_7->addTab(tab_3, QString());
-        tab_53 = new QWidget();
-        tab_53->setObjectName(QStringLiteral("tab_53"));
-        pb_asc_tri_2 = new QPushButton(tab_53);
-        pb_asc_tri_2->setObjectName(QStringLiteral("pb_asc_tri_2"));
-        pb_asc_tri_2->setGeometry(QRect(50, 10, 91, 23));
-        pb_asc_tri_2->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        pb_desc_tri_2 = new QPushButton(tab_53);
-        pb_desc_tri_2->setObjectName(QStringLiteral("pb_desc_tri_2"));
-        pb_desc_tri_2->setGeometry(QRect(164, 10, 91, 23));
-        pb_desc_tri_2->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        tmppatient_tri = new QTableView(tab_53);
-        tmppatient_tri->setObjectName(QStringLiteral("tmppatient_tri"));
-        tmppatient_tri->setGeometry(QRect(10, 50, 841, 321));
-        pb_asc_tri_5 = new QPushButton(tab_53);
-        pb_asc_tri_5->setObjectName(QStringLiteral("pb_asc_tri_5"));
-        pb_asc_tri_5->setGeometry(QRect(570, 10, 111, 23));
-        pb_asc_tri_5->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        pb_desc_tri_5 = new QPushButton(tab_53);
-        pb_desc_tri_5->setObjectName(QStringLiteral("pb_desc_tri_5"));
-        pb_desc_tri_5->setGeometry(QRect(704, 10, 111, 23));
-        pb_desc_tri_5->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        tabWidget_7->addTab(tab_53, QString());
         cancelButton = new QPushButton(tab_5);
         cancelButton->setObjectName(QStringLiteral("cancelButton"));
-        cancelButton->setGeometry(QRect(400, 460, 75, 23));
+        cancelButton->setGeometry(QRect(390, 490, 75, 23));
         cancelButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "padding: 5px;\n"
 "border-radius: 5px;\n"
@@ -445,7 +604,7 @@ public:
         tab_4->setObjectName(QStringLiteral("tab_4"));
         tabWidget_5 = new QTabWidget(tab_4);
         tabWidget_5->setObjectName(QStringLiteral("tabWidget_5"));
-        tabWidget_5->setGeometry(QRect(0, 20, 871, 431));
+        tabWidget_5->setGeometry(QRect(0, 10, 871, 481));
         tab_13 = new QWidget();
         tab_13->setObjectName(QStringLiteral("tab_13"));
         groupBox_2 = new QGroupBox(tab_13);
@@ -505,7 +664,216 @@ public:
         tab_14->setObjectName(QStringLiteral("tab_14"));
         tab_rdv = new QTableView(tab_14);
         tab_rdv->setObjectName(QStringLiteral("tab_rdv"));
-        tab_rdv->setGeometry(QRect(10, 20, 851, 331));
+        tab_rdv->setGeometry(QRect(190, 170, 661, 281));
+        afficher_2 = new QPushButton(tab_14);
+        afficher_2->setObjectName(QStringLiteral("afficher_2"));
+        afficher_2->setGeometry(QRect(40, 310, 75, 23));
+        afficher_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgetrecherche = new QStackedWidget(tab_14);
+        widgetrecherche->setObjectName(QStringLiteral("widgetrecherche"));
+        widgetrecherche->setGeometry(QRect(0, 10, 181, 211));
+        page_22 = new QWidget();
+        page_22->setObjectName(QStringLiteral("page_22"));
+        Rechercher = new QPushButton(page_22);
+        Rechercher->setObjectName(QStringLiteral("Rechercher"));
+        Rechercher->setGeometry(QRect(50, 70, 75, 23));
+        Rechercher->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgetrecherche->addWidget(page_22);
+        page_23 = new QWidget();
+        page_23->setObjectName(QStringLiteral("page_23"));
+        pushButton_45 = new QPushButton(page_23);
+        pushButton_45->setObjectName(QStringLiteral("pushButton_45"));
+        pushButton_45->setGeometry(QRect(130, 180, 51, 21));
+        pushButton_45->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        lineEdit_aff_coderdv = new QLineEdit(page_23);
+        lineEdit_aff_coderdv->setObjectName(QStringLiteral("lineEdit_aff_coderdv"));
+        lineEdit_aff_coderdv->setGeometry(QRect(30, 20, 113, 21));
+        pb_aff_rdv = new QPushButton(page_23);
+        pb_aff_rdv->setObjectName(QStringLiteral("pb_aff_rdv"));
+        pb_aff_rdv->setGeometry(QRect(20, 50, 131, 21));
+        pb_aff_rdv->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        lineEdit_aff_doc = new QLineEdit(page_23);
+        lineEdit_aff_doc->setObjectName(QStringLiteral("lineEdit_aff_doc"));
+        lineEdit_aff_doc->setGeometry(QRect(30, 70, 113, 21));
+        pb_aff_rdv_2 = new QPushButton(page_23);
+        pb_aff_rdv_2->setObjectName(QStringLiteral("pb_aff_rdv_2"));
+        pb_aff_rdv_2->setGeometry(QRect(20, 100, 131, 21));
+        pb_aff_rdv_2->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        lineEdit_aff_ID = new QLineEdit(page_23);
+        lineEdit_aff_ID->setObjectName(QStringLiteral("lineEdit_aff_ID"));
+        lineEdit_aff_ID->setGeometry(QRect(30, 130, 113, 21));
+        pb_aff_rdv_3 = new QPushButton(page_23);
+        pb_aff_rdv_3->setObjectName(QStringLiteral("pb_aff_rdv_3"));
+        pb_aff_rdv_3->setGeometry(QRect(20, 160, 131, 21));
+        pb_aff_rdv_3->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgetrecherche->addWidget(page_23);
+        widgettrie = new QStackedWidget(tab_14);
+        widgettrie->setObjectName(QStringLiteral("widgettrie"));
+        widgettrie->setGeometry(QRect(570, 0, 261, 151));
+        page_24 = new QWidget();
+        page_24->setObjectName(QStringLiteral("page_24"));
+        Trie = new QPushButton(page_24);
+        Trie->setObjectName(QStringLiteral("Trie"));
+        Trie->setGeometry(QRect(100, 50, 75, 23));
+        Trie->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgettrie->addWidget(page_24);
+        page_25 = new QWidget();
+        page_25->setObjectName(QStringLiteral("page_25"));
+        pushButton_46 = new QPushButton(page_25);
+        pushButton_46->setObjectName(QStringLiteral("pushButton_46"));
+        pushButton_46->setGeometry(QRect(200, 120, 51, 21));
+        pushButton_46->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_desc_tri_3 = new QPushButton(page_25);
+        pb_desc_tri_3->setObjectName(QStringLiteral("pb_desc_tri_3"));
+        pb_desc_tri_3->setGeometry(QRect(124, 90, 121, 23));
+        pb_desc_tri_3->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_desc_tri_4 = new QPushButton(page_25);
+        pb_desc_tri_4->setObjectName(QStringLiteral("pb_desc_tri_4"));
+        pb_desc_tri_4->setGeometry(QRect(124, 30, 121, 23));
+        pb_desc_tri_4->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_asc_tri_4 = new QPushButton(page_25);
+        pb_asc_tri_4->setObjectName(QStringLiteral("pb_asc_tri_4"));
+        pb_asc_tri_4->setGeometry(QRect(10, 30, 111, 23));
+        pb_asc_tri_4->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_desc_tri = new QPushButton(page_25);
+        pb_desc_tri->setObjectName(QStringLiteral("pb_desc_tri"));
+        pb_desc_tri->setGeometry(QRect(124, 60, 121, 23));
+        pb_desc_tri->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_asc_tri_3 = new QPushButton(page_25);
+        pb_asc_tri_3->setObjectName(QStringLiteral("pb_asc_tri_3"));
+        pb_asc_tri_3->setGeometry(QRect(10, 90, 111, 23));
+        pb_asc_tri_3->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        pb_asc_tri = new QPushButton(page_25);
+        pb_asc_tri->setObjectName(QStringLiteral("pb_asc_tri"));
+        pb_asc_tri->setGeometry(QRect(10, 60, 111, 23));
+        pb_asc_tri->setStyleSheet(QLatin1String("QPushButton {\n"
+"padding: 5px;\n"
+"border-radius: 5px;\n"
+"background-color:#0094ff;\n"
+"font-weight: bold;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"color :white;\n"
+"}"));
+        widgettrie->addWidget(page_25);
         tabWidget_5->addTab(tab_14, QString());
         tab_11 = new QWidget();
         tab_11->setObjectName(QStringLiteral("tab_11"));
@@ -564,90 +932,6 @@ public:
 "color :white;\n"
 "}"));
         tabWidget_5->addTab(tab_11, QString());
-        tab_19 = new QWidget();
-        tab_19->setObjectName(QStringLiteral("tab_19"));
-        tmprdv_tri = new QTableView(tab_19);
-        tmprdv_tri->setObjectName(QStringLiteral("tmprdv_tri"));
-        tmprdv_tri->setGeometry(QRect(10, 40, 851, 321));
-        pb_asc_tri = new QPushButton(tab_19);
-        pb_asc_tri->setObjectName(QStringLiteral("pb_asc_tri"));
-        pb_asc_tri->setGeometry(QRect(16, 10, 111, 23));
-        pb_asc_tri->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        pb_desc_tri = new QPushButton(tab_19);
-        pb_desc_tri->setObjectName(QStringLiteral("pb_desc_tri"));
-        pb_desc_tri->setGeometry(QRect(130, 10, 111, 23));
-        pb_desc_tri->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        pb_asc_tri_3 = new QPushButton(tab_19);
-        pb_asc_tri_3->setObjectName(QStringLiteral("pb_asc_tri_3"));
-        pb_asc_tri_3->setGeometry(QRect(310, 10, 111, 23));
-        pb_asc_tri_3->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        pb_desc_tri_3 = new QPushButton(tab_19);
-        pb_desc_tri_3->setObjectName(QStringLiteral("pb_desc_tri_3"));
-        pb_desc_tri_3->setGeometry(QRect(424, 10, 111, 23));
-        pb_desc_tri_3->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        pb_asc_tri_4 = new QPushButton(tab_19);
-        pb_asc_tri_4->setObjectName(QStringLiteral("pb_asc_tri_4"));
-        pb_asc_tri_4->setGeometry(QRect(606, 10, 111, 23));
-        pb_asc_tri_4->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        pb_desc_tri_4 = new QPushButton(tab_19);
-        pb_desc_tri_4->setObjectName(QStringLiteral("pb_desc_tri_4"));
-        pb_desc_tri_4->setGeometry(QRect(720, 10, 121, 23));
-        pb_desc_tri_4->setStyleSheet(QLatin1String("QPushButton {\n"
-"padding: 5px;\n"
-"border-radius: 5px;\n"
-"background-color:#0094ff;\n"
-"font-weight: bold;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"color :white;\n"
-"}"));
-        tabWidget_5->addTab(tab_19, QString());
         tab_10 = new QWidget();
         tab_10->setObjectName(QStringLiteral("tab_10"));
         supprimerr = new QPushButton(tab_10);
@@ -672,7 +956,7 @@ public:
         label_2->setGeometry(QRect(610, 0, 161, 21));
         cancelButton_2 = new QPushButton(tab_4);
         cancelButton_2->setObjectName(QStringLiteral("cancelButton_2"));
-        cancelButton_2->setGeometry(QRect(390, 470, 75, 23));
+        cancelButton_2->setGeometry(QRect(400, 490, 75, 23));
         cancelButton_2->setStyleSheet(QLatin1String("QPushButton {\n"
 "padding: 5px;\n"
 "border-radius: 5px;\n"
@@ -684,6 +968,10 @@ public:
 "color :white;\n"
 "}"));
         tabWidget_2->addTab(tab_4, QString());
+        label_3 = new QLabel(tab);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(770, 0, 91, 91));
+        label_3->setStyleSheet(QStringLiteral("image: url(:/logoeclinic.png);"));
         tabWidget->addTab(tab, QString());
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -698,10 +986,14 @@ public:
 
         tabWidget->setCurrentIndex(0);
         tabWidget_2->setCurrentIndex(1);
-        tabWidget_7->setCurrentIndex(5);
+        tabWidget_7->setCurrentIndex(1);
         tabWidget_8->setCurrentIndex(0);
+        widgetrecherche_2->setCurrentIndex(0);
+        widgettrie_2->setCurrentIndex(1);
         tabWidget_9->setCurrentIndex(0);
-        tabWidget_5->setCurrentIndex(4);
+        tabWidget_5->setCurrentIndex(1);
+        widgetrecherche->setCurrentIndex(0);
+        widgettrie->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -729,6 +1021,23 @@ public:
         tabWidget_8->setTabText(tabWidget_8->indexOf(tab_2), QApplication::translate("MainWindow", "Patient", Q_NULLPTR));
         tabWidget_7->setTabText(tabWidget_7->indexOf(tab_20), QApplication::translate("MainWindow", "Ajouter patient", Q_NULLPTR));
         pushButton_1->setText(QApplication::translate("MainWindow", "Print", Q_NULLPTR));
+        afficher->setText(QApplication::translate("MainWindow", "afficher", Q_NULLPTR));
+        Rechercher_2->setText(QApplication::translate("MainWindow", "Rechercher", Q_NULLPTR));
+        pushButton_47->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
+        lineEdit_aff_idpatient->setPlaceholderText(QApplication::translate("MainWindow", "ID patient", Q_NULLPTR));
+        pb_aff_client->setText(QApplication::translate("MainWindow", "rechercher id", Q_NULLPTR));
+        lineEdit_aff_nompatient->setPlaceholderText(QApplication::translate("MainWindow", "nom patient", Q_NULLPTR));
+        pb_aff_client_2->setText(QApplication::translate("MainWindow", "rechercher nom", Q_NULLPTR));
+        lineEdit_aff_prenompatient->setPlaceholderText(QApplication::translate("MainWindow", "prenom patient", Q_NULLPTR));
+        pb_aff_client_3->setText(QApplication::translate("MainWindow", "rechercher prenom", Q_NULLPTR));
+        Trie_2->setText(QApplication::translate("MainWindow", "Trie", Q_NULLPTR));
+        pushButton_48->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
+        pb_desc_tri_6->setText(QApplication::translate("MainWindow", "Descendant assurance", Q_NULLPTR));
+        pb_asc_tri_2->setText(QApplication::translate("MainWindow", "Ascendant ID", Q_NULLPTR));
+        pb_desc_tri_2->setText(QApplication::translate("MainWindow", "Descendant ID", Q_NULLPTR));
+        pb_desc_tri_5->setText(QApplication::translate("MainWindow", "Descendant Type", Q_NULLPTR));
+        pb_asc_tri_5->setText(QApplication::translate("MainWindow", "Ascendant Type", Q_NULLPTR));
+        pb_asc_tri_6->setText(QApplication::translate("MainWindow", "Ascendant assurance", Q_NULLPTR));
         tabWidget_7->setTabText(tabWidget_7->indexOf(tab_21), QApplication::translate("MainWindow", "Afficher patient", Q_NULLPTR));
         Nom_2->setPlaceholderText(QApplication::translate("MainWindow", "Nom", Q_NULLPTR));
         TypePatients_2->setPlaceholderText(QApplication::translate("MainWindow", "TypePatients", Q_NULLPTR));
@@ -750,14 +1059,6 @@ public:
         ID_5->setPlaceholderText(QApplication::translate("MainWindow", "ID", Q_NULLPTR));
         supprimerp->setText(QApplication::translate("MainWindow", "supprimer", Q_NULLPTR));
         tabWidget_7->setTabText(tabWidget_7->indexOf(tab_8), QApplication::translate("MainWindow", "supprimer", Q_NULLPTR));
-        pb_aff_client->setText(QApplication::translate("MainWindow", "Afficher", Q_NULLPTR));
-        lineEdit_aff_idpatient->setPlaceholderText(QApplication::translate("MainWindow", "ID patient", Q_NULLPTR));
-        tabWidget_7->setTabText(tabWidget_7->indexOf(tab_3), QApplication::translate("MainWindow", "recherche par id", Q_NULLPTR));
-        pb_asc_tri_2->setText(QApplication::translate("MainWindow", "Ascendant ID", Q_NULLPTR));
-        pb_desc_tri_2->setText(QApplication::translate("MainWindow", "Descendant ID", Q_NULLPTR));
-        pb_asc_tri_5->setText(QApplication::translate("MainWindow", "Ascendant Type", Q_NULLPTR));
-        pb_desc_tri_5->setText(QApplication::translate("MainWindow", "Descendant Type", Q_NULLPTR));
-        tabWidget_7->setTabText(tabWidget_7->indexOf(tab_53), QApplication::translate("MainWindow", "Trie", Q_NULLPTR));
         cancelButton->setText(QApplication::translate("MainWindow", "cancel", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_5), QApplication::translate("MainWindow", "information patient", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Gestion  d'ajout", Q_NULLPTR));
@@ -768,6 +1069,23 @@ public:
         label_13->setText(QApplication::translate("MainWindow", "Id Patient", Q_NULLPTR));
         pb_ajouter_2->setText(QApplication::translate("MainWindow", "Ajouter", Q_NULLPTR));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_13), QApplication::translate("MainWindow", "Ajouter RDV", Q_NULLPTR));
+        afficher_2->setText(QApplication::translate("MainWindow", "afficher", Q_NULLPTR));
+        Rechercher->setText(QApplication::translate("MainWindow", "Rechercher", Q_NULLPTR));
+        pushButton_45->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
+        lineEdit_aff_coderdv->setPlaceholderText(QApplication::translate("MainWindow", "code_rdv", Q_NULLPTR));
+        pb_aff_rdv->setText(QApplication::translate("MainWindow", "rechercher code", Q_NULLPTR));
+        lineEdit_aff_doc->setPlaceholderText(QApplication::translate("MainWindow", "dorcteur", Q_NULLPTR));
+        pb_aff_rdv_2->setText(QApplication::translate("MainWindow", "rechercher docteur", Q_NULLPTR));
+        lineEdit_aff_ID->setPlaceholderText(QApplication::translate("MainWindow", "ID_P", Q_NULLPTR));
+        pb_aff_rdv_3->setText(QApplication::translate("MainWindow", "rechercher ID", Q_NULLPTR));
+        Trie->setText(QApplication::translate("MainWindow", "Trie", Q_NULLPTR));
+        pushButton_46->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
+        pb_desc_tri_3->setText(QApplication::translate("MainWindow", "Descendant ID", Q_NULLPTR));
+        pb_desc_tri_4->setText(QApplication::translate("MainWindow", "Descendant doctor", Q_NULLPTR));
+        pb_asc_tri_4->setText(QApplication::translate("MainWindow", "Ascendant doctor", Q_NULLPTR));
+        pb_desc_tri->setText(QApplication::translate("MainWindow", "Descendant code", Q_NULLPTR));
+        pb_asc_tri_3->setText(QApplication::translate("MainWindow", "Ascendant ID", Q_NULLPTR));
+        pb_asc_tri->setText(QApplication::translate("MainWindow", "Ascendant code", Q_NULLPTR));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_14), QApplication::translate("MainWindow", "Afficher RDV", Q_NULLPTR));
         groupBox_4->setTitle(QApplication::translate("MainWindow", "Gestion  de modification", Q_NULLPTR));
         label_19->setText(QApplication::translate("MainWindow", "Code de rendez-vous", Q_NULLPTR));
@@ -777,19 +1095,13 @@ public:
         label_23->setText(QApplication::translate("MainWindow", "Id Patient", Q_NULLPTR));
         pb_modifierrdv->setText(QApplication::translate("MainWindow", "Modifier", Q_NULLPTR));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_11), QApplication::translate("MainWindow", "modifier", Q_NULLPTR));
-        pb_asc_tri->setText(QApplication::translate("MainWindow", "Ascendant code", Q_NULLPTR));
-        pb_desc_tri->setText(QApplication::translate("MainWindow", "Descendant code", Q_NULLPTR));
-        pb_asc_tri_3->setText(QApplication::translate("MainWindow", "Ascendant ID", Q_NULLPTR));
-        pb_desc_tri_3->setText(QApplication::translate("MainWindow", "Descendant ID", Q_NULLPTR));
-        pb_asc_tri_4->setText(QApplication::translate("MainWindow", "Ascendant doctor", Q_NULLPTR));
-        pb_desc_tri_4->setText(QApplication::translate("MainWindow", "Descendant doctor", Q_NULLPTR));
-        tabWidget_5->setTabText(tabWidget_5->indexOf(tab_19), QApplication::translate("MainWindow", "Trie", Q_NULLPTR));
         supprimerr->setText(QApplication::translate("MainWindow", "supprimer", Q_NULLPTR));
         CodeRDV_2->setPlaceholderText(QApplication::translate("MainWindow", "CodeRDV", Q_NULLPTR));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_10), QApplication::translate("MainWindow", "supprimer", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "time", Q_NULLPTR));
         cancelButton_2->setText(QApplication::translate("MainWindow", "cancel", Q_NULLPTR));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QApplication::translate("MainWindow", "rendez-vous", Q_NULLPTR));
+        label_3->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "gestion des patients", Q_NULLPTR));
     } // retranslateUi
 

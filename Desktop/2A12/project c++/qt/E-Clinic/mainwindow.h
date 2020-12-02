@@ -69,6 +69,15 @@ void on_pushButton_2_clicked();
 void on_pb_aff_rdv_clicked();//code
 void on_pb_aff_rdv_clicked2();//doctor
 void on_pb_aff_rdv_clicked3();//id
+void on_pushButton_45_clicked();//back
+void on_Rechercher_clicked();//recherche
+void on_pushButton_46_clicked();//back
+void on_Trie_clicked();//trie
+
+void on_pushButton_47_clicked();//back
+void on_Rechercher_2_clicked();//recherche
+void on_pushButton_48_clicked();//back
+void on_Trie_2_clicked();//trie
 
 //time
 void timefct();

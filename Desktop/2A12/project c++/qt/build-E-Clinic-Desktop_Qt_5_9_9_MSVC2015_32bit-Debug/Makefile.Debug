@@ -71,7 +71,8 @@ OBJECTS       = debug\email.obj \
 		debug\moc_mail.obj \
 		debug\moc_mainwindow.obj
 
-DIST          = Mortified.mp3 \
+DIST          = Click.mp3 \
+		Mortified.mp3 \
 		SMTPClient/SMTPClient.pri ..\E-Clinic\SMTPClient\email.h \
 		..\E-Clinic\SMTPClient\emailaddress.h \
 		..\E-Clinic\SMTPClient\smtpclient.h \
@@ -221,6 +222,7 @@ compiler_rcc_clean:
 debug\qrc_resource.cpp: ..\E-Clinic\resource.qrc \
 		C:\Qt\5.9.9\msvc2015\bin\rcc.exe \
 		..\E-Clinic\background.png \
+		..\E-Clinic\logoeclinic.png \
 		..\E-Clinic\logoeclinic.jpg
 	C:\Qt\5.9.9\msvc2015\bin\rcc.exe -name resource ..\E-Clinic\resource.qrc -o debug\qrc_resource.cpp
 
@@ -419,35 +421,6 @@ debug\moc_mail.cpp: C:\Qt\5.9.9\msvc2015\include\QtWidgets\QDialog \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\qfiledevice.h \
 		C:\Qt\5.9.9\msvc2015\include\QtGui\qvector2d.h \
 		C:\Qt\5.9.9\msvc2015\include\QtGui\qtouchdevice.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QString \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\QMainWindow \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\qmainwindow.h \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\qtabwidget.h \
-		C:\Qt\5.9.9\msvc2015\include\QtGui\qicon.h \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\QMessageBox \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\qmessagebox.h \
-		"C:\Users\HP\Desktop\2A12\project c++\qt\E-Clinic\SMTPClient\email.h" \
-		..\E-Clinic\SMTPClient\emailaddress.h \
-		"C:\Users\HP\Desktop\2A12\project c++\qt\E-Clinic\SMTPClient\smtpclient.h" \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QTimer \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qtimer.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qbasictimer.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QObject \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\QSslSocket \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetworkglobal.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetwork-config.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtcpsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qabstractsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslerror.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslcertificate.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qcryptographichash.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qdatetime.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qssl.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QFlags \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\QAbstractSocket \
-		..\E-Clinic\SMTPClient\email.h \
-		"C:\Users\HP\Desktop\2A12\project c++\qt\E-Clinic\SMTPClient\emailaddress.h" \
 		..\E-Clinic\mail.h \
 		debug\moc_predefs.h \
 		C:\Qt\5.9.9\msvc2015\bin\moc.exe
@@ -570,6 +543,24 @@ debug\moc_mainwindow.cpp: ui_mainwindow.h \
 		C:\Qt\5.9.9\msvc2015\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\qabstractitemmodel.h \
 		..\E-Clinic\rdv.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimediaglobal.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimedia-config.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetworkglobal.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QSharedDataPointer \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QUrl \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QVariant \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\qmetaobject.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qaudio.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkconfiguration.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\QDebug \
 		C:\Qt\5.9.9\msvc2015\include\QtPrintSupport\QPrinter \
 		C:\Qt\5.9.9\msvc2015\include\QtPrintSupport\qprinter.h \
@@ -907,51 +898,7 @@ debug\mail.obj: ..\E-Clinic\mail.cpp ../E-Clinic/mail.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\qfiledevice.h \
 		C:\Qt\5.9.9\msvc2015\include\QtGui\qvector2d.h \
 		C:\Qt\5.9.9\msvc2015\include\QtGui\qtouchdevice.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QString \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\QMainWindow \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\qmainwindow.h \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\qtabwidget.h \
-		C:\Qt\5.9.9\msvc2015\include\QtGui\qicon.h \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\QMessageBox \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\qmessagebox.h \
-		"C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/email.h" \
-		../E-Clinic/SMTPClient/emailaddress.h \
-		"C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/smtpclient.h" \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QTimer \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qtimer.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qbasictimer.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QObject \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\QSslSocket \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetworkglobal.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetwork-config.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtcpsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qabstractsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslerror.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslcertificate.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qcryptographichash.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qdatetime.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qssl.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QFlags \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\QAbstractSocket \
-		../E-Clinic/SMTPClient/email.h \
-		"C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/emailaddress.h" \
-		ui_mail.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\QMediaPlaylist \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaplaylist.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediacontent.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaresource.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkrequest.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QSharedDataPointer \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QUrl \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QVariant \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimediaglobal.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimedia-config.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaobject.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmultimedia.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediabindableinterface.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaenumdebug.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qmetaobject.h
+		ui_mail.h
 
 debug\main.obj: ..\E-Clinic\main.cpp ../E-Clinic/mainwindow.h \
 		ui_mainwindow.h \
@@ -1071,6 +1018,24 @@ debug\main.obj: ..\E-Clinic\main.cpp ../E-Clinic/mainwindow.h \
 		C:\Qt\5.9.9\msvc2015\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\qabstractitemmodel.h \
 		../E-Clinic/rdv.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimediaglobal.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimedia-config.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetworkglobal.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QSharedDataPointer \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QUrl \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QVariant \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\qmetaobject.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qaudio.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkconfiguration.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\QDebug \
 		C:\Qt\5.9.9\msvc2015\include\QtPrintSupport\QPrinter \
 		C:\Qt\5.9.9\msvc2015\include\QtPrintSupport\qprinter.h \
@@ -1098,26 +1063,6 @@ debug\main.obj: ..\E-Clinic\main.cpp ../E-Clinic/mainwindow.h \
 		C:\Qt\5.9.9\msvc2015\include\QtGui\qpen.h \
 		C:\Qt\5.9.9\msvc2015\include\QtGui\QMouseEvent \
 		C:\Qt\5.9.9\msvc2015\include\QtGui\QWheelEvent \
-		../E-Clinic/mail.h \
-		C:\Qt\5.9.9\msvc2015\include\QtWidgets\QDialog \
-		"C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/email.h" \
-		../E-Clinic/SMTPClient/emailaddress.h \
-		"C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/smtpclient.h" \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QObject \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\QSslSocket \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetworkglobal.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetwork-config.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtcpsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qabstractsocket.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslerror.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qsslcertificate.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qcryptographichash.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qssl.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QFlags \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\QAbstractSocket \
-		../E-Clinic/SMTPClient/email.h \
-		"C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/SMTPClient/emailaddress.h" \
 		C:\Qt\5.9.9\msvc2015\include\QtWidgets\QApplication \
 		C:\Qt\5.9.9\msvc2015\include\QtWidgets\qapplication.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\qcoreapplication.h \
@@ -1129,23 +1074,7 @@ debug\main.obj: ..\E-Clinic\main.cpp ../E-Clinic/mainwindow.h \
 		C:\Qt\5.9.9\msvc2015\include\QtSql\QSqlDatabase \
 		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\QMediaPlaylist \
 		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaplaylist.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediacontent.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaresource.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkrequest.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QSharedDataPointer \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QUrl \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QVariant \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimediaglobal.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimedia-config.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaobject.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmultimedia.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediabindableinterface.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaenumdebug.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qmetaobject.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\QMediaPlayer \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaplayer.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qaudio.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkconfiguration.h
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediabindableinterface.h
 
 debug\mainwindow.obj: ..\E-Clinic\mainwindow.cpp ../E-Clinic/mainwindow.h \
 		ui_mainwindow.h \
@@ -1265,6 +1194,24 @@ debug\mainwindow.obj: ..\E-Clinic\mainwindow.cpp ../E-Clinic/mainwindow.h \
 		C:\Qt\5.9.9\msvc2015\include\QtSql\qsqlquerymodel.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\qabstractitemmodel.h \
 		../E-Clinic/rdv.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\QMediaPlayer \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaplayer.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaobject.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimediaglobal.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimedia-config.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmultimedia.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediacontent.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaresource.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkrequest.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetworkglobal.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetwork-config.h \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QSharedDataPointer \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QUrl \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\QVariant \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaenumdebug.h \
+		C:\Qt\5.9.9\msvc2015\include\QtCore\qmetaobject.h \
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qaudio.h \
+		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkconfiguration.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\QDebug \
 		C:\Qt\5.9.9\msvc2015\include\QtPrintSupport\QPrinter \
 		C:\Qt\5.9.9\msvc2015\include\QtPrintSupport\qprinter.h \
@@ -1294,21 +1241,7 @@ debug\mainwindow.obj: ..\E-Clinic\mainwindow.cpp ../E-Clinic/mainwindow.h \
 		C:\Qt\5.9.9\msvc2015\include\QtGui\QWheelEvent \
 		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\QMediaPlaylist \
 		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaplaylist.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediacontent.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaresource.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qnetworkrequest.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetworkglobal.h \
-		C:\Qt\5.9.9\msvc2015\include\QtNetwork\qtnetwork-config.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QSharedDataPointer \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QUrl \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\QVariant \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimediaglobal.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qtmultimedia-config.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaobject.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmultimedia.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediabindableinterface.h \
-		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediaenumdebug.h \
-		C:\Qt\5.9.9\msvc2015\include\QtCore\qmetaobject.h
+		C:\Qt\5.9.9\msvc2015\include\QtMultimedia\qmediabindableinterface.h
 
 debug\patient.obj: ..\E-Clinic\patient.cpp ../E-Clinic/patient.h \
 		C:\Qt\5.9.9\msvc2015\include\QtCore\QString \

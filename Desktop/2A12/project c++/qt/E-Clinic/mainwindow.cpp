@@ -61,6 +61,17 @@ MainWindow::MainWindow(QWidget *parent) :
      connect(ui->pb_aff_rdv, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_rdv_clicked()));
 connect(ui->pb_aff_rdv_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_rdv_clicked2()));
 connect(ui->pb_aff_rdv_3, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_rdv_clicked3()));
+
+connect(ui->pushButton_45, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_45_clicked()));
+connect(ui->pushButton_46, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_46_clicked()));
+connect(ui->pushButton_47, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_47_clicked()));
+connect(ui->pushButton_48, SIGNAL(clicked(bool)), this, SLOT(on_pushButton_48_clicked()));
+
+connect(ui->Rechercher, SIGNAL(clicked(bool)), this, SLOT(on_Rechercher_clicked()));
+connect(ui->Rechercher_2, SIGNAL(clicked(bool)), this, SLOT(on_Rechercher_2_clicked()));
+connect(ui->Trie, SIGNAL(clicked(bool)), this, SLOT(on_Trie_clicked()));
+connect(ui->Trie_2, SIGNAL(clicked(bool)), this, SLOT(on_Trie_2_clicked()));
+
     //connect(ui->verify, SIGNAL(clicked(bool)), this, SLOT(verify()));//update
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timefct()));
@@ -75,6 +86,11 @@ connect(ui->pb_aff_rdv_3, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_rdv_clicke
     connect(ui->pushButtonSend, SIGNAL(clicked(bool)), this, SLOT(sendEmail()));
     connect(ui->pushButtonClear, SIGNAL(clicked(bool)), this, SLOT(clearFields()));*/
 
+
+
+
+
+
 }
 
 MainWindow::~MainWindow()
@@ -83,6 +99,38 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_pushButton_45_clicked()
+{
+    ui->widgetrecherche->setCurrentIndex(0);
+}
+void MainWindow::on_Rechercher_clicked()
+{
+    ui->widgetrecherche->setCurrentIndex(1);
+}
+void MainWindow::on_pushButton_46_clicked()
+{
+    ui->widgettrie->setCurrentIndex(0);
+}
+void MainWindow::on_Trie_clicked()
+{
+    ui->widgettrie->setCurrentIndex(1);
+}
+void MainWindow::on_pushButton_47_clicked()
+{
+    ui->widgetrecherche_2->setCurrentIndex(0);
+}
+void MainWindow::on_Rechercher_2_clicked()
+{
+    ui->widgetrecherche_2->setCurrentIndex(1);
+}
+void MainWindow::on_pushButton_48_clicked()
+{
+    ui->widgettrie_2->setCurrentIndex(0);
+}
+void MainWindow::on_Trie_2_clicked()
+{
+    ui->widgettrie_2->setCurrentIndex(1);
+}
 
 void MainWindow::on_pb_ajouter_clicked()
 {   //button sound
