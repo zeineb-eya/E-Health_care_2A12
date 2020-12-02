@@ -57,7 +57,15 @@ public:
     QSqlQueryModel* afficher_desc();
     QSqlQueryModel* afficher_asctype();
     QSqlQueryModel* afficher_desctype();
+    QSqlQueryModel* afficher_ascassu();
+    QSqlQueryModel* afficher_descassu();
     bool search(int id);
+    bool searchnom(QString nom);
+    bool searchprenom(QString prenom);
+
+    QSqlQueryModel* afficher_nompatient(QString nom);
+    QSqlQueryModel* afficher_prenompatient(QString prenom);
+
 private:
     int id,tel ,telpap;
     QString nom, prenom;

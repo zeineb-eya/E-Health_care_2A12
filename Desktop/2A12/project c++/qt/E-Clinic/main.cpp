@@ -8,13 +8,13 @@
 //main
 int main(int argc, char *argv[])
 {   //loop play
-    QMediaPlaylist *playlist = new QMediaPlaylist();
+   /* QMediaPlaylist *playlist = new QMediaPlaylist();
     playlist->addMedia(QUrl("C:/users/HP/Desktop/2A12/project c++/qt/E-Clinic/Mortified.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
     QMediaPlayer *music = new QMediaPlayer();
     music->setPlaylist(playlist);
-    music->play();
+    music->play();*/
 
     QApplication a(argc, argv);
     Connexion c;

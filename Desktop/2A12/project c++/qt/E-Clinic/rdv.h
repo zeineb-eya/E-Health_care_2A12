@@ -36,10 +36,14 @@ bool modifier_r();
     QSqlQueryModel* afficher_asc();
     QSqlQueryModel* afficher_desc();
     bool search(int coderdv);
+    bool searchdoc(QString medecin);
+    bool searchID(int id_p);
     QSqlQueryModel* afficher_idCroissant();
     QSqlQueryModel* afficher_idDecroissant();
     QSqlQueryModel* afficher_DocCroissant();
     QSqlQueryModel* afficher_DocDecroissant();
+    QSqlQueryModel* afficher_doc(QString medecin);
+    QSqlQueryModel* afficher_ID(int id_p);
    // bool exist(QString medecin,int id_p) ;
 private:
     int coderdv,id_p;

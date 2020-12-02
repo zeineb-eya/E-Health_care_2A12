@@ -12,9 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tab_patients->setModel(tmppatient.afficher());
     ui->tab_rdv->setModel(tmprdv.afficher());
+
+
     //sound
-
-
     click = new QMediaPlayer();
     click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
 
@@ -25,6 +25,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->pb_ajouter, SIGNAL(clicked(bool)), this, SLOT(on_pb_ajouter_clicked())); //ajout p
     connect(ui->pb_ajouter_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_ajouter_clicked2())); //ajout r
+
+    connect(ui->afficher, SIGNAL(clicked(bool)), this, SLOT(on_pb_afficher_clicked1()));
+    connect(ui->afficher_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_afficher_clicked2()));
+
 
     connect(ui->supprimerp, SIGNAL(clicked(bool)), this, SLOT(on_pb_supprimer_clicked())); //supp p
     connect(ui->supprimerr, SIGNAL(clicked(bool)), this, SLOT(on_pb_supprimer_clicked2())); //sup r
@@ -45,14 +49,18 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pb_desc_tri_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_tri_clicked_2()));
     connect(ui->pb_asc_tri_5, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_triTYPE_clicked_2()));
     connect(ui->pb_desc_tri_5, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_triTYPE_clicked_2()));
-
+    connect(ui->pb_asc_tri_6, SIGNAL(clicked(bool)), this, SLOT(on_pb_asc_tri_clicked_6()));
+    connect(ui->pb_desc_tri_6, SIGNAL(clicked(bool)), this, SLOT(on_pb_desc_tri_clicked_6()));
 
 
 //recherche par id patient
     connect(ui->pb_aff_client, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_client_clicked()));
+    connect(ui->pb_aff_client_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_client_clicked2()));
+    connect(ui->pb_aff_client_3, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_client_clicked3()));
 //recherche par coderdv
      connect(ui->pb_aff_rdv, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_rdv_clicked()));
-
+connect(ui->pb_aff_rdv_2, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_rdv_clicked2()));
+connect(ui->pb_aff_rdv_3, SIGNAL(clicked(bool)), this, SLOT(on_pb_aff_rdv_clicked3()));
     //connect(ui->verify, SIGNAL(clicked(bool)), this, SLOT(verify()));//update
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(timefct()));
@@ -166,6 +174,22 @@ ui->tab_rdv->setModel(tmprdv.afficher());//refresh
     QMessageBox::critical(nullptr, QObject::tr("Ajouter un rendez-vous"),
                     QObject::tr("Erreur !.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+void MainWindow::on_pb_afficher_clicked1(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+    ui->tab_patients->setModel(tmppatient.afficher());
+}
+
+void MainWindow::on_pb_afficher_clicked2(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+    ui->tab_rdv->setModel(tmprdv.afficher());
 }
 
 void MainWindow::on_pb_supprimer_clicked()
@@ -347,7 +371,7 @@ void MainWindow::on_pb_asc_tri_clicked(){
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmprdv_tri->setModel(tmprdv.afficher_asc());
+    ui->tab_rdv->setModel(tmprdv.afficher_asc());
 }
 
 void MainWindow::on_pb_desc_tri_clicked(){
@@ -355,7 +379,7 @@ void MainWindow::on_pb_desc_tri_clicked(){
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmprdv_tri->setModel(tmprdv.afficher_desc());
+    ui->tab_rdv->setModel(tmprdv.afficher_desc());
 }
 
 
@@ -364,7 +388,7 @@ void MainWindow::on_pb_asc_triID_clicked(){
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmprdv_tri->setModel(tmprdv.afficher_idCroissant());
+    ui->tab_rdv->setModel(tmprdv.afficher_idCroissant());
 }
 
 void MainWindow::on_pb_desc_triID_clicked(){
@@ -372,14 +396,14 @@ void MainWindow::on_pb_desc_triID_clicked(){
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmprdv_tri->setModel(tmprdv.afficher_idDecroissant());
+    ui->tab_rdv->setModel(tmprdv.afficher_idDecroissant());
 }
 void MainWindow::on_pb_asc_triDoc_clicked(){
     //button sound
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmprdv_tri->setModel(tmprdv.afficher_DocCroissant());
+    ui->tab_rdv->setModel(tmprdv.afficher_DocCroissant());
 }
 
 void MainWindow::on_pb_desc_triDoc_clicked(){
@@ -387,7 +411,7 @@ void MainWindow::on_pb_desc_triDoc_clicked(){
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmprdv_tri->setModel(tmprdv.afficher_DocDecroissant());
+    ui->tab_rdv->setModel(tmprdv.afficher_DocDecroissant());
 }
 
 
@@ -397,7 +421,9 @@ void MainWindow::on_pb_asc_tri_clicked_2(){
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmppatient_tri->setModel(tmppatient.afficher_asc());
+    //ui->tmppatient_tri->setModel(tmppatient.afficher_asc());
+        ui->tab_patients->setModel(tmppatient.afficher_asc());
+
 }
 
 void MainWindow::on_pb_desc_tri_clicked_2(){
@@ -405,14 +431,16 @@ void MainWindow::on_pb_desc_tri_clicked_2(){
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmppatient_tri->setModel(tmppatient.afficher_desc());
+    //ui->tmppatient_tri->setModel(tmppatient.afficher_desc());
+        ui->tab_patients->setModel(tmppatient.afficher_desc());
 }
 void MainWindow::on_pb_asc_triTYPE_clicked_2(){
     //button sound
         click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
         click->play();
         qDebug()<<click ->errorString();
-    ui->tmppatient_tri->setModel(tmppatient.afficher_asctype());
+    //ui->tmppatient_tri->setModel(tmppatient.afficher_asctype());
+        ui->tab_patients->setModel(tmppatient.afficher_asctype());
 }
 
 void MainWindow::on_pb_desc_triTYPE_clicked_2(){
@@ -421,9 +449,27 @@ void MainWindow::on_pb_desc_triTYPE_clicked_2(){
         click->play();
         qDebug()<<click ->errorString();
 
-    ui->tmppatient_tri->setModel(tmppatient.afficher_desctype());
+    //ui->tmppatient_tri->setModel(tmppatient.afficher_desctype());
+        ui->tab_patients->setModel(tmppatient.afficher_desctype());
+}
+void MainWindow::on_pb_asc_tri_clicked_6(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+    //ui->tmppatient_tri->setModel(tmppatient.afficher_asc());
+        ui->tab_patients->setModel(tmppatient.afficher_ascassu());
+
 }
 
+void MainWindow::on_pb_desc_tri_clicked_6(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+    //ui->tmppatient_tri->setModel(tmppatient.afficher_desc());
+        ui->tab_patients->setModel(tmppatient.afficher_descassu());
+}
 
 //print
 void MainWindow::on_pushButton_2_clicked(){
@@ -444,7 +490,26 @@ void MainWindow::on_pb_aff_client_clicked(){
         click->play();
         qDebug()<<click ->errorString();
     int id = ui->lineEdit_aff_idpatient->text().toInt();
-    ui->tab_aff_patient->setModel(tmppatient.afficher_idpatient(id));
+   // ui->tab_aff_patient->setModel(tmppatient.afficher_idpatient(id));
+    ui->tab_patients->setModel(tmppatient.afficher_idpatient(id));
+}
+void MainWindow::on_pb_aff_client_clicked2(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+    QString nom = ui->lineEdit_aff_nompatient->text();
+   // ui->tab_aff_patient->setModel(tmppatient.afficher_idpatient(id));
+    ui->tab_patients->setModel(tmppatient.afficher_nompatient(nom));
+}
+void MainWindow::on_pb_aff_client_clicked3(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+        QString prenom = ui->lineEdit_aff_prenompatient->text();
+       // ui->tab_aff_patient->setModel(tmppatient.afficher_idpatient(id));
+        ui->tab_patients->setModel(tmppatient.afficher_nompatient(prenom));
 }
 
 void MainWindow::on_pb_aff_rdv_clicked(){
@@ -453,7 +518,23 @@ void MainWindow::on_pb_aff_rdv_clicked(){
         click->play();
         qDebug()<<click ->errorString();
     int coderdv = ui->lineEdit_aff_coderdv->text().toInt();
-    ui->tab_aff_rdv->setModel(tmprdv.afficher_coderdv(coderdv));
+    ui->tab_rdv->setModel(tmprdv.afficher_coderdv(coderdv));
+}
+void MainWindow::on_pb_aff_rdv_clicked2(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+    QString medecin = ui->lineEdit_aff_doc->text();
+    ui->tab_rdv->setModel(tmprdv.afficher_doc(medecin));
+}
+void MainWindow::on_pb_aff_rdv_clicked3(){
+    //button sound
+        click->setMedia(QUrl::fromLocalFile("C:/Users/HP/Desktop/2A12/project c++/qt/E-Clinic/Click.mp3"));
+        click->play();
+        qDebug()<<click ->errorString();
+    int id_p = ui->lineEdit_aff_ID->text().toInt();
+    ui->tab_rdv->setModel(tmprdv.afficher_ID(id_p));
 }
 
 void MainWindow::timefct()

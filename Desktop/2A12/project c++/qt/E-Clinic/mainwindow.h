@@ -39,6 +39,8 @@ private slots:
    void on_pb_ajouter_clicked2();
     void on_pb_supprimer_clicked();
    void on_pb_supprimer_clicked2();
+   void on_pb_afficher_clicked1();
+   void on_pb_afficher_clicked2();
 //void verify();
 
 void on_pb_modifier_clicked();
@@ -55,14 +57,20 @@ void on_pb_asc_tri_clicked_2();
 void on_pb_desc_tri_clicked_2();
 void on_pb_asc_triTYPE_clicked_2();
 void on_pb_desc_triTYPE_clicked_2();
-
+void on_pb_asc_tri_clicked_6();
+void on_pb_desc_tri_clicked_6();
 //recherche patient
 void on_pb_aff_client_clicked();
+void on_pb_aff_client_clicked2();
+void on_pb_aff_client_clicked3();
 void on_pushButton_2_clicked();
 
 //recherche rdv
-void on_pb_aff_rdv_clicked();
+void on_pb_aff_rdv_clicked();//code
+void on_pb_aff_rdv_clicked2();//doctor
+void on_pb_aff_rdv_clicked3();//id
 
+//time
 void timefct();
 
 /*protected:
