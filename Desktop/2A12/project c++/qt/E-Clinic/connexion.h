@@ -10,7 +10,7 @@ public:
     Connexion();
     bool ouvrirConnexion();
     void fermerConnexion();
-
+//
 };
 
 #endif // CONNEXION_H

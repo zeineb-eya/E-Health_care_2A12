@@ -1,6 +1,6 @@
 #include "connexion.h"
 
-//connexion
+
 Connexion::Connexion()
 {}
 

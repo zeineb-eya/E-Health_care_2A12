@@ -4,7 +4,7 @@
 #include "rdv.h"
 #include <QMediaPlaylist>
 #include <QMessageBox>
-//mainwindow
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)

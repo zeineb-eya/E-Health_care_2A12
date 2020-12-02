@@ -42,7 +42,7 @@ private slots:
    void on_pb_afficher_clicked1();
    void on_pb_afficher_clicked2();
 //void verify();
-
+//
 void on_pb_modifier_clicked();
 void on_pb_modifier_clicked_2();
 //tri rdv
