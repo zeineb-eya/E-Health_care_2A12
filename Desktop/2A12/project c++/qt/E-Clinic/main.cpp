@@ -5,7 +5,7 @@
 #include "connexion.h"
 #include <QMediaPlaylist>
 #include <QMediaPlayer>
-//main
+
 int main(int argc, char *argv[])
 {   //loop play
    /* QMediaPlaylist *playlist = new QMediaPlaylist();

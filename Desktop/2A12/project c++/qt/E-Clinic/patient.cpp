@@ -10,7 +10,7 @@ tel=0; telpap=0; date_naissance="";
 
 }
 
-//info patients
+
 patient::patient(int id,QString nom,QString prenom,QString sexe,int tel,QString nompap,QString prenompap,int telpap,QString adresse,QString situationf,QString assurancemed,QString codeassurance,QString date_naissance,QString typep)
 {   this->id=id;
     this->nom=nom;

@@ -24,7 +24,7 @@ public:
     void settime_rdv(QString);
     void setservice(QString);
 
-
+//
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(int);

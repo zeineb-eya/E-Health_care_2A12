@@ -45,7 +45,7 @@ public:
     void setdate_naissance(QString);
 
 
-
+//
     bool ajouter();
     QSqlQueryModel* afficher();
     bool supprimer(int);
