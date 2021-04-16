@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>background.png</file>
+        <file>logoeclinic.jpg</file>
+        <file>logoeclinic.png</file>
+        <file>Add.png</file>
+        <file>back.png</file>
+        <file>Books.png</file>
+        <file>Flashlight.png</file>
+        <file>ID.png</file>
+        <file>Notepad.png</file>
+        <file>Pencil.png</file>
+        <file>piel.jpg</file>
+        <file>Search.png</file>
+        <file>Search-32.png</file>
+        <file>suitcase.png</file>
+        <file>téléchargement (1).jpg</file>
+        <file>téléchargement.jpg</file>
+        <file>Tick.png</file>
+        <file>Trash.png</file>
+    </qresource>
+</RCC>
